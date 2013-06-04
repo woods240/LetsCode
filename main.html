@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let's Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+        rel="stylesheet">
+    <link href="http://cdn.tierlabs.com/global/google/prettify/prettify.css" rel="stylesheet">
+    <link href="../LetsCode/themes/css/justify.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">Let's Code</a>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">C#</a></li>
+                    <li>
+                        <a href="#">Javascript</a></li>
+                    <li>
+                        <a href="#">Css</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <pre class="prettyprint">function submitAjaxForm(formSelector, action, successCallback) {
+    //alert(action + ' : ' + $(formSelector).serialize());
+    //$(formSelector).ajaxStart(function () {
+    //    alert('Start');
+    //});
+    //$(formSelector).ajaxComplete(function (event, request, settings) {
+    //    alert('Complete');
+    //});
+    //$(formSelector).ajaxSuccess(function (evt, request, settings) {
+    //    alert('Success');
+    //});
+    //$(formSelector).ajaxError(function (event, XMLHttpRequest, ajaxOptions, thrownError) {
+    //    alert("错误:" + thrownError);
+    //});
+    //alert($(formSelector).serialize());
+
+    // 显示进度条
+    addProgressTip();
+    $.post(action, $(formSelector).serialize(), function (data) {
+
+        // 1.提示信息
+        showAlertInfo(formSelector, data);
+
+        // 2.成功后回调
+        if (data.IsSuccess && typeof (successCallback) != 'undefined') {
+            successCallback();
+        }
+
+        // 3.移除进度条
+        removeProgressTip();
+
+    }, 'json');
+}</pre>
+        </div>
+    </div>
+    <!-- js引用 -->
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdn.tierlabs.com/global/google/prettify/prettify.js"></script>
+    <script>
+        prettyPrint();
+    </script>
+</body>
+</html>
