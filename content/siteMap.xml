@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<location>
+    <nav text="HTML">
+        <category text="列表">
+            <item url="#">其它</item>
+            <item url="content/test.html">测试</item>
+        </category>
+    </nav>
+    <nav text="CSS">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+    <nav text="JAVASCRIPT">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+    <nav text="XML">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+    <nav text="JQUERY">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+    <nav text="工具集">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+    <nav text="Web优化">
+        <category text="">
+            <item url=""></item>
+        </category>
+    </nav>
+</location>

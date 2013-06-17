@@ -3,32 +3,29 @@
 <head>
     <title>Let's Code</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
-        rel="stylesheet" />
-    <link href="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css"
-        rel="stylesheet" />
-    <link href="../LetsCode/themes/css/justify.css" rel="stylesheet" />
+
+    <!--CDN-->
+    <!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <link href="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />-->
+    <!--End-->
+
+    <!--Local-->
+    <link href="themes/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <link href="themes/css/prettify.css" rel="stylesheet" />
+    <!--End-->
+
+    <link href="themes/css/justify.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="#">Let's Code</a>
-                <ul class="nav">
+                <ul id="mainMenu" class="nav">
                     <li class="active">
                         <a href="#">HTML</a></li>
                     <li>
                         <a href="#">CSS</a></li>
-                    <li>
-                        <a href="#">JAVASCRIPT</a></li>
-                    <li>
-                        <a href="#">XML</a></li>
-                    <li>
-                        <a href="#">JQUERY</a></li>
-                    <li>
-                        <a href="#">工具集</a></li>
-                    <li>
-                        <a href="#">Web优化</a></li>
                 </ul>
             </div>
         </div>
@@ -37,73 +34,45 @@
         <div class="row">
             <div class="span2">
                 <div class="well">
-                    <ul class="nav nav-list">
+                    <ul id="subMenu" class="nav nav-list">
                         <li class="nav-header">导航菜单</li>
                         <li class="active">
-                            <a href="#">测试</a></li>
-                        <li>
                             <a href="#">其它</a></li>
+                        <li>
+                            <a href="content/test.html">测试</a></li>
                         <li class="divider"></li>
-                        ...
                     </ul>
                 </div>
             </div>
             <div class="span10">
-                <div class="content">
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="#">HTML</a>
-                            <span class="divider">/</span></li>
-                        <li>
-                            <a href="#">导航菜单</a>
-                            <span class="divider">/</span></li>
-                        <li class="active">测试</li>
-                    </ul>
-                    <pre class="prettyprint linenums">
-function submitAjaxForm(formSelector, action, successCallback) {
-    //alert(action + ' : ' + $(formSelector).serialize());
-    //$(formSelector).ajaxStart(function () {
-    //    alert('Start');
-    //});
-    //$(formSelector).ajaxComplete(function (event, request, settings) {
-    //    alert('Complete');
-    //});
-    //$(formSelector).ajaxSuccess(function (evt, request, settings) {
-    //    alert('Success');
-    //});
-    //$(formSelector).ajaxError(function (event, XMLHttpRequest, ajaxOptions, thrownError) {
-    //    alert("错误:" + thrownError);
-    //});
-    //alert($(formSelector).serialize());
-
-    // 显示进度条
-    addProgressTip();
-    $.post(action, $(formSelector).serialize(), function (data) {
-
-        // 1.提示信息
-        showAlertInfo(formSelector, data);
-
-        // 2.成功后回调
-        if (data.IsSuccess && typeof (successCallback) != 'undefined') {
-            successCallback();
-        }
-
-        // 3.移除进度条
-        removeProgressTip();
-
-    }, 'json');
-}</pre>
+                <ul id="breadcrumb" class="breadcrumb">
+                    <li>
+                        <a href="#">HTML</a><span class="divider">/</span></li>
+                    <li>
+                        <a href="#">导航菜单</a>
+                        <span class="divider">/</span></li>
+                    <li class="active">测试</li>
+                </ul>
+                <div id="content">
                 </div>
             </div>
         </div>
     </div>
-    <!-- js引用 -->
+
+    <!-- CDN -->
     <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
-    <script src="scripts/menu.js" type="text/javascript"></script>
-    <script>
-        window.prettyPrint && prettyPrint()
-    </script>
+    <!--End-->
+
+    <!--Local-->
+    <!--<script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/prettify.js"></script>-->
+    <!--End-->
+
+    <script src="scripts/prettyCode.js"></script>
+    <script src="scripts/location.js"></script>
+
 </body>
 </html>
