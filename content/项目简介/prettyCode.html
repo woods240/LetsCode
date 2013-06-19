@@ -1,0 +1,17 @@
+﻿<h4>代码美化组件由两部分组成</h4>
+<ol>
+    <li><strong class="label label-info">代码显示开关</strong> 负责显示/隐藏代码内容</li>
+    <li><strong class="label label-info">代码显示容器</strong> 负责显示代码内容、并进行美化</li>
+</ol>
+
+<p class="alert">
+    注：
+    <br />
+    1.美化功能由google-code-prettify完成，因此组件依赖于prettify.js和prettify.css
+    <br />
+    2.代码开关的属性data-code-url指定了代码文件的位置，仅在第一次显示代码时用Ajax方式读取
+    <br />
+    3.扩展了jQuery静态方法$.initPrettyCodeSwitch()，对代码开关的样式进行初始化
+</p>
+
+<a data-code-url="scripts/prettyCode.js">prettyCode.js 代码</a>

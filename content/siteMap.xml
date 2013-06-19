@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <location>
+    <nav text="项目简介">
+        <category text="源代码介绍">
+            <item url="content/项目简介/siteMap.html">站点地图</item>
+            <item url="content/项目简介/framework.html">框架页</item>
+            <item url="content/项目简介/location.html">导航定位组件</item>
+            <item url="content/项目简介/prettyCode.html">代码美化组件</item>
+        </category>
+    </nav>
     <nav text="HTML">
         <category text="列表">
             <item url="#">其它</item>
-            <item url="content/test.html">测试</item>
+            <item url="content/HTML/test.html">测试</item>
         </category>
     </nav>
     <nav text="CSS">
@@ -27,8 +35,8 @@
         </category>
     </nav>
     <nav text="工具集">
-        <category text="">
-            <item url=""></item>
+        <category text="编码">
+            <item url="content/工具集/test.html">测试</item>
         </category>
     </nav>
     <nav text="Web优化">

@@ -1,0 +1,16 @@
+﻿<h4>导航定位组件由3部分组成</h4>
+<ol>
+    <li><strong class="label label-info">siteMap.xml</strong> 提供站点地图数据</li>
+    <li><strong class="label label-info">DOM选择器</strong> 在页面中定位导航区域</li>
+    <li><strong class="label label-info">location.js</strong> 用站点地图数据构造导航区域，实时刷新内容区域</li>
+</ol>
+
+<p class="alert">
+    注：
+    <br />
+    1.location.js的引用顺序要放到最后
+    <br />
+    2.可以注册onContentLoad事件，在内容区域加载完成后触发
+</p>
+
+<a data-code-url="scripts/location.js">location.js 代码</a>

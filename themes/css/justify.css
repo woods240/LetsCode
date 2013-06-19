@@ -1,5 +1,8 @@
-
-body
-{
+﻿
+body {
     margin-top: 60px;
+}
+
+div#content {
+    padding: 0 1em;
 }

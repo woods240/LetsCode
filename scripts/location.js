@@ -1,4 +1,7 @@
-!function ($) {
+ï»¿!function ($) {
+
+    /* Location CLASS DEFINITION
+    * ========================= */
 
     var Location = function (options) {
         this.$mainMenu = $('#' + options.mainMenuId);
@@ -8,6 +11,8 @@
 
         this.$location = null;
         this.getLocationFromSiteMap(options.siteMapPath);
+
+        this.onContentLoad = options.onContentLoad;
     };
 
     Location.prototype = {
@@ -52,13 +57,13 @@
           var menuItems = ''
             , that = this;
 
-          this.$location.find('nav[text!=""]').each(function () {      // Ë¢ĞÂnav
+          this.$location.find('nav[text!=""]').each(function () {      // åˆ·æ–°nav
               var navText = $(this).attr('text');
               menuItems += that.createMenuItem(navText);
           });
           this.$mainMenu.html(menuItems);
 
-          this.$mainMenu.find('a').on('click', function (event) {     // °ó¶¨µã»÷ÊÂ¼ş
+          this.$mainMenu.find('a').on('click', function (event) {     // ç»‘å®šç‚¹å‡»äº‹ä»¶
               var $linkItem = $(this)
                 , navText = $linkItem.text();
 
@@ -73,7 +78,7 @@
           var subMenuItems = ''
             , that = this;
 
-          this.$location.find('nav[text=' + navText + ']').find('category[text!=""]').each(function () {    // Ë¢ĞÂsubMenu
+          this.$location.find('nav[text=' + navText + ']').find('category[text!=""]').each(function () {    // åˆ·æ–°subMenu
               var $categoryItem = $(this)
                 , categoryText = $categoryItem.attr('text');
 
@@ -86,7 +91,7 @@
           });
           this.$subMenu.html(subMenuItems);
 
-          this.$subMenu.find('a').on('click', function (event) {     // °ó¶¨µã»÷ÊÂ¼ş
+          this.$subMenu.find('a').on('click', function (event) {     // ç»‘å®šç‚¹å‡»äº‹ä»¶
               var $linkItem = $(this)
                 , linkUrl = $linkItem.attr('href');
 
@@ -119,6 +124,7 @@
                   dataType: 'html',
                   success: function (html) {
                       that.$content.html(html);
+                      that.onContentLoad();
                   },
                   error: function (XMLHttpRequest, textStatus, errorThrown) { alert(errorThrown); },
                   cache: false,
@@ -127,11 +133,13 @@
               });
           }
           else {
-              this.$content.html('<p>Ò³ÃæÕıÔÚ¿ª·¢ÖĞ£¬¾´ÇëÆÚ´ı¡£¡£¡£</p>');
+              this.$content.html('<p>é¡µé¢æ­£åœ¨å¼€å‘ä¸­ï¼Œæ•¬è¯·æœŸå¾…ã€‚ã€‚ã€‚</p>');
           }
       }
     };
 
+    /* Location PLUGIN DEFINITION
+    * ============================= */
 
     $.fn.location = function (option) {
         return this.each(function () {
@@ -149,12 +157,21 @@
         subMenuId: 'subMenu',
         breadcrumbId: 'breadcrumb',
         contentId: 'content',
-        siteMapPath: 'content/siteMap.xml'
+        siteMapPath: 'content/siteMap.xml',
+        onContentLoad: function () { }
     };
 
-    $(window).on('load', function () {
-        $('body').location();
-    });
 
+    /* Location DATA-API
+    * =================== */
+
+    $(window).on('load', function () {
+        $('body').location({
+            onContentLoad: function () {        // æ³¨å†ŒonContentLoadäº‹ä»¶
+                // 1.åˆå§‹åŒ– PrettyCode çš„å¼€å…³æ ·å¼
+                $.initPrettyCodeSwitch();
+            }
+        });
+    });
 
 }(window.jQuery);

@@ -1,2 +1,2 @@
-网站样式定义：
-justify.css		负责在BootStrap基础上，进行细微调整
+锘跨綉绔欐牱寮忓畾涔夛細
+justify.css		璐熻矗鍦˙ootStrap鍩虹涓婏紝杩涜缁嗗井璋冩暣
