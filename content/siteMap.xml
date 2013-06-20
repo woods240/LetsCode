@@ -30,7 +30,14 @@
         </category>
     </nav>
     <nav text="JQUERY">
-        <category text="">
+        <category text="Ajax">
+            <item url=""></item>
+            <item url=""></item>
+            <item url=""></item>
+        </category>
+        <category text="选择器">
+            <item url=""></item>
+            <item url=""></item>
             <item url=""></item>
         </category>
     </nav>
