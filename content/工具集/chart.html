@@ -1,0 +1,30 @@
+﻿<h4>基于HTML5 canvas技术</h4>
+<ol>
+    <li>可以画
+        <strong class="label label-info">曲线图</strong>
+        <strong class="label label-info">柱状图</strong>
+        <strong class="label label-info">雷达图</strong>
+        <strong class="label label-info">极地区域图</strong>
+        <strong class="label label-info">饼状图</strong>
+        <strong class="label label-info">环形图</strong></li>
+    <li>包含一个js文件chart.min.js</li>
+    <li>支持所有现代浏览器，并且针对IE7/8提供了降级替代方案</li>
+    <li>
+        <a href="content/工具集/chart_demo.html" target="_blank">曲线图例子</a>
+        ，可在线查阅<a href="http://www.bootcss.com/p/chart.js/docs/" target="_blank">使用手册</a>
+    </li>
+</ol>
+
+<p class="alert">
+    注：
+    <br />
+    1.只能静态显示图表，不支持动态交互
+    <br />
+    2.初始化Chart：在window.onload时，而不是DOMContentReady时（避免canvas取2d context时出错）
+    <br />
+    3.如果要兼容IE7/8，需要引用excanvas.js
+    <br />
+    4.使用modernizr探测浏览器是否支持canvas，打开/关闭animation
+</p>
+
+<a data-code-url="content/工具集/chart_demo.html">chart_demo.html 代码</a>

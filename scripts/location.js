@@ -26,9 +26,11 @@
               success: function (xml) {
                   that.$location = $('location', xml);
               },
-              error: function (XMLHttpRequest, textStatus, errorThrown) { alert(errorThrown); },
+              error: function (XMLHttpRequest, textStatus, errorThrown) {
+                  alert(errorThrown);
+              },
               cache: false,
-              type: 'get',
+              type: 'GET',
               async: false
           });
       }

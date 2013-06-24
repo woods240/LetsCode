@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
     <nav text="项目简介">
         <category text="源代码介绍">
@@ -20,7 +20,10 @@
         </category>
     </nav>
     <nav text="JAVASCRIPT">
-        <category text="">
+        <category text="核心javascript">
+            <item url="">数据类型和值</item>
+        </category>
+        <category text="客户端javascript">
             <item url=""></item>
         </category>
     </nav>
@@ -42,8 +45,8 @@
         </category>
     </nav>
     <nav text="工具集">
-        <category text="编码">
-            <item url="content/工具集/test.html">测试</item>
+        <category text="图表">
+            <item url="content/工具集/chart.html">HTML5图表：chart.js</item>
         </category>
     </nav>
     <nav text="Web优化">

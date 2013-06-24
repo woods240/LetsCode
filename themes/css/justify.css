@@ -1,8 +1,22 @@
-﻿
+﻿/* 页面布局 */
 body {
     margin-top: 60px;
 }
 
 div#content {
-    padding: 0 1em;
+    padding: 0;
+}
+
+
+/* 代码美化 */
+pre.prettyprint {
+    max-height: 460px;
+    overflow: auto;
+    font-family:Consolas;
+}
+
+
+.label, .badge {
+    padding: 3px 5px;
+    font-family:Consolas;
 }

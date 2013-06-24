@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>曲线图例子</title>
+    <script src="../../scripts/modernizr.js"></script>
+</head>
+<body>
+    <!--必须指定width,height-->
+    <canvas id="myChart" width="600" height="300"></canvas>
+    <canvas id="testChart" width="600" height="300"></canvas>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <!--[if lte IE 8]><script src="../../scripts/excanvas.js"></script><![endif]-->
+    <script src="../../scripts/chart.min.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            // 在window.onload时调用
+            drawChart();
+            drawTestChart();
+        });
+        alert(Modernizr.canvas);
+        var globalGraphSettings = { animation: Modernizr.canvas };
+        function drawChart() {
+            // 1.准备两组数据
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        data: [65, 59, 90, 81, 56, 55, 40]
+                    },
+                    {
+                        fillColor: "rgba(151,187,205,0.5)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#fff",
+                        data: [28, 48, 40, 19, 96, 27, 100]
+                    }
+                ]
+            }
+
+            // 2.对图表进行配置
+            var options = {};
+
+            // 3.交给Chart对象来展现曲线图
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var myNewChart = new Chart(ctx).Line(data, $.extend({}, globalGraphSettings, options));
+        }
+
+        function drawTestChart() {
+            // 1.准备两组数据
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        fillColor: "rgba(220,220,220,0.5)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        data: [65, 59, 90, 81, 56, 55, 40]
+                    },
+                    {
+                        fillColor: "rgba(151,187,205,0.5)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#fff",
+                        data: [28, 48, 40, 19, 96, 27, 100]
+                    }
+                ]
+            }
+
+            // 2.对图表进行配置
+            var options = {
+                scaleOverlay: true, scaleOverride: true, scaleSteps: 10, scaleStepWidth: 10, scaleStartValue: 40,
+                scaleLineColor: 'red', scaleShowLabels: true, scaleLabel: "<%=value%>元", scaleFontSize: 14,
+                scaleShowGridLines: false, bezierCurve: false, pointDot: false, datasetStroke: true
+            };
+
+            // 3.交给Chart对象来展现曲线图
+            var ctx = document.getElementById("testChart").getContext("2d");
+            var myNewChart = new Chart(ctx).Line(data, $.extend({}, globalGraphSettings, options));
+        }
+    </script>
+</body>
+</html>
