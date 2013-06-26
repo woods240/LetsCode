@@ -9,9 +9,8 @@
         </category>
     </nav>
     <nav text="HTML">
-        <category text="列表">
-            <item url="#">其它</item>
-            <item url="content/HTML/test.html">测试</item>
+        <category text="">
+            <item url=""></item>
         </category>
     </nav>
     <nav text="CSS">
@@ -21,10 +20,18 @@
     </nav>
     <nav text="JAVASCRIPT">
         <category text="核心javascript">
-            <item url="content/JAVASCRIPT/dataType.html">数据类型和值</item>
+            <item url="content/JAVASCRIPT/dataType.html">数据类型、类型转换</item>
+            <item url="content/JAVASCRIPT/function.html">函数</item>
+            <item url="">数组</item>
+            <item url="">对象</item>
+            <item url="">正则表达式</item>
         </category>
         <category text="客户端javascript">
             <item url=""></item>
+        </category>
+        <category text="内建对象">
+            <item url="">String</item>
+            <item url="">Date</item>
         </category>
     </nav>
     <nav text="XML">
@@ -47,6 +54,9 @@
     <nav text="工具集">
         <category text="图表">
             <item url="content/工具集/chart.html">HTML5图表：chart.js</item>
+        </category>
+        <category text="地图">
+            <item url="">百度地图</item>
         </category>
     </nav>
     <nav text="Web优化">

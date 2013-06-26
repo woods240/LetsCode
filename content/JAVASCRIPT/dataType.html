@@ -1,16 +1,16 @@
 ﻿<h4>数据类型：计算机通过操作值来运行，它是能够表示并操作的值的类型</h4>
-<ol>
+<ul>
     <li>三种基本数据类型
         <ul>
             <li><strong class="label label-info">数字</strong> 量化工具</li>
             <li><strong class="label label-info">字符串</strong> 用 '_' 或 "_" 包含的文本</li>
-            <li><strong class="label label-info">布尔值</strong> </li>
+            <li><strong class="label label-info">布尔值</strong> 表示真假</li>
         </ul>
     </li>
     <li>两种小数据类型
         <ul>
-            <li>null</li>
-            <li>undefined</li>
+            <li><strong class="label label-info">null</strong> 无值</li>
+            <li><strong class="label label-info">undefined</strong> 未定义</li>
         </ul>
     </li>
     <li>object类型
@@ -20,31 +20,35 @@
             <li><strong class="label label-info">函数</strong> 具有可执行代码，可通过调用来执行操作</li>
         </ul>
     </li>
-</ol>
+</ul>
 
 <hr />
 
 <h4>类型转换</h4>
-<ol>
+<ul>
     <li>数字转字符串
         <ul>
-            <li><strong class="label label-info">自动转换</strong> var 字符串 = 数字 + "" ;</li>
+            <li><strong class="label label-info">自动转换</strong> var 字符串 = 数字 + '' ;</li>
             <li><strong class="label label-info">指定小数位数</strong> var 字符串 = 数字.toFixed(小数位数) ;</li>
             <li><strong class="label label-info">指定有效数字位数</strong> var 字符串 = 数字.toPrecision(有效数字位数) ;</li>
             <li><strong class="label label-info">指定指数表示中的小数位数</strong> var 字符串 = 数字.toExponential(指数表示中的小数位数) ;</li>
         </ul>
     </li>
-    <li>
+    <li>字符串转数字
         <ul>
-            <li></li>
-            <li></li>
+            <li><strong class="label label-info">自动转换</strong> var 数字 = 字符串 - 0 ;</li>
+            <li><strong class="label label-info">整数转换</strong> var 数字 = parseInt(字符串) ;</li>
+            <li><strong class="label label-info">小数转换</strong> var 数字 = parseFloat(字符串) ;</li>
         </ul>
     </li>
-    <li>
+    <li>布尔值自动转换
         <ul>
-            <li></li>
-            <li></li>
+            <li><strong class="label label-info">布尔值在数字环境</strong> true -> 1, false -> 0</li>
+            <li><strong class="label label-info">布尔值在字符串环境</strong> true -> "true", false -> "false"</li>
+            <li><strong class="label label-info">数字在布尔值环境</strong> 0或NaN -> false, 其余 -> true</li>
+            <li><strong class="label label-info">字符串在布尔值环境</strong> 空字符串 -> false, 其余 -> true</li>
+            <li><strong class="label label-info">object在布尔值环境</strong> null和undefined -> false, 其余 -> true</li>
         </ul>
     </li>
-</ol>
+</ul>
 
