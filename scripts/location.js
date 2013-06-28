@@ -13,6 +13,7 @@
         this.getLocationFromSiteMap(options.siteMapPath);
 
         this.onContentLoad = options.onContentLoad;
+        this.onContentLoading = options.onContentLoading;
     };
 
     Location.prototype = {
@@ -59,7 +60,7 @@
           var menuItems = ''
             , that = this;
 
-          this.$location.find('nav[text!=""]').each(function () {      // 刷新nav
+          this.$location.find('nav').each(function () {      // 刷新nav
               var navText = $(this).attr('text');
               menuItems += that.createMenuItem(navText);
           });
@@ -80,12 +81,12 @@
           var subMenuItems = ''
             , that = this;
 
-          this.$location.find('nav[text=' + navText + ']').find('category[text!=""]').each(function () {    // 刷新subMenu
+          this.$location.find('nav[text=' + navText + ']').find('category').each(function () {    // 刷新subMenu
               var $categoryItem = $(this)
                 , categoryText = $categoryItem.attr('text');
 
               subMenuItems += that.createCetegoryItem(categoryText);
-              $categoryItem.find('item[url!=""]').each(function () {
+              $categoryItem.find('item').each(function () {
                   var linkText = $(this).text()
                     , linkUrl = $(this).attr('url');
                   subMenuItems += that.createMenuItem(linkText, linkUrl);
@@ -121,11 +122,14 @@
       , refreshContent: function (url) {
           if (url != '#') {
               var that = this;
+              that.onContentLoading();
               $.ajax({
                   url: url,
                   dataType: 'html',
                   success: function (html) {
                       that.$content.html(html);
+                  },
+                  complete: function () {
                       that.onContentLoad();
                   },
                   error: function (XMLHttpRequest, textStatus, errorThrown) { alert(errorThrown); },
@@ -139,6 +143,7 @@
           }
       }
     };
+
 
     /* Location PLUGIN DEFINITION
     * ============================= */
@@ -160,6 +165,7 @@
         breadcrumbId: 'breadcrumb',
         contentId: 'content',
         siteMapPath: 'content/siteMap.xml',
+        onContentLoading: function () { },
         onContentLoad: function () { }
     };
 
@@ -169,10 +175,22 @@
 
     $(window).on('load', function () {
         $('body').location({
-            onContentLoad: function () {        // 注册onContentLoad事件
-                // 1.初始化 PrettyCode 的开关样式
-                $.initPrettyCodeSwitch();
+            /* 内容加载前执行 */
+            onContentLoading: function () {
+
+                $.waitingPrompt.show('#content', '正在加载，请稍等 ...');   // 打开等待提示（最先执行）
+
             }
+
+            /* 内容加载完成后执行 */
+           , onContentLoad: function () {    
+
+               
+               $.initPrettyCodeSwitch();               // 初始化 PrettyCode 的开关样式
+               $('.alert').addClass('alert-info');     // 初始化 Alert区域 的样式
+
+               $.waitingPrompt.hide('#content');       // 关闭等待提示（最后执行）
+           }
         });
     });
 

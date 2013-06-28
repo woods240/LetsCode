@@ -9,14 +9,8 @@
         </category>
     </nav>
     <nav text="HTML">
-        <category text="">
-            <item url=""></item>
-        </category>
     </nav>
     <nav text="CSS">
-        <category text="">
-            <item url=""></item>
-        </category>
     </nav>
     <nav text="JAVASCRIPT">
         <category text="核心javascript">
@@ -35,20 +29,11 @@
         </category>
     </nav>
     <nav text="XML">
-        <category text="">
-            <item url=""></item>
-        </category>
     </nav>
     <nav text="JQUERY">
         <category text="Ajax">
-            <item url=""></item>
-            <item url=""></item>
-            <item url=""></item>
         </category>
         <category text="选择器">
-            <item url=""></item>
-            <item url=""></item>
-            <item url=""></item>
         </category>
     </nav>
     <nav text="工具集">
@@ -60,8 +45,5 @@
         </category>
     </nav>
     <nav text="Web优化">
-        <category text="">
-            <item url=""></item>
-        </category>
     </nav>
 </location>
