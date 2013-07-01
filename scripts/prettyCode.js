@@ -5,7 +5,7 @@
 
     var PrettyCode = function ( element, codeUrl ) {
         this.$element = $( element );
-        this.$codeContainer = $( '<pre class="prettyprint linenums">源代码 ...</pre>' );
+        this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码...</span></pre>' );
         this.codeUrl = codeUrl;
         this.visible = false;
 
@@ -19,13 +19,9 @@
           return s.replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
       }
 
-      , makeGooglePrettyFormat: function ( encodedData ) {
-          return '<pre class="prettyprint linenums">' + encodedData + '</pre>';
-      }
-
       , show: function () {
           if ( !this.visible ) {
-              var noContent = this.$codeContainer.filter( 'pre:empty' ).length == 1;
+              var noContent = this.$codeContainer.children().hasClass( 'loading' );
               if ( noContent ) {
                   var that = this;
                   $.ajax( {
