@@ -1,0 +1,20 @@
+﻿<h4>给jQuery这个类，扩展实例方法</h4>
+<ul>
+    <li><strong class="label label-info">直接定义</strong> $.fn.插件名称 = function () { //代码 }</li>
+    <li><strong class="label label-info">用方法扩展</strong> $.fn.extend { 插件名称 : function () { //代码 } }</li>
+    <li><strong class="label label-info">同时定义多个</strong> $.fn.命名空间 = { 插件1 : function () { //代码 }, 插件2 : function () { //代码 } }</li>
+</ul>
+
+<p class="alert">
+    注：
+    <br />
+    1.对象插件与类插件的定义相比，只是多了个 <strong>.fn</strong>
+    <br />
+    2.插件的目的是<strong>逻辑复用</strong>，两种插件仅是挂接的位置不同
+    <br />
+    3.逻辑<strong>面向jQuery元素</strong>的，使用对象插件； 逻辑<strong>更通用</strong>的，使用类插件
+    <br />
+    4.location.js是一个典型的对象插件，请参考其代码
+</p>
+
+<a data-code-url="scripts/location.js">location.js 代码</a>

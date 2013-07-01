@@ -1,0 +1,18 @@
+﻿<h4>给jQuery这个类，扩展静态方法</h4>
+<ul>
+    <li><strong class="label label-info">直接定义</strong> $.插件名称 = function () { //代码 }</li>
+    <li><strong class="label label-info">用方法扩展</strong> $.extend { 插件名称 : function () { //代码 } }</li>
+    <li><strong class="label label-info">同时定义多个</strong> $.命名空间 = { 插件1 : function () { //代码 }, 插件2 : function () { //代码 } }</li>
+</ul>
+
+<p class="alert">
+    注：
+    <br />
+    1.插件名称就是<strong>静态方法</strong>的名字，可以包含命名空间：<strong>命名空间.插件名称</strong>
+    <br />
+    2.函数也是对象，所以第一种方式可以转化为第三种方式
+    <br />
+    3.waitingPrompt.js是一个典型的类插件，请参考其代码
+</p>
+
+<a data-code-url="scripts/waitingPrompt.js">waitingPrompt.js 代码</a>

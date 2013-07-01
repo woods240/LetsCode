@@ -10,7 +10,7 @@ div#content {
 }
 
 
-/* 代码美化 */
+/* 代码美化组件 */
 pre.prettyprint {
     max-height: 460px;
     overflow: auto;
@@ -54,11 +54,12 @@ li ul li {
     z-index: 1050;
     position: absolute;
     top: 40%;
+    left: 40%;
     background-color: #FFF;
     background-image: url(../img/loading.gif);
     background-repeat: no-repeat;
     background-position: .5em 50%;
     padding: .4em 1em .4em 2em;
     width: auto;
-    border:2px solid #E3E3E3;
+    border: 2px solid #E3E3E3;
 }

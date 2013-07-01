@@ -5,6 +5,7 @@
             <item url="content/项目简介/siteMap.html">站点地图</item>
             <item url="content/项目简介/framework.html">框架页</item>
             <item url="content/项目简介/location.html">导航定位组件</item>
+            <item url="content/项目简介/waitingPrompt.html">等待提示组件</item>
             <item url="content/项目简介/prettyCode.html">代码美化组件</item>
         </category>
     </nav>
@@ -34,6 +35,11 @@
         <category text="Ajax">
         </category>
         <category text="选择器">
+        </category>
+        <category text="开发插件">
+            <item url="content/JQUERY/jQuery.extend.html">类插件</item>
+            <item url="content/JQUERY/jQuery.fn.extend.html">对象插件</item>
+            <item url="content/JQUERY/convention.html">开发习惯</item>
         </category>
     </nav>
     <nav text="工具集">

@@ -1,0 +1,26 @@
+﻿<h4>借鉴于Bootstrap的开发习惯</h4>
+<ul>
+    <li><strong class="label label-info">使用闭包</strong> 隔离外界干扰</li>
+    <li><strong class="label label-info">类定义</strong> 实现核心逻辑</li>
+    <li><strong class="label label-info">插件定义</strong> 将核心逻辑附加到jQuery上</li>
+    <li><strong class="label label-info">默认值定义</strong> 将配置参数组织到一起</li>
+    <li><strong class="label label-info">data API</strong> 按约定查找DOM读取数据，并使用插件初始化</li>
+</ul>
+
+<p class="alert">
+    注：
+    <br />
+    1.类定义时：<strong>实例方法</strong>定义在prototype中，<strong>私有方法</strong>在类外直接定义
+    <br />
+    2.在插件定义时，可根据交互方式<strong>暴露核心类的方法</strong>
+    <br />
+    3.默认值定义将<strong>所有可配置参数</strong>罗列出来，一目了然
+    <br />
+    4.插件可以提供两种使用方式：<strong>编程方式</strong>和<strong>数据定义方式（可选）</strong>
+    <br />
+    5.data API有两种<strong>插件初始化</strong>方式：<strong>事件触发</strong>和<strong>加载完成后触发</strong>
+    <br />
+    6.jQueryPluginTemplate.js是根据以上习惯，做成的一个jQuery插件开发模版，请参考
+</p>
+
+<a data-code-url="scripts/jQueryPluginTemplate.js">jQueryPluginTemplate.js 代码</a>
