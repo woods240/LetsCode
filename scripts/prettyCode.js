@@ -5,7 +5,7 @@
 
     var PrettyCode = function ( element, codeUrl ) {
         this.$element = $( element );
-        this.$codeContainer = $( '<pre class="prettyprint linenums"></pre>' );
+        this.$codeContainer = $( '<pre class="prettyprint linenums">源代码 ...</pre>' );
         this.codeUrl = codeUrl;
         this.visible = false;
 
@@ -17,6 +17,10 @@
 
       , htmlEncode: function ( s ) {
           return s.replace( /&/g, '&amp;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+      }
+
+      , makeGooglePrettyFormat: function ( encodedData ) {
+          return '<pre class="prettyprint linenums">' + encodedData + '</pre>';
       }
 
       , show: function () {
