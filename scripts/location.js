@@ -2,7 +2,6 @@
 
     /* Location CLASS DEFINITION
     * ========================= */
-
     var Location = function ( options ) {
         this.$mainMenu = $( '#' + options.mainMenuId );
         this.$subMenu = $( '#' + options.subMenuId );
@@ -147,7 +146,6 @@
 
     /* Location PLUGIN DEFINITION
     * ============================= */
-
     $.fn.location = function ( option ) {
         return this.each( function () {
             var $this = $( this )
@@ -172,7 +170,6 @@
 
     /* Location DATA-API
     * =================== */
-
     $( window ).on( 'load', function () {
         $( 'body' ).location( {
 

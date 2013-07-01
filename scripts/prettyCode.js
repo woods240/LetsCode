@@ -5,7 +5,7 @@
 
     var PrettyCode = function ( element, codeUrl ) {
         this.$element = $( element );
-        this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码...</span></pre>' );
+        this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码加载中...</span></pre>' );
         this.codeUrl = codeUrl;
         this.visible = false;
 
