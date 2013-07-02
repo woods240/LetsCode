@@ -13,6 +13,7 @@
 
         this.onContentLoad = options.onContentLoad;
         this.onContentLoading = options.onContentLoading;
+        this.onContentUpdate = options.onContentUpdate;
     };
 
     Location.prototype = {
@@ -29,7 +30,7 @@
               error: function ( XMLHttpRequest, textStatus, errorThrown ) {
                   alert( errorThrown );
               },
-              cache: false,
+              ifModified: true,
               type: 'GET',
               async: false
           } );
@@ -127,12 +128,13 @@
                   dataType: 'html',
                   success: function ( html ) {
                       that.$content.html( html );
+                      that.onContentUpdate();
                   },
                   complete: function () {
                       that.onContentLoad();
                   },
                   error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
-                  cache: false,
+                  ifModified: true,
                   type: 'get',
                   async: true
               } );
@@ -164,7 +166,8 @@
         contentId: 'content',
         siteMapPath: 'content/siteMap.xml',
         onContentLoading: function () { },
-        onContentLoad: function () { }
+        onContentLoad: function () { },
+        onContentUpdate: function () { }
     };
 
 
@@ -181,14 +184,17 @@
             }
 
             /* 内容加载完成后执行 */
-           , onContentLoad: function () {
+          , onContentLoad: function () {
 
+              $.waitingPrompt.hide( '#content' );          // 关闭等待提示（最后执行）
+          }
 
-               $.initPrettyCodeSwitch();                    // 初始化 PrettyCode 的开关样式
-               $( '.alert' ).addClass( 'alert-info' );      // 初始化 Alert区域 的样式
+            /* 内容更新后执行 */
+          , onContentUpdate: function () {
 
-               $.waitingPrompt.hide( '#content' );          // 关闭等待提示（最后执行）
-           }
+              $.initPrettyCodeSwitch();                    // 初始化 PrettyCode 的开关样式
+              $( '.alert' ).addClass( 'alert-info' );      // 初始化 Alert区域 的样式
+          }
 
         } );
     } );

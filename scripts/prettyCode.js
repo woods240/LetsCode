@@ -33,7 +33,7 @@
                           window.prettyPrint && prettyPrint();
                       },
                       error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
-                      cache: false,
+                      ifModified: true,
                       type: 'get',
                       async: true
                   } );
@@ -94,7 +94,7 @@
         var closeIcon = 'icon-hand-right'
             , openIcon = 'icon-hand-down';
 
-        $( document ).find( '[data-code-url]' ).addClass( 'label label-important' ).prepend( '<i class="icon-white ' + closeIcon + '"></i> ' ).on( 'click', function () {
+        $( document ).find( '[data-code-url]' ).not( '.label' ).addClass( 'label label-important' ).prepend( '<i class="icon-white ' + closeIcon + '"></i> ' ).on( 'click', function () {
             var $icon = $( this ).find( 'i' )
               , close = $icon.hasClass( closeIcon );
 
