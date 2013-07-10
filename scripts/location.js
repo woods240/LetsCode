@@ -30,7 +30,7 @@
               error: function ( XMLHttpRequest, textStatus, errorThrown ) {
                   alert( errorThrown );
               },
-              ifModified: true,
+              cache: false,
               type: 'GET',
               async: false
           } );
@@ -126,15 +126,18 @@
               $.ajax( {
                   url: url,
                   dataType: 'html',
-                  success: function ( html ) {
-                      that.$content.html( html );
+                  success: function ( data, textStatus, jqXHR ) {
+                      that.$content.html( data );
                       that.onContentUpdate();
                   },
-                  complete: function () {
+                  complete: function ( XMLHttpRequest, textStatus ) {
                       that.onContentLoad();
                   },
-                  error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
-                  ifModified: true,
+                  error: function ( XMLHttpRequest, textStatus, errorThrown ) {
+                      alert( errorThrown );
+                      that.$content.html( '出错啦' );
+                  },
+                  cache: false,
                   type: 'get',
                   async: true
               } );

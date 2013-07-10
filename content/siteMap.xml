@@ -49,6 +49,9 @@
         <category text="地图">
             <item url="">百度地图</item>
         </category>
+        <category text="源代码版本管理">
+            <item url="">GitHub</item>
+        </category>
     </nav>
     <nav text="Web优化">
     </nav>

@@ -33,7 +33,7 @@
                           window.prettyPrint && prettyPrint();
                       },
                       error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
-                      ifModified: true,
+                      cache: false,
                       type: 'get',
                       async: true
                   } );
