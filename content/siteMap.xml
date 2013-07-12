@@ -2,11 +2,11 @@
 <location>
     <nav text="项目简介">
         <category text="源代码介绍">
-            <item url="content/ProjectIntroduction/siteMap.html">站点地图</item>
-            <item url="content/ProjectIntroduction/framework.html">框架页</item>
-            <item url="content/ProjectIntroduction/location.html">导航定位组件</item>
-            <item url="content/ProjectIntroduction/waitingPrompt.html">等待提示组件</item>
-            <item url="content/ProjectIntroduction/prettyCode.html">代码美化组件</item>
+            <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
+            <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
+            <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
+            <item name="#waitingPrompt" url="content/ProjectIntroduction/waitingPrompt.html">等待提示组件</item>
+            <item name="#prettyCode" url="content/ProjectIntroduction/prettyCode.html">代码美化组件</item>
         </category>
     </nav>
     <nav text="HTML">
@@ -15,8 +15,8 @@
     </nav>
     <nav text="JAVASCRIPT">
         <category text="核心javascript">
-            <item url="content/JAVASCRIPT/dataType.html">数据类型、类型转换</item>
-            <item url="content/JAVASCRIPT/function.html">函数</item>
+            <item name="#dataType" url="content/JAVASCRIPT/dataType.html">数据类型、类型转换</item>
+            <item name="#function" url="content/JAVASCRIPT/function.html">函数</item>
             <item url="">数组</item>
             <item url="">对象</item>
             <item url="">正则表达式</item>
@@ -37,20 +37,20 @@
         <category text="选择器">
         </category>
         <category text="开发插件">
-            <item url="content/JQUERY/jQuery.extend.html">类插件</item>
-            <item url="content/JQUERY/jQuery.fn.extend.html">对象插件</item>
-            <item url="content/JQUERY/convention.html">开发习惯</item>
+            <item name="#jQueryExtend" url="content/JQUERY/jQuery.extend.html">类插件</item>
+            <item name="#jQueryFnExtend" url="content/JQUERY/jQuery.fn.extend.html">对象插件</item>
+            <item name="#convention" url="content/JQUERY/convention.html">开发习惯</item>
         </category>
     </nav>
     <nav text="工具集">
         <category text="图表">
-            <item url="content/Tools/chart.html">HTML5图表：chart.js</item>
+            <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
         </category>
         <category text="地图">
             <item url="">百度地图</item>
         </category>
         <category text="源代码版本管理">
-            <item url="">GitHub</item>
+            <item name="#GitHub" url="">GitHub</item>
         </category>
     </nav>
     <nav text="Web优化">
