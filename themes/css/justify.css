@@ -23,10 +23,6 @@ pre.prettyprint {
 }
 
 /* 普通列表 */
-ul li {
-    color: #468847;
-}
-
 li ul li {
     list-style-type: none;
 }
