@@ -4,14 +4,9 @@
     <title>Let's Code</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <!--CDN-->
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link href="//twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
-
-    <!--Local-->
-    <!--<link href="themes/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="themes/css/prettify.css" rel="stylesheet" />-->
-
+    <!-- css -->
+    <link id="bootstrap_cssRef" href="themes/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
     <link href="themes/css/justify.css" rel="stylesheet" />
 </head>
 <body>
@@ -22,6 +17,9 @@
                 <ul id="mainMenu" class="nav">
                     <!--主导航-->
                 </ul>
+                <select id="themeSwitch" class="span2 pull-right">
+                    <option disabled="disabled">风格切换</option>
+                </select>
             </div>
         </div>
     </div>
@@ -45,23 +43,98 @@
         </div>
     </div>
 
-    <!-- CDN -->
-    <script src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-
-    <!--Local-->
-    <!--<script src="scripts/jquery.min.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/prettify.js"></script>-->
+    <!-- js -->
+    <script id="jqueryRef" src="scripts/jquery.min.js"></script>
+    <script id="bootstrap_jsRef" src="scripts/bootstrap.min.js"></script>
+    <script id="prettify_jsRef" src="scripts/prettify.js"></script>
 
     <script src="scripts/waitingPrompt.js"></script>
     <script src="scripts/prettyCode.js"></script>
     <script src="scripts/location.js"></script>
+    <script src="scripts/packageSwitch.js"></script>
 
     <script type="text/javascript">
 
-        
+        $( function () {
+
+            enabelCDNSwitch( false );
+            showThemeSwitch();
+
+        } );
+
+        // 主题样式表切换
+        function showThemeSwitch() {
+            $( '#themeSwitch' ).packageSwitch( {
+
+                packageSelector: { 'bootstrap_cssRef': 'href' }
+
+              , seriesCollection: [
+                    { seriesName: 'amelia', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/amelia/bootstrap.min.css' } }
+                  , { seriesName: 'cerulean', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css' } }
+                  , { seriesName: 'cosmo', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css' } }
+                  , { seriesName: 'cyborg', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cyborg/bootstrap.min.css' } }
+                  , { seriesName: 'flatly', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css' } }
+                  , { seriesName: 'journal', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/journal/bootstrap.min.css' } }
+                  , { seriesName: 'readable', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/readable/bootstrap.min.css' } }
+                  , { seriesName: 'simplex', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/simplex/bootstrap.min.css' } }
+                  , { seriesName: 'slate', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/slate/bootstrap.min.css' } }
+                  , { seriesName: 'spacelab', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/spacelab/bootstrap.min.css' } }
+                  , { seriesName: 'spruce', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/spruce/bootstrap.min.css' } }
+                  , { seriesName: 'superhero', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css' } }
+                  , { seriesName: 'united', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css' } }
+              ]
+
+              , showSeriesList: function ( $element, seriesList, PackageSwitch ) {
+                  var options = '';
+                  $.each( seriesList, function ( index, name ) {
+                      options += '<option value="' + index + '">' + name + '</option>';
+                  } );
+
+                  $element.append( options ).on( 'change', function () {
+                      var seriesIndex = $( this ).val();
+                      PackageSwitch.switchTo( seriesIndex );
+                  } );
+              }
+
+              , addDefault: true
+
+              , defaultSeriesName: 'default'
+            } );
+        }
+
+        // 本地/CDN 切换
+        function enabelCDNSwitch( enableCDN ) {
+            $( document ).packageSwitch( {
+
+                packageSelector: {
+                    'bootstrap_cssRef': 'href'
+                  , 'prettify_cssRef': 'href'
+                  , 'jqueryRef': 'src'
+                  , 'bootstrap_jsRef': 'src'
+                  , 'prettify_jsRef': 'src'
+                }
+
+              , seriesCollection: [
+                  {
+                      seriesName: 'CDN'
+
+                    , seriesValues: {
+                        'bootstrap_cssRef': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css'
+                      , 'prettify_cssRef': '//twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css'
+                      , 'jqueryRef': '//libs.baidu.com/jquery/1.9.1/jquery.min.js'
+                      , 'bootstrap_jsRef': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
+                      , 'prettify_jsRef': '//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js'
+                    }
+                  }
+              ]
+
+              , showSeriesList: function ( $element, seriesList, PackageSwitch ) {
+                  var seriesIndex = enableCDN ? 1 : 0;
+                  PackageSwitch.switchTo( seriesIndex );
+              }
+            } );
+        }
+
     </script>
 </body>
 </html>

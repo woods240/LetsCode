@@ -1,0 +1,43 @@
+﻿<h4>方便批量替换一组元素的属性</h4>
+<ul>
+    <li><strong class="label label-info">原理介绍</strong>
+        <ul>
+            <li><strong class="label label-info">包装</strong> 将多个 { 元素 : 属性 }，组合到一个包里，成为集合</li>
+            <li><strong class="label label-info">系列</strong> 包中所有元素的属性值集合，多种情况可定义多个系列</li>
+            <li><strong class="label label-info">默认系列</strong> 从页面中遍历包中的元素，分别读取当前的属性值，作为一个系列</li>
+            <li><strong class="label label-info">切换系列</strong> 将包中所有元素的属性值，同时更新至一个系列</li>
+        </ul>
+    </li>
+    <li><strong class="label label-info">如何使用</strong>
+        <ul>
+            <li><strong class="label label-info">packageSelector</strong> 使用json定义 { id : attr } 集合（id用于找到元素，attr用于更新属性值）</li>
+            <li><strong class="label label-info">seriesCollection</strong> 定义多个系列
+                <ul>
+                    <li><strong class="label label-info">seriesName</strong> 系列的名称</li>
+                    <li><strong class="label label-info">seriesValues</strong> 以packageSelector的方式，定义该系列的值集合（将attr替换成具体值）</li>
+                </ul>
+            </li>
+            <li><strong class="label label-info">showSeriesList</strong> 提供时机和参数，允许用户构建一个可视的系列集合
+                <ul>
+                    <li><strong class="label label-info">$element</strong> 调用本插件的jQuery对象</li>
+                    <li><strong class="label label-info">seriesList</strong> 所有系列名称，组成的数组</li>
+                    <li><strong class="label label-info">PackageSwitch</strong> 实现插件功能的javascript对象</li>
+                </ul>
+            </li>
+            <li><strong class="label label-info">addDefault</strong> 是否添加默认系列</li>
+            <li><strong class="label label-info">defaultSeriesName</strong> 默认系列的名称</li>
+        </ul>
+    </li>
+</ul>
+
+<p class="alert">
+    注：
+    <br />
+    1.插件参数的格式必须正确，目前只支持id作为元素的唯一选择器
+    <br />
+    2.可以通过showSeriesList做一些灵活的处理：构建可选列表，编程方式选择系列 ...
+    <br />
+    3.主页用packageSwitch实现了样式主题切换，编程方式配置CDN的使用，可参考<strong>框架页</strong>
+</p>
+
+<a data-code-url="scripts/packageSwitch.js">packageSwitch.js 代码</a>

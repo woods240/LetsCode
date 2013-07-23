@@ -7,6 +7,7 @@
             <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
             <item name="#waitingPrompt" url="content/ProjectIntroduction/waitingPrompt.html">等待提示组件</item>
             <item name="#prettyCode" url="content/ProjectIntroduction/prettyCode.html">代码美化组件</item>
+            <item name="#packageSwitch" url="content/ProjectIntroduction/packageSwitch.html">批量替换组件</item>
         </category>
     </nav>
     <nav text="HTML">
@@ -50,7 +51,10 @@
             <item url="">百度地图</item>
         </category>
         <category text="源代码版本管理">
-            <item name="#GitHub" url="">GitHub</item>
+            <item name="#gitHub" url="">GitHub</item>
+        </category>
+        <category text="免费空间">
+            <item name="#appHarbor" url="">AppHarbor</item>
         </category>
     </nav>
     <nav text="Web优化">
