@@ -62,3 +62,21 @@ li ul li {
     width: auto;
     border: 2px solid #E3E3E3;
 }
+
+/* 回到顶端 */
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #555;
+    color: #fff;
+}
+
+/* 快速面板 */
+#rapidPanel {
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    position: fixed;
+}
+

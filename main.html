@@ -17,9 +17,6 @@
                 <ul id="mainMenu" class="nav">
                     <!--主导航-->
                 </ul>
-                <select id="themeSwitch" class="span2 pull-right">
-                    <option disabled="disabled">风格切换</option>
-                </select>
             </div>
         </div>
     </div>
@@ -42,11 +39,21 @@
             </div>
         </div>
     </div>
+    <div id="rapidPanel" class="label label-info">
+        <label class="checkbox">
+            <input id="cdnSwitch" type="checkbox">
+            使用CDN
+        </label>
+        <select id="themeSwitch" style="width: auto;">
+            <option disabled="disabled">风格切换</option>
+        </select>
+    </div>
 
     <!-- js -->
     <script id="jqueryRef" src="scripts/jquery.min.js"></script>
     <script id="bootstrap_jsRef" src="scripts/bootstrap.min.js"></script>
     <script id="prettify_jsRef" src="scripts/prettify.js"></script>
+    <script id="scrollUp_jsRef" src="scripts/jquery.scrollUp.min.js"></script>
 
     <script src="scripts/waitingPrompt.js"></script>
     <script src="scripts/prettyCode.js"></script>
@@ -57,13 +64,14 @@
 
         $( function () {
 
-            enabelCDNSwitch( false );
-            showThemeSwitch();
+            enabelCDNSwitch();
+            enableThemeSwitch();
+            enableScrollUp();
 
         } );
 
-        // 主题样式表切换
-        function showThemeSwitch() {
+        // 主题样式表切换 --> packageSwitch.js
+        function enableThemeSwitch() {
             $( '#themeSwitch' ).packageSwitch( {
 
                 packageSelector: { 'bootstrap_cssRef': 'href' }
@@ -84,7 +92,7 @@
                   , { seriesName: 'united', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css' } }
               ]
 
-              , showSeriesList: function ( $element, seriesList, PackageSwitch ) {
+              , showSeriesList: function ( $element, seriesList, packageSwitch ) {
                   var options = '';
                   $.each( seriesList, function ( index, name ) {
                       options += '<option value="' + index + '">' + name + '</option>';
@@ -92,7 +100,7 @@
 
                   $element.append( options ).on( 'change', function () {
                       var seriesIndex = $( this ).val();
-                      PackageSwitch.switchTo( seriesIndex );
+                      packageSwitch.switchTo( seriesIndex );
                   } );
               }
 
@@ -102,8 +110,8 @@
             } );
         }
 
-        // 本地/CDN 切换
-        function enabelCDNSwitch( enableCDN ) {
+        // 本地/CDN 切换 --> packageSwitch.js
+        function enabelCDNSwitch() {
             $( document ).packageSwitch( {
 
                 packageSelector: {
@@ -112,6 +120,7 @@
                   , 'jqueryRef': 'src'
                   , 'bootstrap_jsRef': 'src'
                   , 'prettify_jsRef': 'src'
+                  , 'scrollUp_jsRef': 'src'
                 }
 
               , seriesCollection: [
@@ -124,17 +133,38 @@
                       , 'jqueryRef': '//libs.baidu.com/jquery/1.9.1/jquery.min.js'
                       , 'bootstrap_jsRef': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
                       , 'prettify_jsRef': '//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js'
+                      , 'scrollUp_jsRef': '//www.bootcss.com/assets/js/jquery.scrollUp.min.js'
                     }
                   }
               ]
 
-              , showSeriesList: function ( $element, seriesList, PackageSwitch ) {
-                  var seriesIndex = enableCDN ? 1 : 0;
-                  PackageSwitch.switchTo( seriesIndex );
+              , showSeriesList: function ( $element, seriesList, packageSwitch ) {
+                  $( '#cdnSwitch' ).on( 'change', function () {
+                      var seriesIndex = this.checked ? 1 : 0;
+                      packageSwitch.switchTo( seriesIndex );
+                  } );
               }
+
+              , addDefault: true
+            } );
+        }
+
+        // 启用回到顶端 --> jquery.scrollUp.min.js
+        function enableScrollUp() {
+            $.scrollUp( {
+                scrollName: 'scrollUp', // Element ID
+                topDistance: '300', // Distance from top before showing element (px)
+                topSpeed: 300, // Speed back to top (ms)
+                animation: 'fade', // Fade, slide, none
+                animationInSpeed: 200, // Animation in speed (ms)
+                animationOutSpeed: 200, // Animation out speed (ms)
+                scrollText: '回到顶端', // Text for element
+                activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
             } );
         }
 
     </script>
+
+    
 </body>
 </html>

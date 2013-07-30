@@ -78,7 +78,7 @@
     $.fn.packageSwitch.defaults = {
         addDefault: true,
         defaultSeriesName: '默认',
-        showSeriesList: function ( $element, seriesList, PackageSwitch ) { }     // 显示可切换系列的列表[系列名称，序号]
+        showSeriesList: function ( $element, seriesList, packageSwitch ) { }     // 显示可切换系列的列表[系列名称，序号]
     };
 
 

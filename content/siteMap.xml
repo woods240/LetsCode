@@ -1,13 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
-    <nav text="项目简介">
-        <category text="源代码介绍">
-            <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
+    <nav text="自我介绍">
+        <category text="展示的内容">
+            <item name="#about" url="content/ProjectIntroduction/about.html">我是谁</item>
+            <item name="#structure" url="content/ProjectIntroduction/structure.html">我的内部结构</item>
+            <item name="#htmlSyntax" url="content/ProjectIntroduction/htmlSyntax.html">HTML语法</item>
+            <item name="#cssSyntax" url="content/ProjectIntroduction/cssSyntax.html">CSS语法</item>
+            <item name="#jsSyntax" url="content/ProjectIntroduction/jsSyntax.html">JAVASCRIPT语法</item>
+            <item name="#xmlSyntax" url="content/ProjectIntroduction/xmlSyntax.html">XML语法</item>
+            <item name="#jquerySyntax" url="content/ProjectIntroduction/jquerySyntax.html">JQUERY语法</item>
+            <item name="#cSharpSyntax" url="content/ProjectIntroduction/cSharpSyntax.html">C#语法</item>
+            <item name="#toolboxIntroduction" url="content/ProjectIntroduction/toolboxIntroduction.html">工具集介绍</item>
+            <item name="#webOptimization" url="content/ProjectIntroduction/webOptimization.html">Web优化</item>
+        </category>
+        <category text="内部结构">
             <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
             <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
+            <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
             <item name="#waitingPrompt" url="content/ProjectIntroduction/waitingPrompt.html">等待提示组件</item>
             <item name="#prettyCode" url="content/ProjectIntroduction/prettyCode.html">代码美化组件</item>
             <item name="#packageSwitch" url="content/ProjectIntroduction/packageSwitch.html">批量替换组件</item>
+            <item name="#scrollUp" url="content/ProjectIntroduction/scrollUp.html">回到顶端组件</item>
         </category>
     </nav>
     <nav text="HTML">
@@ -41,6 +54,13 @@
             <item name="#jQueryExtend" url="content/JQUERY/jQuery.extend.html">类插件</item>
             <item name="#jQueryFnExtend" url="content/JQUERY/jQuery.fn.extend.html">对象插件</item>
             <item name="#convention" url="content/JQUERY/convention.html">开发习惯</item>
+        </category>
+    </nav>
+    <nav text="C#">
+        <category text="编程规范">
+            <item name="#cSharpGeneralStandard" url="content/ProjectIntroduction/cSharpGeneralStandard.html">通用编程规范</item>
+            <item name="#cSharpDotNetStandard" url="content/ProjectIntroduction/cSharpDotNetStandard.html">.Net编程规范</item>
+            <item name="#cSharpEffectiveStandard" url="content/ProjectIntroduction/cSharpEffectiveStandard.html">Effective C#</item>
         </category>
     </nav>
     <nav text="工具集">
