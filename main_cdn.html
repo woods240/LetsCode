@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!-- css -->
-    <link id="bootstrap_cssRef" href="themes/css/bootstrap.min.css" rel="stylesheet" />
-    <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
+    <link id="bootstrap_cssRef" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <link id="prettify_cssRef" href="//twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
     <link href="themes/css/justify.css" rel="stylesheet" />
 </head>
 <body>
@@ -20,6 +20,7 @@
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
             <div class="span3">
@@ -39,21 +40,18 @@
             </div>
         </div>
     </div>
+
     <div id="rapidPanel" class="label label-info">
-        <label class="checkbox">
-            <input id="cdnSwitch" type="checkbox">
-            使用CDN
-        </label>
         <select id="themeSwitch" style="width: auto;">
             <option disabled="disabled">风格切换</option>
         </select>
     </div>
 
     <!-- js -->
-    <script id="jqueryRef" src="scripts/jquery.min.js"></script>
-    <script id="bootstrap_jsRef" src="scripts/bootstrap.min.js"></script>
-    <script id="prettify_jsRef" src="scripts/prettify.js"></script>
-    <script id="scrollUp_jsRef" src="scripts/jquery.scrollUp.min.js"></script>
+    <script id="jqueryRef" src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script id="bootstrap_jsRef" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script id="prettify_jsRef" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    <script id="scrollUp_jsRef" src="//www.bootcss.com/assets/js/jquery.scrollUp.min.js"></script>
 
     <script src="scripts/waitingPrompt.js"></script>
     <script src="scripts/prettyCode.js"></script>
@@ -64,7 +62,6 @@
 
         $( function () {
 
-            enabelCDNSwitch();
             enableThemeSwitch();
             enableScrollUp();
 
@@ -110,45 +107,6 @@
             } );
         }
 
-        // 本地/CDN 切换 --> packageSwitch.js
-        function enabelCDNSwitch() {
-            $( document ).packageSwitch( {
-
-                packageSelector: {
-                    'bootstrap_cssRef': 'href'
-                  , 'prettify_cssRef': 'href'
-                  , 'jqueryRef': 'src'
-                  , 'bootstrap_jsRef': 'src'
-                  , 'prettify_jsRef': 'src'
-                  , 'scrollUp_jsRef': 'src'
-                }
-
-              , seriesCollection: [
-                  {
-                      seriesName: 'CDN'
-
-                    , seriesValues: {
-                        'bootstrap_cssRef': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css'
-                      , 'prettify_cssRef': '//twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css'
-                      , 'jqueryRef': '//libs.baidu.com/jquery/1.9.1/jquery.min.js'
-                      , 'bootstrap_jsRef': '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js'
-                      , 'prettify_jsRef': '//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js'
-                      , 'scrollUp_jsRef': '//www.bootcss.com/assets/js/jquery.scrollUp.min.js'
-                    }
-                  }
-              ]
-
-              , showSeriesList: function ( $element, seriesList, packageSwitch ) {
-                  $( '#cdnSwitch' ).on( 'change', function () {
-                      var seriesIndex = this.checked ? 1 : 0;
-                      packageSwitch.switchTo( seriesIndex );
-                  } );
-              }
-
-              , addDefault: true
-            } );
-        }
-
         // 启用回到顶端 --> jquery.scrollUp.min.js
         function enableScrollUp() {
             $.scrollUp( {
@@ -165,6 +123,6 @@
 
     </script>
 
-    
+
 </body>
 </html>

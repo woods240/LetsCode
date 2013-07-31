@@ -1,24 +1,16 @@
 ﻿/* 页面布局 */
 body {
     margin-top: 60px;
+    font-family: Tahoma;
 }
 
 div#content {
-    padding: 0;
-    font-size: 16px;
-    font-family: Tahoma;
 }
 
 /* 代码美化组件 */
 pre.prettyprint {
     max-height: 460px;
     overflow: auto;
-    font-family: Consolas;
-}
-
-/* 标签与徽章 */
-.label, .badge {
-    padding: 3px 5px;
     font-family: Consolas;
 }
 
@@ -29,7 +21,7 @@ li ul li {
 
 /* 提示区域 */
 .alert {
-    font-size: .8em;
+    margin-top: 1em;
 }
 
 /* 遮罩层 */
@@ -80,3 +72,28 @@ li ul li {
     position: fixed;
 }
 
+/* 黑板 */
+.blackBoard {
+    padding: 1em;
+    border: 6px solid #C5A568;
+    background-color: #3E644D;
+    color: white;
+    font-family: 楷体;
+    font-size: 1.2em;
+}
+
+    .blackBoard h4 {
+        font-size: 1.2em;
+    }
+
+    .blackBoard li {
+        margin: 3px;
+    }
+
+    .blackBoard .label, .blackBoard .badge {
+        padding: 4px 5px;
+    }
+
+    .blackBoard h4, .blackBoard .label, .blackBoard .badge {
+        font-family: 'Microsoft YaHei';
+    }

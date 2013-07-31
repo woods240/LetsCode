@@ -258,7 +258,7 @@
 
               $.initPrettyCodeSwitch();                         // 初始化 PrettyCode 的开关样式
               $( '.alert' ).addClass( 'alert-info' );           // 初始化 Alert区域 的样式
-              $( 'h4' ).next( 'ul' ).addClass( 'text-success' );   // 初始化 描述列表 的样式
+
           }
 
         } );
