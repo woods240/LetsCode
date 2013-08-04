@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+// 下面的代码展示了如何实现 IEquatable<T>
+// 相等逻辑：Person 对象的 SSN 属性相等
+
+public class Person : IEquatable<Person>
+{
+    private string uniqueSsn;   // 主键
+    private string lName;       // 其它属性
+
+    public Person(string lastName, string ssn)
+    {
+        this.SSN = ssn;
+        this.LastName = lastName;
+    }
+
+    public string SSN
+    {
+        get { return this.uniqueSsn; }
+        set
+        {
+            if (Regex.IsMatch(value, @"\d{9}"))
+                uniqueSsn = String.Format("{0}-(1}-{2}", value.Substring(0, 3),
+                                                         value.Substring(3, 2),
+                                                         value.Substring(5, 4));
+            else if (Regex.IsMatch(value, @"\d{3}-\d{2}-\d{4}"))
+                uniqueSsn = value;
+            else
+                throw new FormatException("社会安全号码格式错误");
+        }
+    }
+
+    public string LastName
+    {
+        get { return this.lName; }
+        set
+        {
+            if (String.IsNullOrEmpty(value))
+                throw new ArgumentException("姓名不能为空");
+            else
+                this.lName = value;
+        }
+    }
+
+
+    #region IEquatable<T> 固定模式（修改TODO）
+
+    public bool Equals(Person other)
+    {
+        if (other == null)
+            return false;
+
+        // 相等逻辑：Person 对象的 SSN 属性相等
+        // TODO
+        if (this.uniqueSsn == other.SSN)
+            return true;
+        else
+            return false;
+    }
+
+    public override bool Equals(Object obj)
+    {
+        if (obj == null)
+            return false;
+
+        Person personObj = obj as Person;
+        if (personObj == null)
+            return false;
+        else
+            return Equals(personObj);
+    }
+
+    public override int GetHashCode()
+    {
+        // 用主键的唯一标识代替类的唯一标识
+        // TODO
+        return this.SSN.GetHashCode();
+    }
+
+    public static bool operator ==(Person person1, Person person2)
+    {
+        if ((object)person1 == null || ((object)person2) == null)
+            return Object.Equals(person1, person2);
+
+        return person1.Equals(person2);
+    }
+
+    public static bool operator !=(Person person1, Person person2)
+    {
+        if (person1 == null || person2 == null)
+            return !Object.Equals(person1, person2);
+
+        return !(person1.Equals(person2));
+    }
+
+    #endregion
+}
+
+// 下面的代码展示了使用 IEquatable<T> 的场景
+
+public class TestIEquatable
+{
+    public static void Main()
+    {
+        // 创建多个对象
+        Person applicant1 = new Person("Jones", "099-29-4999");
+        Person applicant2 = new Person("Jones", "199-29-3999");
+        Person applicant3 = new Person("Jones", "299-49-6999");
+
+        // 加入集合
+        List<Person> applicants = new List<Person>();
+        applicants.Add(applicant1);
+        applicants.Add(applicant2);
+        applicants.Add(applicant3);
+
+        // 创建一个对象，判断它是否在集合中（集合会使用IEquatable<T>判断）
+        Person candidate = new Person("Jones", "199-29-3999");
+        if (applicants.Contains(candidate))
+            Console.WriteLine("Found {0} (SSN {1}).",
+                               candidate.LastName, candidate.SSN);
+        else
+            Console.WriteLine("Applicant {0} not found.", candidate.SSN);
+
+        // 使用基类的静态方法判断对象相等
+        Console.WriteLine("{0}({1}) already on file: {2}.",
+                          applicant2.LastName,
+                          applicant2.SSN,
+                          Person.Equals(applicant2, candidate));
+    }
+}

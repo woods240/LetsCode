@@ -1,6 +1,6 @@
 ﻿/* 页面布局 */
 body {
-    margin-top: 60px;
+    /*margin-top: 60px;*/
     font-family: Tahoma;
 }
 
@@ -76,7 +76,7 @@ li ul li {
 .blackBoard {
     padding: 1em;
     border: 6px solid #C5A568;
-    background-color: #3E644D;
+    background-color: #2C523B;
     color: white;
     font-family: 楷体;
     font-size: 1.2em;

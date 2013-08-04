@@ -1,0 +1,94 @@
+﻿<div class="blackBoard">
+    <ol>
+        <li>
+            <dl>
+                <dt>文件和结构</dt>
+                <dd>1个文件只包含1个Public类</dd>
+                <dd>1个Public类中可以有多个内部类</dd>
+                <dd>“文件名”和“类名”必须相同</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>命名规范：见名知意</dt>
+                <dd>名词：命名空间、接口、类、结构体、枚举、属性、域、变量、常量</dd>
+                <dd>动词(短语)：方法</dd>
+                <dd>“_前缀”：域</dd>
+                <dd>“I前缀”：接口</dd>
+                <dd>“后缀Callback”：委托</dd>
+                <dd>“后缀EventHandler”：事件</dd>
+                <dd>“T”：泛型参数</dd>
+                <dd>暴露给外部的数据大写，内部使用的数据小写</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>常量：运行时static readonly / 编译时const</dt>
+                <dd>值类型 && 不会随着版本变化的数据，使用const</dd>
+                <dd>引用类型 || 会随着版本变化的数据，使用readonly</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>字符串</dt>
+                <dd>拼接：量少时使用“+”，量大时使用StringBuilder</dd>
+                <dd>相等：str1.Equals(str2, StringComparison.OrdinalIgnoreCase)</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>描述相同数据类型的元素集合：数组 / 泛型集合</dt>
+                <dd>数组：大小固定，性能较高，只读场景下须Clone()<ins>代价高</ins></dd>
+                <dd>泛型集合：大小可变，性能稍差，可以转为<ins>ReadOnlyCollection&lt;T&gt;</ins></dd>
+                <dd>IEnumerable / IEnumerable&lt;T&gt;是遍历集合的接口，任何集合必须实现</dd>
+                <dd>集合不能是null，没有元素时是空集合</dd>
+                <dd>底层函数倾向于使用数组，API中倾向于使用泛型集合</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>结构体：struct</dt>
+                <dd>用于存储数据</dd>
+                <dd>如果需要比较，请实现IEquatable&lt;T&gt;</dd>
+                <dd>默认构造函数将struct初始化为0，必须将0定义为一个有意义的状态</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>类：class</dt>
+                <dd>字段：一个成员，表示与对象或类关联的变量</dd>
+                <dd>属性：通过get/set附加简单逻辑，暴露域</dd>
+                <dd>构造函数：初始化数据成员，做必须的工作；不要调用虚方法</dd>
+                <dd>方法：实参验证失败时抛出ArgumentExeption；将输出参数放到最后</dd>
+                <dd>事件：引发事件的代码放到try...catch中（防止被异常终止程序）</dd>
+                <dd>回调：确定执行时机，不确定具体行为，由传递的委托确定</dd>
+                <dd>虚函数：留给子类重写实现</dd>
+                <dd>接口：定义行为契约</dd>
+                <dd>抽象类：抽象出共同的数据和行为；构造函数对外不可见protected</dd>
+                <dd>静态类：框架内的核心支持辅助类</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>前置条件不满足：错误 / 异常</dt>
+                <dd>错误：出问题了，责任在我（内因），更正后可以继续</dd>
+                <dd>异常：出问题了，责任在我依赖的环境（外因），除非让环境变化，否则进行不下去</dd>
+                <dd>共同点：①通过检查前置条件，事先预测错误或异常 ②都是消息传递方式，分别由“错误码”/“异常类型”来区分消息</dd>
+                <dd>不同点：①错误通过正常流程返回，可由用户更正 ②异常直接抛出，可被try...catch处理：尝试修复 / 记录 / 重新抛出</dd>
+            </dl>
+        </li>
+    </ol>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.第8条加入了个人看法，请阅读者斟酌
+</p>

@@ -58,9 +58,9 @@
     </nav>
     <nav text="C#">
         <category text="编程规范">
-            <item name="#cSharpGeneralStandard" url="content/ProjectIntroduction/cSharpGeneralStandard.html">通用编程规范</item>
-            <item name="#cSharpDotNetStandard" url="content/ProjectIntroduction/cSharpDotNetStandard.html">.Net编程规范</item>
-            <item name="#cSharpEffectiveStandard" url="content/ProjectIntroduction/cSharpEffectiveStandard.html">Effective C#</item>
+            <item name="#cSharpGeneralStandard" url="content/CSharp/cSharpGeneralStandard.html">通用编程规范</item>
+            <item name="#cSharpDotNetStandard" url="content/CSharp/cSharpDotNetStandard.html">.Net编程规范</item>
+            <item name="#cSharpEffectiveStandard" url="content/CSharp/cSharpEffectiveStandard.html">Effective C#</item>
         </category>
     </nav>
     <nav text="工具集">

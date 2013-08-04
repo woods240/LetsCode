@@ -1,0 +1,162 @@
+﻿<div class="blackBoard">
+    <ol>
+        <li>
+            <dl>
+                <dt>暴露数据成员：使用属性</dt>
+                <dd>域必须是私有的，而属性是公有的</dd>
+                <dd>可以在get和set中封装轻量级的逻辑</dd>
+                <dd>用户将属性看成数据成员，编译器将属性看成方法</dd>
+            </dl>
+        </li>
+        
+        <li>
+            <dl>
+                <dt>实现行为：普通函数 / 虚函数 / 回调 / 事件</dt>
+                <dd>普通函数：直接实现行为（静态定义）</dd>
+                <dd>虚函数：已实现，同时留给子类扩展的权力（静态改变）</dd>
+                <dd>回调：由调用者实现（动态实现），只能同时调用一个</dd>
+                <dd>事件：由订阅者实现（动态实现），能够同时调用多个</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>类型转换：as / is / 强转</dt>
+                <dd>引用类型，使用as</dd>
+                <dd>值类型，使用强转</dd>
+                <dd>任何类型的判断，使用is</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>更优雅的条件编译：[Conditional("条件编译符号")]</dt>
+                <dd>用在无返回值的函数上，通过“工程属性/生成/条件编译符号”来配置</dd>
+                <dd>好处：方便生成应用的多个版本</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>轻松显示对象的相关信息</dt>
+                <dd>对于自定义的类，重写ToString()</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>理解等同性判断：尤其用在集合识别其成员的情况下</dt>
+                <dd>值类型struct，应该重写③,④，以提高比较性能</dd>
+                <dd>需要用语义区分的引用类型class，应该重写③</dd>
+                <dd>重写③必须实现<ins><a href="#IEquatableCode">IEquatable&lt;T&gt;</a></ins>，重载④能够提高程序可读性</dd>
+                <dd></dd>
+                <dd>①static bool ReferenceEquals(object left, object right) 引用相等</dd>
+                <dd>②static bool Equals(object left, object right) 值相等</dd>
+                <dd>③virtual bool Equals(object right) 值相等</dd>
+                <dd>④static bool operator ==(object left, object right) 值相等</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>集合操作：推荐使用Linq</dt>
+                <dd>集合操作都是两个步骤：“遍历”，“对元素操作”</dd>
+                <dd>Linq已经实现好了遍历，我们只需定义“对元素的操作”（Lambda表达式）</dd>
+                <dd>Linq有两种语法形式：查询语法（形似Sql），方法调用语法</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>给API传参时，避免类型转换</dt>
+                <dd>API的本质是定义消息的功能和格式</dd>
+                <dd>经转换的数据，不一定包含消息要求的所有信息，可能会发生错误</dd>
+                <dd>多态可以使用，因为子类包含了父类的所有信息</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>方法扩展：可选参数 / 重载</dt>
+                <dd>在一个重载系列中，短重载将长重载<ins>多余的参数</ins>固定为默认值</dd>
+                <dd>如果默认值不会随着版本变化，就把它变为可选参数（可以减少重载数量）</dd>
+                <dd>否则，只能使用方法重载</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>抒写单一职责的方法</dt>
+                <dd>程序员通过阅读代码，维护程序</dd>
+                <dd>编译器通过阅读代码，优化编译结果</dd>
+                <dd>因此，我们需要编写清晰、简洁的代码</dd>
+                <dd>单一职责的方法结构清晰、逻辑简单，可读性好</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>成员初始化方式：默认值 / 构造函数</dt>
+                <dd>调用顺序：静态成员 &rarr; 静态构造函数 &rarr; 实例成员 &rarr; 实例构造函数</dd>
+                <dd>如果成员的默认值为0或null，可以不用初始化</dd>
+                <dd>默认值简单就使用成员初始化器，如果复杂就使用构造函数</dd>
+                <dd>把多个构造函数重复的部分提炼出来，封装到私有构造函数中</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>清理非托管资源：using / try...finally</dt>
+                <dd>使用非托管资源的类型必须<ins><a href="#IDisposableCode">实现IDisposable</a></ins>，提供清理非托管资源的方法</dd>
+                <dd>该类型的使用者负责调用IDisposable，执行清理动作</dd>
+                <dd>using会被编译成try...finally，并在finally中调用IDisposable</dd>
+                <dd>若不清楚IDisposable是否被实现，可将对象as成IDisposable，然后using</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>配合GC清理托管资源：减少垃圾对象</dt>
+                <dd>在方法中频繁使用，提升为成员变量</dd>
+                <dd>在程序中频繁使用，但状态不同，使用享元模式</dd>
+                <dd>在程序中频繁使用，状态都相同，使用单件模式</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>选择数据类型：struct / class / interface</dt>
+                <dd>定义数据，使用struct</dd>
+                <dd>定义行为，使用interface</dd>
+                <dd>实现行为，使用class</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>有原子性的值类型，让它保持常量性</dt>
+                <dd>原子性：最小的单元，再不能分割</dd>
+                <dd>常量性：状态不可变</dd>
+                <dd>具有原子性的struct，不能单独修改属性，否则会把它割裂开，变成无意义的数据；所以在它诞生后，状态就一直不可变，成为常量</dd>
+                <dd>这样的struct：域为readonly，没有set属性，在get属性中的引用类型成员必须被复制，只能通过构造函数初始化</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>...</dt>
+                <dd></dd>
+            </dl>
+        </li>
+
+    </ol>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.参考书籍《C#高效编程改进C#代码的50个行之有效的办法(第2版) 中文版》
+</p>
+
+<a id="IEquatableCode" data-code-url="content/CSharp/IEquatableDemo.txt">标准 IEquatable&lt;T&gt; 代码</a>
+<a id="IDisposableCode" data-code-url="content/CSharp/IDisposableDemo.txt">标准 IDisposable 代码</a>
