@@ -2,16 +2,8 @@
 <location>
     <nav text="自我介绍">
         <category text="展示的内容">
-            <item name="#about" url="content/ProjectIntroduction/about.html">我是谁</item>
-            <item name="#structure" url="content/ProjectIntroduction/structure.html">我的内部结构</item>
-            <item name="#htmlSyntax" url="content/ProjectIntroduction/htmlSyntax.html">HTML语法</item>
-            <item name="#cssSyntax" url="content/ProjectIntroduction/cssSyntax.html">CSS语法</item>
-            <item name="#jsSyntax" url="content/ProjectIntroduction/jsSyntax.html">JAVASCRIPT语法</item>
-            <item name="#xmlSyntax" url="content/ProjectIntroduction/xmlSyntax.html">XML语法</item>
-            <item name="#jquerySyntax" url="content/ProjectIntroduction/jquerySyntax.html">JQUERY语法</item>
-            <item name="#cSharpSyntax" url="content/ProjectIntroduction/cSharpSyntax.html">C#语法</item>
-            <item name="#toolboxIntroduction" url="content/ProjectIntroduction/toolboxIntroduction.html">工具集介绍</item>
-            <item name="#webOptimization" url="content/ProjectIntroduction/webOptimization.html">Web优化</item>
+            <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
+            <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
         </category>
         <category text="内部结构">
             <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
