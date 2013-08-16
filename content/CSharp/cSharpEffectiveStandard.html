@@ -8,7 +8,7 @@
                 <dd>用户将属性看成数据成员，编译器将属性看成方法</dd>
             </dl>
         </li>
-        
+
         <li>
             <dl>
                 <dt>实现行为：普通函数 / 虚函数 / 回调 / 事件</dt>
@@ -144,22 +144,95 @@
 
         <li>
             <dl>
-                <dt>...</dt>
-                <dd></dd>
-            </dl>
-        </li>
-        
-        <li>
-            <dl>
-                <dt>...</dt>
-                <dd></dd>
+                <dt>暴露最少的信息：最少知识原则</dt>
+                <dd>类：隐藏不必要的成员
+                    <ul>
+                        <li><strong class="label label-info">public</strong> 完全暴露成员</li>
+                        <li><strong class="label label-info">protected</strong> 只将成员暴露给子类</li>
+                        <li><strong class="label label-info">private</strong> 不暴露，只为自己服务</li>
+                    </ul>
+                </dd>
+                <dd>程序集：隐藏不必要的类
+                    <ul>
+                        <li><strong class="label label-info">public</strong> 给外部提供服务</li>
+                        <li><strong class="label label-info">internal</strong> 为程序集内的其它类服务 / 只为实现接口</li>
+                        <li><strong class="label label-info">private</strong> 内部类，只为某个类服务 / 只为实现接口</li>
+                    </ul>
+                </dd>
+                <dd>暴露范围原则：仅暴露在必须使用到“它”的场合，一定要尽量隐藏</dd>
             </dl>
         </li>
 
         <li>
             <dl>
-                <dt>...</dt>
-                <dd></dd>
+                <dt>契约 / 抽象类</dt>
+                <dd>干什么：定义契约interface</dd>
+                <dd>怎么干：抽象类abstract class / 对象组合</dd>
+                <dd>从目的出发，两者截然不同：interface定义干什么，abstract class只是怎么干的一种方式</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>类型 & 实例</dt>
+                <dd>类型：interface, delegate, event, struct, class （描述分类）</dd>
+                <dd>实例：new object() （描述个体）</dd>
+                <dd>实例由变量来指代，你从什么分类角度看待它，就用什么样的变量类型（接口、父类、具体类）</dd>
+                <dd>实例不会随变量类型变化</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>接口 / 虚方法</dt>
+                <dd>接口：类与类之间的契约，只定义不实现</dd>
+                <dd>虚方法：父类和子类之间的契约，必须提供默认实现</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>使用单播方式发送通知：回调机制</dt>
+                <dd>给方法传递委托，就实现了回调</dd>
+                <dd>类库中提供了常用的委托：Predict&lt;&gt; / Action&lt;&gt; / Func&lt;&gt; </dd>
+                <dd>Predict<>：返回 bool类型，自定义 in类型</dd>
+                <dd>Action<>：返回 void类型，自定义 in类型</dd>
+                <dd>Func<>：自定义 out类型，自定义 in类型</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>使用广播方式发送通知：事件机制</dt>
+                <dd>定义事件的标准方式：event EventHandler&lt;TEventArgs&gt; 事件变量</dd>
+                <dd>描述事件传递参数：class TEventArgs: EventArgs</dd>
+                <dd>订阅事件：事件变量 += 订阅方法</dd>
+                <dd>引发事件：事件变量()</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>避免返回对成员的引用：防止被外界修改</dt>
+                <dd>用接口指代内部成员：外界只使用内部成员提供的服务</dd>
+                <dd>使用包装器：如ReadOnlyCollection&lt;T&gt;</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>让自定义类型支持序列化：[Serializable] / ISerializable</dt>
+                <dd>简单方式：加标记[Serializable]</dd>
+                <dd>复杂方式：实现ISerializable</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>设计Web API时选择合适的粒度</dt>
+                <dd>粒度小：通信次数多，数据传输量小（client陷入频繁等待）</dd>
+                <dd>粒度大：通信次数少，数据传输量大（一次等待的时间长）</dd>
+                <dd>选择合适的粒度，使client每次的等待时间都适中，在合理时间内完成一件事</dd>
             </dl>
         </li>
 
