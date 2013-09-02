@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+// 下面的代码展示了如何实现 IComparer<T>
+// 比较逻辑：Person 对象的 Name 字母顺序
+
+public class PersonSortByName : IComparer<Person>
+{
+    public int Compare(Person x, Person y)
+    {
+        if (x == null)
+        {
+            return -1;
+        }
+        else if (y == null)
+        {
+            return 1;
+        }
+        else
+        {
+            return x.Name.CompareTo(y.Name);
+        }
+    }
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+// 下面的代码展示了使用 IComparer<T> 的场景
+
+public class TestIComparable
+{
+    public static void Main()
+    {
+        List<Person> personList = new List<Person>();
+        personList.Add(new Person() { Name = "张三", Age = "5" });
+        personList.Add(new Person() { Name = "李四", Age = "4" });
+        personList.Add(new Person() { Name = "王五", Age = "3" });
+
+        IComparer<Person> personComparer = new PersonSortByName();
+        personList.Sort(personComparer);
+
+        personList.ForEach(p => Console.WriteLine(p.Name + ": " + p.Age));
+    }
+}

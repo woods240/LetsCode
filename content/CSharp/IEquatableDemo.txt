@@ -62,14 +62,8 @@ public class Person : IEquatable<Person>
 
     public override bool Equals(Object obj)
     {
-        if (obj == null)
-            return false;
-
         Person personObj = obj as Person;
-        if (personObj == null)
-            return false;
-        else
-            return Equals(personObj);
+        return Equals(personObj);
     }
 
     public override int GetHashCode()

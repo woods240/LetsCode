@@ -56,6 +56,10 @@
         </category>
     </nav>
     <nav text="工具集">
+        <category text="图片">
+            <item name="#cssSprites" url="content/Tools/cssSprites.html">图片合并</item>
+            <item name="#icoPng" url="content/Tools/icoPng.html">.ico &lt;—&gt; .png</item>
+        </category>
         <category text="图表">
             <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
         </category>
@@ -67,6 +71,9 @@
         </category>
         <category text="免费空间">
             <item name="#appHarbor" url="">AppHarbor</item>
+        </category>
+        <category text="CSS设计参考">
+            <item name="#w3cplus" url="content/Tools/w3cplus.html">w3cplus</item>
         </category>
     </nav>
     <nav text="Web优化">

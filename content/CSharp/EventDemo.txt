@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+/// <summary>
+/// EventDemo 的摘要说明
+/// </summary>
+public class EventDemo
+{
+    public static void Main()
+    {
+        Publisher publisher = new Publisher();
+        Subscriber subscriber = new Subscriber();
+
+        // 订阅事件
+        publisher.eventDemo += new EventHandler<EventArgsDemo>(subscriber.Answer);
+        // 引发事件
+        publisher.Notice();
+    }
+
+    /// <summary>
+    /// 事件参数
+    /// </summary>
+    class EventArgsDemo : EventArgs
+    {
+        public EventArgsDemo(string eventInfo)
+        {
+            EventInfo = eventInfo;
+        }
+
+        public string EventInfo { get; private set; }
+    }
+
+    /// <summary>
+    /// 事件发出者
+    /// </summary>
+    class Publisher
+    {
+        public event EventHandler<EventArgsDemo> eventDemo; // 定义事件
+
+        public void Notice()
+        {
+            EventHandler<EventArgsDemo> theEventDemo = eventDemo;
+            if (theEventDemo != null)
+            {
+                try
+                {
+                    theEventDemo(this, new EventArgsDemo("这是一个Demo事件"));
+                }
+                catch (Exception ex)
+                {
+                    // 事件响应引发了异常，记录日志
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 事件订阅者
+    /// </summary>
+    class Subscriber
+    {
+        public void Answer(object sender, EventArgsDemo e)
+        {
+            // 响应事件的代码
+        }
+    }
+
+}

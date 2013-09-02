@@ -3,50 +3,47 @@ using System.ComponentModel;
 
 // 下面的代码展示了如何实现 IDisposable 接口
 
-public class DisposeExample
+public class MyResource : IDisposable
 {
-    public class MyResource : IDisposable
+    private IntPtr handle;  // 非托管资源
+    private Component component = new Component();  // 托管资源
+    private bool disposed = false;
+
+    public MyResource(IntPtr handle)
     {
-        private IntPtr handle;  // 非托管资源
-        private Component component = new Component();  // 托管资源
-        private bool disposed = false;
+        this.handle = handle;
+    }
 
-        public MyResource(IntPtr handle)
-        {
-            this.handle = handle;
-        }
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
 
-        public void Dispose()
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!this.disposed)
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!this.disposed)
+            if (disposing)
             {
-                if (disposing)
-                {
-                    // 清理托管资源
-                    component.Dispose();
-                }
-
-                // 清理非托管资源
-                CloseHandle(handle);
-                handle = IntPtr.Zero;
-
-                disposed = true;
+                // 清理托管资源
+                component.Dispose();
             }
-        }
 
-        // 清理非托管资源的方法
-        [System.Runtime.InteropServices.DllImport("Kernel32")]
-        private extern static Boolean CloseHandle(IntPtr handle);
+            // 清理非托管资源
+            CloseHandle(handle);
+            handle = IntPtr.Zero;
 
-        ~MyResource()
-        {
-            Dispose(false);
+            disposed = true;
         }
+    }
+
+    // 清理非托管资源的方法
+    [System.Runtime.InteropServices.DllImport("Kernel32")]
+    private extern static Boolean CloseHandle(IntPtr handle);
+
+    ~MyResource()
+    {
+        Dispose(false);
     }
 }
