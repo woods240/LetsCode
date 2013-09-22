@@ -49,10 +49,11 @@
         </category>
     </nav>
     <nav text="C#">
-        <category text="编程规范">
-            <item name="#cSharpGeneralStandard" url="content/CSharp/cSharpGeneralStandard.html">通用编程规范</item>
-            <item name="#cSharpDotNetStandard" url="content/CSharp/cSharpDotNetStandard.html">.Net编程规范</item>
-            <item name="#cSharpEffectiveStandard" url="content/CSharp/cSharpEffectiveStandard.html">Effective C#</item>
+        <category text="我爱读书">
+            <item name="#cSharpGeneralStandard" url="content/CSharp/cSharpGeneralStandard.html">《通用编程规范》</item>
+            <item name="#cSharpDotNetStandard" url="content/CSharp/cSharpDotNetStandard.html">《.Net编程规范》</item>
+            <item name="#cSharpEffectiveStandard" url="content/CSharp/cSharpEffectiveStandard.html">《Effective C#》</item>
+            <item name="#enterpriseArchitect" url="content/CSharp/enterpriseArchitect.html">《企业应用架构模式》</item>
         </category>
     </nav>
     <nav text="工具集">
