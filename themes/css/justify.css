@@ -9,13 +9,27 @@ div#content {
 
 /* 代码美化组件 */
 pre.prettyprint {
-    max-height: 460px;
+    max-height: 98%;
     overflow: auto;
     font-family: Consolas;
 }
 
+    pre.prettyprint.modal {
+        width: 98%;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    pre.prettyprint .scaleButton {
+        cursor: pointer;
+        margin-right: 10px;
+        float: right;
+        border: 1px solid #666;
+    }
+
 /* 普通列表 */
-li ul li {
+ul {
     list-style-type: none;
 }
 
@@ -74,7 +88,7 @@ li ul li {
 
 /* 黑板 */
 .blackBoard {
-    padding: 1em;
+    padding: .5em 1em;
     border: 6px solid #C5A568;
     background-color: #20503F;
     color: white;
@@ -83,19 +97,24 @@ li ul li {
 }
 
     .blackBoard h4 {
-        font-size: 1.2em;
+        margin-bottom: 1.2em;
     }
-    
+
+    .blackBoard dl {
+        margin-bottom: 2em;
+    }
+
     .blackBoard dd {
-        margin: .5em;
+        margin: .8em 0;
     }
 
     .blackBoard li {
-        margin: .2em;
+        margin: .4em;
     }
 
     .blackBoard .label, .blackBoard .badge {
         padding: 4px 5px;
+        letter-spacing: 2px;
     }
 
     .blackBoard h4, .blackBoard .label, .blackBoard .badge {

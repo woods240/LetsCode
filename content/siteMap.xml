@@ -15,6 +15,8 @@
             <item name="#scrollUp" url="content/ProjectIntroduction/scrollUp.html">回到顶端组件</item>
         </category>
     </nav>
+    <nav text="Web原理">
+    </nav>
     <nav text="HTML">
     </nav>
     <nav text="CSS">
@@ -23,24 +25,35 @@
         <category text="核心javascript">
             <item name="#dataType" url="content/JAVASCRIPT/dataType.html">数据类型、类型转换</item>
             <item name="#function" url="content/JAVASCRIPT/function.html">函数</item>
+            <item name="#sentence" url="content/JAVASCRIPT/sentence.html">语句</item>
             <item url="">数组</item>
             <item url="">对象</item>
             <item url="">正则表达式</item>
         </category>
         <category text="客户端javascript">
-            <item url=""></item>
         </category>
-        <category text="内建对象">
-            <item url="">String</item>
-            <item url="">Date</item>
+        <category text="常用技巧">
         </category>
     </nav>
     <nav text="XML">
+        <category text="基本语法">
+        </category>
+        <category text="使用场合">
+        </category>
     </nav>
     <nav text="JQUERY">
-        <category text="Ajax">
-        </category>
         <category text="选择器">
+        </category>
+        <category text="操作类型">
+        </category>
+        <category text="工具方法">
+        </category>
+        <category text="Ajax">
+            <item name="#globalEventHandler" url="content/JQUERY/globalEventHandler.html">Ajax全局事件</item>
+            <item name="#helperFunction" url="content/JQUERY/helperFunction.html">辅助方法</item>
+            <item name="#directInterface" url="content/JQUERY/directInterface.html">底层接口</item>
+            <item name="#shortHandMethod" url="content/JQUERY/shortHandMethod.html">简略接口</item>
+            <item name="#howToUseAjax" url="content/JQUERY/howToUseAjax.html">如何使用 Ajax ?</item>
         </category>
         <category text="开发插件">
             <item name="#jQueryExtend" url="content/JQUERY/jQuery.extend.html">类插件</item>
@@ -49,34 +62,37 @@
         </category>
     </nav>
     <nav text="C#">
-        <category text="我爱读书">
+        <category text="基本语法">
+        </category>
+        <category text="高级语法">
+        </category>
+        <category text="编程规范">
             <item name="#cSharpGeneralStandard" url="content/CSharp/cSharpGeneralStandard.html">《通用编程规范》</item>
             <item name="#cSharpDotNetStandard" url="content/CSharp/cSharpDotNetStandard.html">《.Net编程规范》</item>
+        </category>
+        <category text="拓展书目">
             <item name="#cSharpEffectiveStandard" url="content/CSharp/cSharpEffectiveStandard.html">《Effective C#》</item>
             <item name="#enterpriseArchitect" url="content/CSharp/enterpriseArchitect.html">《企业应用架构模式》</item>
         </category>
     </nav>
     <nav text="工具集">
-        <category text="图片">
+        <category text="软件授权协议">
+        </category>
+        <category text="加速开发的工具">
+            <item name="#baidu" url="content/Tools/baidu.html">百度工具</item>
+            <item name="#w3cplus" url="content/Tools/w3cplus.html">CSS设计参考</item>
             <item name="#cssSprites" url="content/Tools/cssSprites.html">图片合并</item>
             <item name="#icoPng" url="content/Tools/icoPng.html">.ico &lt;—&gt; .png</item>
-        </category>
-        <category text="图表">
             <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
-        </category>
-        <category text="地图">
             <item url="">百度地图</item>
-        </category>
-        <category text="源代码版本管理">
             <item name="#gitHub" url="">GitHub</item>
-        </category>
-        <category text="免费空间">
             <item name="#appHarbor" url="">AppHarbor</item>
-        </category>
-        <category text="CSS设计参考">
-            <item name="#w3cplus" url="content/Tools/w3cplus.html">w3cplus</item>
         </category>
     </nav>
     <nav text="Web优化">
+        <category text="客户端性能优化">
+        </category>
+        <category text="服务端性能优化">
+        </category>
     </nav>
 </location>

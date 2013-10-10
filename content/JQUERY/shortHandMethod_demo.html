@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>使用简略接口的例子</title>
+</head>
+<body>
+    <input id="getText" type="button" value=".load()获取text" />
+    <input id="getScript" type="button" value="jQuery.getScript()获取script" />
+    <input id="getCss" type="button" value="jQuery.getJSON()动态装载css" />
+    <pre id="source" class="prettyprint linenums" style="display: block;"></pre>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $( '#getText' ).on( 'click', function () {
+
+            $( '#source' ).load(
+                '/scripts/app/jQueryAjaxTemplate.js',
+                function ( responseText, textStatus, XMLHttpRequest ) {
+                    alert( '请求完成' );
+                } );
+
+        } );
+
+        $( '#getScript' ).on( 'click', function () {
+
+            $.getScript( '/scripts/prettify.js',
+                function ( data, textStatus, jqXHR ) {
+                    window.prettyPrint && prettyPrint();
+                } );
+
+        } );
+
+        $( '#getCss' ).on( 'click', function () {
+
+            $.getJSON( '/content/JQUERY/shortHandMethod_demo_json.txt',
+                function ( data, textStatus, jqXHR ) {
+                    $( '<link />' ).attr( 'href', data.href ).attr( 'rel', data.rel ).appendTo( 'head' );
+                } );
+
+        } );
+    </script>
+</body>
+</html>

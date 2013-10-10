@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ajax全局事件的例子</title>
+</head>
+<body>
+    <input id="successAjax" type="button" value="成功的请求" />
+    <input id="failAjax" type="button" value="失败的请求" />
+    <input id="clearDescription" type="button" value="清除Ajax执行记录" />
+
+    <div id="ajaxProcess" style="border: 1px solid red;"></div>
+    <div id="descriptionDiv"></div>
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $( document )
+            .ajaxStart( function () {
+
+                // 第一个Ajax请求 开始
+                $( '#ajaxProcess' ).append( '<div>ajaxStart ...</div>' );
+                alert( '继续' );
+            } )
+            .ajaxSend( function ( event, jqXHR, ajaxOptions ) {
+
+                // 请求发送前执行
+                $( '#ajaxProcess' ).append( '<div>ajaxSend ... global:' + ajaxOptions.global + '</div>' );
+                alert( '继续' );
+            } )
+            .ajaxSuccess( function ( event, jqXHR, ajaxOptions ) {
+
+                // 请求成功
+                $( '#ajaxProcess' ).append( '<div>ajaxSuccess ... event.timeStamp:' + event.timeStamp + '</div>' );
+            } )
+            .ajaxError( function ( event, jqXHR, ajaxOptions, thrownError ) {
+
+                // 请求失败
+                $( '#ajaxProcess' ).append( '<div>ajaxError ... thrownError:' + thrownError + '</div>' );
+            } )
+            .ajaxComplete( function ( event, XMLHttpRequest, ajaxOptions ) {
+
+                // 请求完成
+                $( '#ajaxProcess' ).append( '<div>ajaxComplete ... ajaxOptions.url:' + ajaxOptions.url + '</div>' );
+            } )
+            .ajaxStop( function () {
+
+                // 最后一个Ajax请求 结束
+                $( '#ajaxProcess' ).append( '<div>ajaxStop ...</div><br />' );
+            } );
+        
+
+        // 定义js事件
+        $( function () {
+            // 点击 "成功的请求"
+            $( '#successAjax' ).on( 'click', function () {
+                $( '#descriptionDiv' ).load( 'globalEventHandler.html' );
+            } );
+
+            // 点击 "失败的请求"
+            $( '#failAjax' ).on( 'click', function () {
+                $( '#descriptionDiv' ).load( 'globalEventHandler_notExist.html' );
+            } );
+
+            // 点击 "清除Ajax执行记录"
+            $( '#clearDescription' ).on( 'click', function () {
+                $( '#descriptionDiv' ).empty();
+                $( '#ajaxProcess' ).empty();
+            } );
+        } );
+    </script>
+</body>
+</html>

@@ -7,6 +7,7 @@
         this.$element = $( element );
         this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码加载中...</span></pre>' );
         this.codeUrl = codeUrl;
+        this.title = this.$element.text();
         this.visible = false;
 
         this.$element.after( this.$codeContainer );
@@ -30,7 +31,24 @@
                       success: function ( data ) {
                           var encodedData = that.htmlEncode( data );
                           that.$codeContainer.html( encodedData );
+
                           window.prettyPrint && prettyPrint();
+
+                          var title = $( '<h6 class="text-center">' + that.title + '<i class="icon-fullscreen scaleButton" title="缩放"></i></h6>' );
+                          that.$codeContainer.prepend( title );
+                          title.find( 'i.scaleButton' ).on( 'click', function () {
+                              var scaleButton = $( this );
+                              var isFullScreen = that.$codeContainer.hasClass( 'modal' );
+                              if ( isFullScreen ) {
+                                  that.$codeContainer.removeClass( 'modal' );
+                                  scaleButton.removeClass( " icon-resize-small" ).addClass( "icon-fullscreen" );
+                              }
+                              else {
+                                  that.$codeContainer.addClass( 'modal' );
+                                  scaleButton.removeClass( "icon-fullscreen" ).addClass( " icon-resize-small" );
+                              }
+                          } );
+
                       },
                       error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
                       cache: false,

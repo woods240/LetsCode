@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>使用底层接口执行Ajax任务的例子</title>
+</head>
+<body>
+    <div>
+        <label>
+            <input id="cache" type="checkbox" />cache</label>
+        <label>
+            <input id="ifModified" type="checkbox" checked="checked" />ifModified</label>
+    </div>
+    <input id="getText" type="button" value="Ajax方式获取text" />
+    <input id="getScript" type="button" value="Ajax方式获取script" />
+    <input id="getCss" type="button" value="动态装载css" />
+    <pre id="source" class="prettyprint linenums" style="display: block;"></pre>
+
+
+    <script src="../../scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        var ajaxOptions = {
+
+            url: '',            // 请求的地址
+            data: {},           // 发送的键值对（默认将被序列化成查询字符串）
+            type: 'get',        // 请求方式 [get, post]
+            async: true,        // 是否异步模式 default:true
+            dataType: 'text',       // 将返回数据作为 [text, xml, html, json, jsonp] 来处理
+
+
+            global: false,                      // 是否触发Ajax全局事件 default:true
+            context: {},                        // 设置Ajax事件处理函数的上下文 default:ajaxSetting
+            beforeSend: function ( jqXHR, accepts ) { alert( '准备发送Ajax请求' ); },            // 请求发送前的事件
+            error: function ( jqXHR, textStatus, errorThrown ) { alert( 'error事件: ' + textStatus ); }, // 请求失败时的事件
+            complete: function ( jqXHR, textStatus ) { alert( 'Ajax请求完成' ); },           // 请求完成后的事件
+            statusCode: {                                           // 根据状态码，响应请求结果
+                200: function () { alert( '200: 请求成功' ); },
+                304: function () { alert( '304: 未按预期修改文档。客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。' ); },
+            },
+        };
+
+        $( '#getText' ).on( 'click', function () {
+            var isCache = $( '#cache' )[0].checked;
+            var isIfModified = $( '#ifModified' )[0].checked;
+
+            ajaxOptions.url = '/scripts/app/jQueryAjaxTemplate.js';
+            ajaxOptions.dataType = 'text';
+            ajaxOptions.cache = isCache;
+            ajaxOptions.ifModified = isIfModified;
+            ajaxOptions.success = function ( data, textStatus, jqXHR ) { alert( 'success事件: ' + textStatus ); $( '#source' ).append( data ); };
+            $.ajax( ajaxOptions );
+        } );
+
+        $( '#getScript' ).on( 'click', function () {
+            ajaxOptions.url = '/scripts/prettify.js';
+            ajaxOptions.dataType = 'script';
+            ajaxOptions.success = function ( data, textStatus, jqXHR ) { alert( 'success事件: ' + textStatus ); window.prettyPrint && prettyPrint(); };
+            $.ajax( ajaxOptions );
+        } );
+
+        $( '#getCss' ).on( 'click', function () {
+            $( 'head' ).append( '<link id="prettify_cssRef" href="/themes/css/prettify.css" rel="stylesheet" />' );
+        } );
+    </script>
+</body>
+</html>

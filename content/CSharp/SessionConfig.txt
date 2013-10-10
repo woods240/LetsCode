@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <system.web>
+        <!--StateServer（需要运行ASP.NET 状态服务）-->
+        <sessionState mode="StateServer" stateConnectionString="tcpip=服务器IP地址:42424" cookieless="false" timeout="20"/>
+
+        <!--SQLServer（需要使用 Aspnet_regsql.exe 工具安装会话状态数据库）-->
+        <sessionState mode="SQLServer" sqlConnectionString="Integrated Security=SSPI;data source=服务器IP地址;" />
+    </system.web>
+</configuration>

@@ -1,0 +1,25 @@
+﻿<div class="blackBoard">
+    <h4>Ajax请求引发全局事件</h4>
+    <ul>
+        <li><strong class="label label-info">.ajaxStart()</strong> 第一个Ajax请求 开始时</li>
+        <li><strong class="label label-info">.ajaxSend()</strong> 请求发送前</li>
+        <li><strong class="label label-info">.ajaxSuccess()</strong> 请求成功</li>
+        <li><strong class="label label-info">.ajaxError()</strong> 请求失败</li>
+        <li><strong class="label label-info">.ajaxComplete()</strong> 请求完成</li>
+        <li><strong class="label label-info">.ajaxStop()</strong> 最后一个Ajax请求 结束时</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.全局事件的开关：<strong>global</strong> 默认为<strong>true</strong>
+    <br />
+    2.不支持跨域请求，全局事件只能绑定到 <strong>document</strong> 上
+    <br />
+    3.<a href="content/JQUERY/globalEventHandler_demo.html" target="_blank">全局事件的例子</a>
+    <br />
+    4.参考<a href="http://api.jquery.com/category/ajax/global-ajax-event-handlers/" target="_blank">jQuery官方API文档</a>，以及<a href="http://api.jquery.com/Ajax_Events/" target="_blank">所有Ajax事件的描述</a>
+</p>
+
+<a data-code-url="content/JQUERY/globalEventHandler_demo.html">globalEventHandler_demo 代码</a>

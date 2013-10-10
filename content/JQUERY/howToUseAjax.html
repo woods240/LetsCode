@@ -1,0 +1,35 @@
+﻿<div class="blackBoard">
+    <h4>在哪些场合适合用 Ajax ，怎样使用效果最好</h4>
+    <ul>
+        <li>
+            <h5>特点</h5>
+            <ul>
+                <li><strong class="label label-info">异步交互</strong> 多个请求同时处理，互不影响</li>
+                <li><strong class="label label-info">轻巧</strong> 不需要包含css、js、模板页等无关数据</li>
+                <li><strong class="label label-info">不刷新整个页面</strong> 不容易知道交互结果</li>
+            </ul>
+        </li>
+        <li>
+            <h5>一些适用的场合</h5>
+            <ul>
+                <li><strong class="label label-info">局部小视图刷新</strong> 按需取数据，数据量小、传输快【DataGrid、SubMenu】</li>
+                <li><strong class="label label-info">数据逻辑验证</strong> 响应迅速、交互简便</li>
+            </ul>
+        </li>
+        <li>
+            <h5>如何使用</h5>
+            <ul>
+                <li><strong class="label label-info">Ajax 是执行任务的手段</strong> 将所有的异步请求用方法定义好整理在一起</li>
+                <li><strong class="label label-info">进度提示</strong> 如果长时间执行且没有进度提示，用户会非常困惑</li>
+                <li><strong class="label label-info">调试 Ajax</strong> 在 debug.js 中通过配置 Ajax 参数，跟踪执行过程中的所有事件</li>
+            </ul>
+        </li>
+        <li>
+            <h5>总结</h5>
+            <ul>
+                <li>获取页面的结果 是粗粒度接口，获取部分视图 是细粒度接口</li>
+                <li><strong>粗粒度接口</strong>： 采用页面请求实现，<strong>细粒度接口</strong>： 采用Ajax实现</li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -52,16 +52,16 @@
         <li>
             <dl>
                 <dt>性能衡量</dt>
-                <dd>响应时间：一次系统交互用掉的时间（输入&rarr;输出，耗费的时间）</dd>
-                <dd>等待时间：什么都不做时，系统的响应时间（远程系统中的大问题）</dd>
-                <dd>响应性：用户对系统响应的感受（进度提示等，可以提高这种用户体验）</dd>
-                <dd>吞吐率：单位时间内，系统的吞吐量（输出）</dd>
-                <dd>负载：当前接收的用户请求数量，常作为其它指标的背景（输入）</dd>
-                <dd>容量：最大有效负载（最大输入，超出就不能承受了）</dd>
-                <dd>负载敏感度：响应时间随负载变化的幅度（输入对输出在时间方面的影响）</dd>
-                <dd>效率：性能除以资源，反应系统整合资源的能力</dd>
-                <dd>可伸缩性：系统性能对资源的依赖性（越强越好）</dd>
-                <dd>性能是从多个角度来衡量的，现实中根据系统的特点，提高某几个方面就够了</dd>
+                <dd><strong class="label label-info">响应时间</strong> 一次系统交互用掉的时间（输入&rarr;输出，耗费的时间）</dd>
+                <dd><strong class="label label-info">等待时间</strong> 什么都不做时，系统的响应时间（远程系统中的大问题）</dd>
+                <dd><strong class="label label-info">响应性</strong> 用户对系统响应的感受（进度提示等，可以提高这种用户体验）</dd>
+                <dd><strong class="label label-info">吞吐率</strong> 单位时间内，系统的吞吐量（输出）</dd>
+                <dd><strong class="label label-info">负载</strong> 当前接收的用户请求数量，常作为其它指标的背景（输入）</dd>
+                <dd><strong class="label label-info">容量</strong> 最大有效负载（最大输入，超出就不能承受了）</dd>
+                <dd><strong class="label label-info">负载敏感度</strong> 响应时间随负载变化的幅度（输入对输出在时间方面的影响）</dd>
+                <dd><strong class="label label-info">效率</strong> 性能除以资源，反应系统整合资源的能力</dd>
+                <dd><strong class="label label-info">可伸缩性</strong> 系统性能对资源的依赖性（越强越好）</dd>
+                <dd>性能是从多个角度来衡量的，现实中根据系统的特点，提高某些方面就够了</dd>
             </dl>
         </li>
 
@@ -164,7 +164,7 @@
                 <dd>并发的本质问题（正确性）
                     <ul>
                         <li><strong class="label label-info">更新丢失</strong> 两个人修改同一版本的文件，后提交的覆盖了先提交的，致使第一个更新丢失</li>
-                        <li><strong class="label label-info">不一致读</strong> 在两个时间点读取两份数据，中间执行的操作同时更新两份数据，致使两份数据的版本不一致</li>
+                        <li><strong class="label label-info">不一致读</strong> 两份数据有关系，读取第一份数据后，执行某操作修改了两份数据，然后读取第二份数据，致使两份份数据的版本不一致</li>
                     </ul>
                 </dd>
                 <dd>执行环境
@@ -194,14 +194,83 @@
                 <dd>ACID
                     <ul>
                         <li><strong class="label label-info">原子性 Atomicity</strong> 所有步骤必须全部成功，否则工作回滚到初始状态</li>
-                        <li><strong class="label label-info">一致性 Consistency</strong> 事务的结果只有两个状态：成功后的状态，执行前的状态</li>
+                        <li><strong class="label label-info">一致性 Consistency</strong> 事务结果只有两个状态：成功后的状态，执行前的状态</li>
                         <li><strong class="label label-info">隔离性 Isolation</strong> 事务完成后，它的结果才可见</li>
                         <li><strong class="label label-info">持久性 Durability</strong> 事务的结果是永久性的，“在任何系统崩溃的状态下都能保存下来”</li>
                     </ul>
                 </dd>
-                <dd>。。。</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>会话状态</dt>
+                <dd>会话：客户端与服务器端的完整交互过程，由多个请求组成</dd>
+                <dd>存储会话状态的位置（StateServer较常用）
+                    <ul>
+                        <li><strong class="label label-info">客户端</strong> Cookie / Url / HiddenField【跨少量请求】</li>
+                        <li><strong class="label label-info">服务器端</strong> InProc【容易丢失】</li>
+                        <li><strong class="label label-info">第三方</strong> StateServer / SQLServer【需要序列化】</li>
+                        <li>Asp.Net中，仅需要在<ins><a href="#SessionConfig">Web.config</a></ins>中配置，详情参考<a href="http://msdn.microsoft.com/zh-cn/library/ms178586(v=vs.80).aspx" target="_blank">MSDN</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>分布策略</dt>
+                <dd>过程调用的基本特点
+                    <ul>
+                        <li>进程内的过程调用非常快</li>
+                        <li>跨进程的调用慢一个数量级</li>
+                        <li>跨机器的调用又要慢一个数量级，具体取决于网络</li>
+                    </ul>
+                </dd>
+                <dd>接口设计
+                    <ul>
+                        <li><strong class="label label-info">本地接口</strong> 细粒度，单一职责</li>
+                        <li><strong class="label label-info">远程接口</strong> 粗粒度，为了减少方法调用次数</li>
+                        <li><strong class="label label-info">集群系统</strong> 将程序复制到多个处理器上，本地接口设计 + 多处理器资源</li>
+                    </ul>
+                </dd>
+                <dd>分布接口实现
+                    <ul>
+                        <li><strong class="label label-info">Web Service</strong> 跨平台，但数据转换开销大</li>
+                        <li><strong class="label label-info">系统的远程调用机制</strong> 开销小，但平台必须相同</li>
+                    </ul>
+                </dd>
+                <dd>策略：先按细粒度进行设计，然后根据远程过程的需要，包装远程外观（粗粒度接口）</dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>通盘考虑</dt>
+                <dd>架构思路
+                    <ul>
+                        <li><strong class="label label-info">从事务脚本到领域模型</strong> 分析事务脚本以理清需求，设计领域模型以完成任务</li>
+                        <li><strong class="label label-info">从领域模型到行数据入口</strong> 分析领域模型的存储需求，定义行数据入口并设计逻辑数据模型</li>
+                        <li><strong class="label label-info">从行数据入口到数据层实现</strong> 根据逻辑数据模型设计物理数据模型，并实现行数据入口</li>
+                    </ul>
+                </dd>
+                <dd>细节问题
+                    <ul>
+                        <li><strong class="label label-info">如何分层？</strong> 哪一层复杂，就将职责切分，由多个层分工协作</li>
+                        <li><strong class="label label-info">提高性能？</strong> 哪个逻辑复杂，就将多个步骤合并，由一个粗粒度接口直接完成【类似直辖市】</li>
+                        <li><strong class="label label-info">如何定义Model？</strong> Model是3层之间用于沟通的数据容器，按照业务接口和数据接口的需要来定义</li>
+                    </ul>
+                </dd>
             </dl>
         </li>
 
     </ol>
 </div>
+
+<p class="alert">
+    作者箴言：
+    <br />
+    “我并不知道所有的答案，也不知道你的问题。应该用这些建议去推动你思考，而不是代替你去思考。最终决策的应该是你，最终享受乐趣或承担痛苦的也是你。”
+</p>
+
+<a id="SessionConfig" data-code-url="content/CSharp/SessionConfig.txt">配置Session存储方式</a>

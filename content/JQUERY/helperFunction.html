@@ -1,0 +1,28 @@
+﻿<div class="blackBoard">
+    <h4>执行Ajax任务时，经常会用到的 数据转换</h4>
+    <ul>
+        <li><strong class="label label-info">jQuery.param()</strong> 将"对象/数组"序列化成字符串，方便 QueryString/Ajax 使用</li>
+        <li><strong class="label label-info">.serializeArray()</strong> 将"表单元素"转换成js对象数组[{ name:"", value:"" } ...]</li>
+        <li><strong class="label label-info">.serialize()</strong> 使用上面的方法将"表单元素"序列化成字符串，方便Ajax提交表单</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.<strong>jQuery.param()</strong> 在序列化的同时，进行 url 编码
+
+    <br />
+    2.<strong>.serializeArray()</strong> 只筛选表单元素中的<a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2" target="_blank">"successful controls"</a>
+
+    <br />
+    3.<strong>"successful controls"</strong> 表单提交所包含的有效控件(不包含上传的文件、被禁用的控件、没有name属性的控件)
+
+    <br />
+    4.<a href="content/JQUERY/helperFunction_demo.html" target="_blank">使用辅助方法的例子</a>
+
+    <br />
+    5.参考<a href="http://api.jquery.com/category/ajax/helper-functions/" target="_blank">jQuery官方API文档</a>
+</p>
+
+<a data-code-url="content/JQUERY/helperFunction_demo.html">helperFunction_demo 代码</a>
