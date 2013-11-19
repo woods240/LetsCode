@@ -18,8 +18,23 @@
     <nav text="Web原理">
     </nav>
     <nav text="HTML">
+        <category text="标签语义">
+        </category>
+        <category text="DOM">
+        </category>
+        <category text="设计原则">
+        </category>
     </nav>
     <nav text="CSS">
+        <category text="CSS选择器">
+        </category>
+        <category text="CSS样式">
+        </category>
+        <category text="设计原则">
+        </category>
+        <category text="常用技巧">
+            <item name="#shape" url="content/CSS/shape.html">特殊形状</item>
+        </category>
     </nav>
     <nav text="JAVASCRIPT">
         <category text="核心javascript">
@@ -89,7 +104,7 @@
             <item name="#appHarbor" url="">AppHarbor</item>
         </category>
     </nav>
-    <nav text="Web优化">
+    <nav text="性能优化">
         <category text="客户端性能优化">
         </category>
         <category text="服务端性能优化">

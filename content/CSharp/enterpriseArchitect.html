@@ -160,6 +160,30 @@
 
         <li>
             <dl>
+                <dt>Web表现</dt>
+                <dd>M 模型
+                    <ul>
+                        <li><strong class="label label-info">数据模型</strong> 组织业务逻辑</li>
+                    </ul>
+                </dd>
+                <dd>V 视图
+                    <ul>
+                        <li><strong class="label label-info">模版视图</strong> 面向Html结果，从整体到局部（先构建结果蓝图，再填充数据）</li>
+                        <li><strong class="label label-info">转换视图</strong> 面向领域数据，从局部到整体（先明确数据意义，然后确定展现）</li>
+                        <li><strong class="label label-info">两步视图</strong> 领域数据&rarr;表现数据&rarr;Html结果</li>
+                    </ul>
+                </dd>
+                <dd>C 控制器
+                    <ul>
+                        <li><strong class="label label-info">页面控制器</strong> 为特定页面或动作处理请求（响应单个请求）</li>
+                        <li><strong class="label label-info">前端控制器</strong> 为一个站点处理所有请求（做认证、授权等通用的工作）</li>
+                    </ul>
+                </dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
                 <dt>并发</dt>
                 <dd>并发的本质问题（正确性）
                     <ul>
@@ -181,8 +205,24 @@
                 </dd>
                 <dd>必须面对并发时的策略
                     <ul>
-                        <li><strong class="label label-info">乐观锁</strong> 允许并发，更新时检测冲突，然后决定如何处理（合并、放弃、覆盖）</li>
-                        <li><strong class="label label-info">悲观锁</strong> 不允许并发，避免冲突，只能被一个线程访问</li>
+                        <li><strong class="label label-info">乐观锁</strong> 允许并发访问，在更新时检测冲突（然后决定如何处理：合并、放弃、覆盖）
+                            <ol>
+                                <li>事后检测，适用于冲突几率低的情况</li>
+                                <li>优点：并发度很高（不管三七二十一，一拥而上）</li>
+                                <li>缺点：一旦由于冲突导致更新失败，要重新开始</li>
+                            </ol>
+                        </li>
+                        <li><strong class="label label-info">悲观锁</strong> 不允许并发访问，避免冲突
+                            <ol>
+                                <li>事前检测，适用于冲突几率高的情况</li>
+                                <li>优点：没有冲突，不影响更新</li>
+                                <li>缺点：需要排队等待，效率低</li>
+                                <li>独占写锁：一个人写，不考虑其它人读（并发高，但可能出现不一致读：写的时候可以读）</li>
+                                <li>独占读锁：一个人读/一个人读写（并发低，访问效率太低）</li>
+                                <li>读/写锁：一个人写/多个人读（并发适中，但实现麻烦）</li>
+                                <li>锁管理对象：负责锁的获取和释放</li>
+                            </ol>
+                        </li>
                     </ul>
                 </dd>
             </dl>
@@ -208,8 +248,8 @@
                 <dd>会话：客户端与服务器端的完整交互过程，由多个请求组成</dd>
                 <dd>存储会话状态的位置（StateServer较常用）
                     <ul>
-                        <li><strong class="label label-info">客户端</strong> Cookie / Url / HiddenField【跨少量请求】</li>
-                        <li><strong class="label label-info">服务器端</strong> InProc【容易丢失】</li>
+                        <li><strong class="label label-info">客户端</strong> Cookie / Url / HiddenField【小数据量、跨少量请求、不安全】</li>
+                        <li><strong class="label label-info">服务器端</strong> InProc【容易丢失、不支持集群和故障恢复】</li>
                         <li><strong class="label label-info">第三方</strong> StateServer / SQLServer【需要序列化】</li>
                         <li>Asp.Net中，仅需要在<ins><a href="#SessionConfig">Web.config</a></ins>中配置，详情参考<a href="http://msdn.microsoft.com/zh-cn/library/ms178586(v=vs.80).aspx" target="_blank">MSDN</a></li>
                     </ul>
@@ -240,6 +280,12 @@
                         <li><strong class="label label-info">系统的远程调用机制</strong> 开销小，但平台必须相同</li>
                     </ul>
                 </dd>
+                <dd>远程外观
+                    <ul>
+                        <li><strong class="label label-info">粗粒度接口</strong> 把几件事合成一件来干</li>
+                        <li><strong class="label label-info">数据传输对象</strong> 把几件事的结果组合到一起来传递</li>
+                    </ul>
+                </dd>
                 <dd>策略：先按细粒度进行设计，然后根据远程过程的需要，包装远程外观（粗粒度接口）</dd>
             </dl>
         </li>
@@ -249,9 +295,10 @@
                 <dt>通盘考虑</dt>
                 <dd>架构思路
                     <ul>
-                        <li><strong class="label label-info">从事务脚本到领域模型</strong> 分析事务脚本以理清需求，设计领域模型以完成任务</li>
-                        <li><strong class="label label-info">从领域模型到行数据入口</strong> 分析领域模型的存储需求，定义行数据入口并设计逻辑数据模型</li>
-                        <li><strong class="label label-info">从行数据入口到数据层实现</strong> 根据逻辑数据模型设计物理数据模型，并实现行数据入口</li>
+                        <li><strong class="label label-info">定义服务层</strong> 分析客户需求，定义事务脚本</li>
+                        <li><strong class="label label-info">实现服务层，定义领域层接口</strong> 分析事务脚本的具体步骤，设计领域模型组织所有步骤</li>
+                        <li><strong class="label label-info">实现领域层，定义数据层接口</strong> 分析领域模型的存储需求，定义行数据入口并设计逻辑数据模型</li>
+                        <li><strong class="label label-info">实现数据层接口，创建物理数据库</strong> 根据逻辑数据模型设计物理数据模型，并实现行数据入口</li>
                     </ul>
                 </dd>
                 <dd>细节问题
@@ -259,6 +306,61 @@
                         <li><strong class="label label-info">如何分层？</strong> 哪一层复杂，就将职责切分，由多个层分工协作</li>
                         <li><strong class="label label-info">提高性能？</strong> 哪个逻辑复杂，就将多个步骤合并，由一个粗粒度接口直接完成【类似直辖市】</li>
                         <li><strong class="label label-info">如何定义Model？</strong> Model是3层之间用于沟通的数据容器，按照业务接口和数据接口的需要来定义</li>
+                    </ul>
+                </dd>
+            </dl>
+        </li>
+
+        <li>
+            <dl>
+                <dt>基本模式</dt>
+                <dd>延迟加载：一个对象，不包含数据，但知道怎样获取这些数据
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 加载一个对象时，引起相关数据的加载，相当费资源且使用率很低</li>
+                        <li><strong class="label label-info">使用时机</strong> 费资源、且使用率很低的数据</li>
+                        <li><strong class="label label-info">方法</strong> 设立一个标志（null/0/...），以便使需要数据的时候再加载</li>
+                    </ul>
+                </dd>
+                <dd>预加载：一个对象，加载多个对象需要的数据
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 多个对象使用的数据在同一个地方，单独加载速度很慢</li>
+                        <li><strong class="label label-info">使用时机</strong> 加载很慢、且可以同时加载的数据</li>
+                        <li><strong class="label label-info">方法</strong> 用一个类，同时加载所有的数据，再分别筛选，交给每个对象使用</li>
+                    </ul>
+                </dd>
+                <dd>入口：一个对象，封装对资源的访问
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 访问任何资源，都要学习其API，面对不可避免的复杂性</li>
+                        <li><strong class="label label-info">使用时机</strong> 不熟悉、且复杂的API</li>
+                        <li><strong class="label label-info">方法</strong> 用一个类封装资源的API代码，将其转换为自己习惯的接口</li>
+                    </ul>
+                </dd>
+                <dd>映射器：一个对象，在两个独立的对象之间建立通信
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 两个子系统间没有依赖关系，要在它们之间建立通信</li>
+                        <li><strong class="label label-info">使用时机</strong> 子系统之间交互复杂，且交互独立于各自的主要目标</li>
+                        <li><strong class="label label-info">方法</strong> 书中无详细介绍</li>
+                    </ul>
+                </dd>
+                <dd>层超类型：一个类型，充当一层中所有类型的超类型
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 一层中所有的对象都具有某些方法，希望可以复用它们</li>
+                        <li><strong class="label label-info">使用时机</strong> 为了实现这一层的职责，需要的公共方法</li>
+                        <li><strong class="label label-info">方法</strong> 自顶向下设计公共方法 / 从底向上提取公共方法</li>
+                    </ul>
+                </dd>
+                <dd>分离接口：将接口的定义与实现分离，单独放在一个包中
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 使用者只依赖于接口，不依赖于具体实现</li>
+                        <li><strong class="label label-info">使用时机</strong> 接口有多种实现 / 主导接口的人不是实现者</li>
+                        <li><strong class="label label-info">方法</strong> 使用 interface / abstract class 定义接口包</li>
+                    </ul>
+                </dd>
+                <dd>注册表：将获全局数据注册到一个对象中（其实就是将获取数据的方法集中到一起）
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 需要使用一系列数据，但不知道从哪里获取它们</li>
+                        <li><strong class="label label-info">使用时机</strong> 数据的作用域是全局、且使用频繁</li>
+                        <li><strong class="label label-info">方法</strong> 使用 静态方法 / Singleton实例 实现注册表接口</li>
                     </ul>
                 </dd>
             </dl>
