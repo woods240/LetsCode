@@ -95,7 +95,7 @@
 
           var $ItemText = $( '<li class="active">' + $Item.text() + '</li>' )
             , $CategoryLink = this.createCategoryLink( $Category ).append( '<span class="divider">/</span>' )
-            , $NavLink = this.createCategoryLink( $Nav ).append( '<span class="divider">/</span>' );
+            , $NavLink = this.createNavLink( $Nav ).append( '<span class="divider">/</span>' );
 
           this.$Breadcrumb.empty();
           this.$Breadcrumb.append( $NavLink ).append( $CategoryLink ).append( $ItemText );
@@ -161,24 +161,26 @@
           return '<li><a href="' + ( anchor || '#' ) + '">' + text + '</a></li>';
       }
 
+      , createLink: function ( anchor, text ) {
+          var that = this;
+
+          return $( this.createLinkHtml( anchor, text ) ).on( 'click', function ( event ) {
+              that.loadPage( anchor );
+          } );
+      }
+
       , createNavLink: function ( $Nav ) {
           var anchor = $Nav.find( 'item[name]' ).first().attr( 'name' )
-            , navText = $Nav.attr( 'text' )
-            , that = this;
+            , navText = $Nav.attr( 'text' );
 
-          return $( this.createLinkHtml( anchor, navText ) )
-              .on( 'click', function ( event ) {
-                  that.activeLink( $( this ) );
-                  that.loadSubMenu( navText );
-                  that.$SubMenu.find( 'li:has(a)' ).first().trigger( 'click' );
-              } );
+          return this.createLink( anchor, navText )
       }
 
       , createCategoryLink: function ( $Category ) {
           var anchor = $Category.find( 'item[name]' ).first().attr( 'name' )
             , categoryText = $Category.attr( 'text' );
 
-          return $( this.createLinkHtml( anchor, categoryText ) );
+          return this.createLink( anchor, categoryText );
       }
 
       , createCategoryText: function ( $Category ) {
@@ -189,16 +191,9 @@
 
       , createItemLink: function ( $Item ) {
           var anchor = $Item.attr( 'name' )
-            , itemText = $Item.text()
-            , that = this;
+            , itemText = $Item.text();
 
-          return $( this.createLinkHtml( anchor, itemText ) )
-              .on( 'click', function ( event ) {
-                  that.activeLink( $( this ) );
-                  that.loadBreadcrumb( $Item );
-                  that.loadContent( $Item );
-                  //event.preventDefault();
-              } );
+          return this.createLink( anchor, itemText );
       }
 
       , activeLink: function ( $Link ) {
