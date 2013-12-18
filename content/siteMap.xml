@@ -38,11 +38,11 @@
     </nav>
     <nav text="JAVASCRIPT">
         <category text="核心javascript">
-            <item name="#dataType" url="content/JAVASCRIPT/dataType.html">数据类型、类型转换</item>
-            <item name="#function" url="content/JAVASCRIPT/function.html">函数</item>
+            <item name="#dataType" url="content/JAVASCRIPT/dataType.html">数据类型和类型转换</item>
             <item name="#sentence" url="content/JAVASCRIPT/sentence.html">语句</item>
-            <item url="">数组</item>
-            <item url="">对象</item>
+            <item name="#function" url="content/JAVASCRIPT/function.html">函数</item>
+            <item name="#object" url="content/JAVASCRIPT/object.html">对象</item>
+            <item name="#array" url="content/JAVASCRIPT/array.html">数组</item>
             <item url="">正则表达式</item>
         </category>
         <category text="客户端javascript">
