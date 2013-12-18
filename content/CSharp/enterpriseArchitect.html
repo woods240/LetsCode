@@ -356,11 +356,32 @@
                         <li><strong class="label label-info">方法</strong> 使用 interface / abstract class 定义接口包</li>
                     </ul>
                 </dd>
-                <dd>注册表：将获全局数据注册到一个对象中（其实就是将获取数据的方法集中到一起）
+                <dd>注册表：将全局数据注册到一个对象中（其实就是将获取数据的方法集中到一起）
                     <ul>
                         <li><strong class="label label-info">问题背景</strong> 需要使用一系列数据，但不知道从哪里获取它们</li>
                         <li><strong class="label label-info">使用时机</strong> 数据的作用域是全局、且使用频繁</li>
                         <li><strong class="label label-info">方法</strong> 使用 静态方法 / Singleton实例 实现注册表接口</li>
+                    </ul>
+                </dd>
+                <dd>插件：在运行时根据接口自动连接实现
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 接口在多种环境下对应多种实现，希望在特定环境下自动连接对应的实现</li>
+                        <li><strong class="label label-info">使用时机</strong> 在不同环境下，要求不同的接口实现</li>
+                        <li><strong class="label label-info">方法</strong> 使用插件工厂 从程序集反射 / 读取配置文件 来映射接口和实现</li>
+                    </ul>
+                </dd>
+                <dd>服务桩（模拟对象）：在测试时，模拟所依赖的 服务 / 对象
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 所依赖的服务尚未开发或不容易得到，延缓了开发进程</li>
+                        <li><strong class="label label-info">使用时机</strong> 对某一服务的依赖，妨碍了开发和测试</li>
+                        <li><strong class="label label-info">方法</strong> 先分离服务接口，然后用简单的代码模拟实现（可以使用Mock工具）</li>
+                    </ul>
+                </dd>
+                <dd>记录集（DataSet）：在内存中，将数据用关系表格来组织
+                    <ul>
+                        <li><strong class="label label-info">问题背景</strong> 某些环境需要用关系表格描述的数据结构</li>
+                        <li><strong class="label label-info">使用时机</strong> 某个环境依赖于记录集结构、并将其作为操控数据的通用方法</li>
+                        <li><strong class="label label-info">方法</strong> 先分离服务接口，然后用简单的代码模拟实现（可以使用Mock工具）</li>
                     </ul>
                 </dd>
             </dl>
