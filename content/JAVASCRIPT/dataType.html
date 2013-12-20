@@ -24,39 +24,3 @@
         </li>
     </ul>
 </div>
-
-<br />
-
-<div class="blackBoard">
-    <h4>
-        类型转换</h4>
-    <ul>
-        <li>数字转字符串
-            <ul>
-                <li><strong class="label label-info">自动转换</strong> var 字符串 = 数字 + '' ;</li>
-                <li><strong class="label label-info">指定小数位数</strong> var 字符串 = 数字.toFixed(小数位数) ;</li>
-                <li><strong class="label label-info">指定有效数字位数</strong> var 字符串 = 数字.toPrecision(有效数字位数)
-                    ;</li>
-                <li><strong class="label label-info">指定指数表示中的小数位数</strong> var 字符串 = 数字.toExponential(指数表示中的小数位数)
-                    ;</li>
-            </ul>
-        </li>
-        <li>字符串转数字
-            <ul>
-                <li><strong class="label label-info">自动转换</strong> var 数字 = 字符串 - 0 ;</li>
-                <li><strong class="label label-info">整数转换</strong> var 数字 = parseInt(字符串) ;</li>
-                <li><strong class="label label-info">小数转换</strong> var 数字 = parseFloat(字符串) ;</li>
-            </ul>
-        </li>
-        <li>布尔值自动转换
-            <ul>
-                <li><strong class="label label-info">布尔值在数字环境</strong> true -> 1, false -> 0</li>
-                <li><strong class="label label-info">布尔值在字符串环境</strong> true -> "true", false -> "false"</li>
-                <li><strong class="label label-info">数字在布尔值环境</strong> 0或NaN -> false, 其余 -> true</li>
-                <li><strong class="label label-info">字符串在布尔值环境</strong> 空字符串 -> false, 其余 -> true</li>
-                <li><strong class="label label-info">object在布尔值环境</strong> null和undefined -> false,
-                    其余 -> true</li>
-            </ul>
-        </li>
-    </ul>
-</div>
