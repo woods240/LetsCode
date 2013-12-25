@@ -3,28 +3,34 @@
         对象：无序的属性集合
     </h4>
     <ul>
-        <li>
-            创建
+        <li>创建
             <ul>
                 <li><strong class="label label-info">静态</strong> var o = { "name1": "value1", "name2": "value2", ... }</li>
                 <li><strong class="label label-info">动态</strong> var o = new 构造函数()</li>
             </ul>
         </li>
-        <li>
-            调用
+        <li>调用
             <ul>
                 <li><strong class="label label-info">静态</strong> o.name1</li>
                 <li><strong class="label label-info">动态</strong> o["name1"]</li>
             </ul>
         </li>
-        <li>
-            Object属性和方法
+        <li>Object属性和方法
             <ul>
                 <li><strong class="label label-info">o.constructor</strong> 引用构造函数</li>
+                <li><strong class="label label-info">o.prototype</strong> 引用原型对象</li>
                 <li><strong class="label label-info">o.toString()</strong> 转换为字符串</li>
                 <li><strong class="label label-info">o.valueOf()</strong> 转换为数字</li>
                 <li><strong class="label label-info">o.hasOwnProperty('属性名')</strong> 检查对象自己的属性（Object的除外）</li>
                 <li><strong class="label label-info">A.isPrototypeOf(B)</strong> A是否为B的原型对象</li>
+            </ul>
+        </li>
+        <li>自定义类
+            <ul>
+                <li><strong class="label label-info">定义属性</strong> var MyClass = function(x, ...){ this.属性1 = x; ... }</li>
+                <li><strong class="label label-info">定义方法</strong> MyClass.prototype.方法1 = function(){ ... }</li>
+                <li><strong>MyClass</strong> 被定义成类的构造函数</li>
+                <li><strong>this</strong> 指代类的实例，在构造函数和方法中被引用</li>
             </ul>
         </li>
     </ul>

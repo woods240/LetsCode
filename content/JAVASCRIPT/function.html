@@ -3,23 +3,20 @@
         函数：定义过程的工具（在语法上，属于javascript对象的一种）
     </h4>
     <ul>
-        <li>
-            定义
+        <li>定义
             <ul>
                 <li><strong class="label label-info">命名方式</strong> function f(){ ... }</li>
                 <li><strong class="label label-info">匿名方式</strong> var f = function() { ... }</li>
             </ul>
         </li>
-        <li>
-            调用
+        <li>调用
             <ul>
                 <li><strong class="label label-info">静态调用</strong> 调用对象.f()</li>
                 <li><strong class="label label-info">动态调用</strong> f.call(调用对象,参数0,1, ...) / f.apply( ... )</li>
                 <li>函数作为属性所属的对象，被称作"调用对象"，在函数内部由this指代</li>
             </ul>
         </li>
-        <li>
-            参数
+        <li>参数
             <ul>
                 <li><strong class="label label-info">实参</strong> 调用时传递的参数</li>
                 <li><strong class="label label-info">形参</strong> 定义的参数</li>
@@ -27,8 +24,7 @@
                 <li>实参多于形参时，可用arguments[下标]访问所有的实参</li>
             </ul>
         </li>
-        <li>
-            闭包
+        <li>闭包
             <ul>
                 <li><strong class="label label-info">概念</strong> 一个函数，它使用了外部变量</li>
                 <li><strong class="label label-info">类比理解</strong> 面向对象设计模式中的Command模式</li>

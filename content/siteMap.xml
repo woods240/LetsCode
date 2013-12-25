@@ -53,7 +53,6 @@
             <item name="#number" url="content/JAVASCRIPT/number.html">Number</item>
             <item name="#date" url="content/JAVASCRIPT/date.html">Date</item>
             <item name="#math" url="content/JAVASCRIPT/math.html">Math</item>
-            <item name="#boolean" url="content/JAVASCRIPT/boolean.html">Boolean</item>
             <item name="#regExp" url="content/JAVASCRIPT/regExp.html">RegExp</item>
         </category>
         <category text="常用技巧">
