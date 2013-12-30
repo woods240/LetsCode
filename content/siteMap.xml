@@ -109,7 +109,7 @@
             <item name="#icoPng" url="content/Tools/icoPng.html">.ico &lt;—&gt; .png</item>
             <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
             <item url="">百度地图</item>
-            <item name="#gitHub" url="">GitHub</item>
+            <item name="#gitHub" url="content/Tools/gitHub.html">GitHub</item>
             <item name="#appHarbor" url="">AppHarbor</item>
         </category>
     </nav>
