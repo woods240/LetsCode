@@ -103,14 +103,14 @@
         <category text="软件授权协议">
         </category>
         <category text="加速开发的工具">
+            <item name="#gitHub" url="content/Tools/gitHub.html">GitHub</item>
+            <item url="">AppHarbor</item>
+            <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
             <item name="#baidu" url="content/Tools/baidu.html">百度工具</item>
             <item name="#w3cplus" url="content/Tools/w3cplus.html">CSS设计参考</item>
             <item name="#cssSprites" url="content/Tools/cssSprites.html">图片合并</item>
             <item name="#icoPng" url="content/Tools/icoPng.html">.ico &lt;—&gt; .png</item>
-            <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
             <item url="">百度地图</item>
-            <item name="#gitHub" url="content/Tools/gitHub.html">GitHub</item>
-            <item name="#appHarbor" url="">AppHarbor</item>
         </category>
     </nav>
     <nav text="性能优化">

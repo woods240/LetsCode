@@ -3,36 +3,71 @@
         分布式版本控制：当前流行的开源版本控制工具
     </h4>
     <ul>
-        <li>常用命令
+        <li>本地操作
             <ul>
                 <li><strong class="label label-info">git clone &lt;项目地址&gt;</strong> 克隆GitHub上的项目</li>
-                <li><strong class="label label-info">git status</strong> 检查文件状态</li>
-                <li><strong class="label label-info">git add &lt;文件路径&gt;</strong> 将文件内容 纳入版本库</li>
-                <li><strong class="label label-info">git rm --cached &lt;文件路径&gt;</strong> </li>
-                <li><strong class="label label-info">git commit</strong> 提交暂存区的文件</li>
-                <li><strong class="label label-info">git commit -a</strong> 跳过暂存区，提交所有文件</li>
-                
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
+                <li><strong class="label label-info">git add &lt;文件路径&gt;</strong> 内容“复制”到暂存区</li>
+                <li><strong class="label label-info">git commit</strong> 暂存区的内容“复制”到本地仓库</li>
+                <li><strong class="label label-info">git commit -a</strong> 工作目录和暂存区的内容“复制”到本地仓库</li>
+                <li><strong class="label label-info">git reset HEAD &lt;文件路径&gt;</strong> 移除暂存区的内容</li>
+                <li><strong class="label label-info">git checkout --&lt;文件路径&gt;</strong> 本地仓库的内容“复制”到工作目录</li>
+                <li><strong class="label label-info">git status</strong> 检查文件状态（在哪个区域）</li>
+                <li><strong class="label label-info">git commit --amend</strong> 修改上次的提交（信息/内容）</li>
+                <li><strong class="label label-info">git rm --cached &lt;文件路径&gt;</strong> 内容“离开”了GitHub</li>
+                <li>.gitignore（用正则表达式忽略匹配的 文件[夹]）
+                    <ul>
+                        <li><strong class="label label-info">*</strong> 匹配任意多个字符</li>
+                        <li><strong class="label label-info">[]</strong> 匹配[]中枚举的字符</li>
+                        <li><strong class="label label-info">?</strong> 匹配一个字符</li>
+                        <li><strong class="label label-info">*/</strong> 匹配目录</li>
+                        <li><strong class="label label-info">!</strong> 取反</li>
+                    </ul>
+                </li>
             </ul>
         </li>
-        <li>.gitignore（用正则表达式忽略匹配的 文件[夹]）
+        <li>分支
             <ul>
-                <li><strong class="label label-info">*</strong> 匹配任意多个字符</li>
-                <li><strong class="label label-info">[]</strong> 匹配[]中枚举的字符</li>
-                <li><strong class="label label-info">?</strong> 匹配一个字符</li>
-                <li><strong class="label label-info">*/</strong> 匹配目录</li>
-                <li><strong class="label label-info">!</strong> 取反</li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
-                <li><strong class="label label-info"></strong> </li>
+                <li>HEAD 是当前分支的别名</li>
+                <li><strong class="label label-info">git branch [branch-name]</strong> 创建分支</li>
+                <li><strong class="label label-info">git checkout [branch-name]</strong> 切换到分支</li>
+                <li><strong class="label label-info">git merge [branch-name]</strong> 合并分支内容到HEAD(有时要手动解决冲突)</li>
+                <li><strong class="label label-info">git branch --merged</strong> 列出已合并的分支(可以删了)</li>
+                <li><strong class="label label-info">git branch -d [branch-name]</strong> 删除分支</li>
+                <li>分支工作流程
+                    <ol>
+                        <li>创建项目，在默认的master分支上工作</li>
+                        <li>遇到bug或新需求，创建并切换到新分支上工作</li>
+                        <li>bug或新需求完成后，切换回master，然后合并新分支</li>
+                        <li>删除分支，继续在master上工作</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>管理远程仓库（协作）
+            <ul>
+                <li><strong class="label label-info">git remote add [远程名] [url]</strong> 跟踪远程仓库并起名(自动跟踪master)</li>
+                <li><strong class="label label-info">git remote show [远程名]</strong> 查看指定仓库的信息</li>
+                <li><strong class="label label-info">git remote rm [远程名]</strong> 不再跟踪指定仓库</li>
+                <li><strong class="label label-info">git remote -v</strong> 列出所有远程仓库</li>
+                <li><strong class="label label-info">git fetch [远程名]</strong> 将指定仓库的数据抓到本地</li>
+                <li><strong class="label label-info">git push [远程名] [本地分支]:[远程分支]</strong> 将分支的内容推送给指定仓库</li>
+                <li><strong class="label label-info">git checkout --track [远程名]/[分支名]</strong> 跟踪远程分支</li>
+                <li><strong class="label label-info">git push [远程名] :[远程分支]</strong> 不再跟踪远程分支</li>
             </ul>
         </li>
     </ul>
 </div>
+
+<p class="alert">
+    注：
+    <br />
+    1.GitHub使用3个区域：<strong>工作目录(编辑内容)、暂存区(打算提交)、本地仓库(已经提交)</strong>管理提交过程
+    <br />
+    2.使用GitHub的过程，就是文件内容在3个区域的“行走”过程
+    <br />
+    3.远程仓库是托管在网络上的项目仓库，需要先在本地<strong>跟踪远程仓库</strong>，然后与之交换数据
+    <br />
+    4.分支可以<strong>分离项目的关注点</strong>，在master上维持稳定版本，在其它branch上专攻某些特性
+    <br />
+    5.参考书目《Pro Git（中文版）》
+</p>
