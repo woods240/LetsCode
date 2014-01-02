@@ -44,7 +44,7 @@
             <item name="#function" url="content/JAVASCRIPT/function.html">函数</item>
             <item name="#object" url="content/JAVASCRIPT/object.html">对象</item>
             <item name="#mock" url="content/JAVASCRIPT/mock.html">模拟类</item>
-            <item url="">正则表达式</item>
+            <item name="#nameSpace" url="content/JAVASCRIPT/nameSpace.html">模块和名字空间</item>
         </category>
         <category text="客户端javascript">
         </category>

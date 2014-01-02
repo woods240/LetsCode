@@ -13,5 +13,22 @@
                 <li><strong>this</strong> 指代类的实例，在构造函数和实例方法中被引用</li>
             </ul>
         </li>
+        <li>类继承
+            <ul>
+                <li><strong class="label label-info">继承实例属性</strong> var InheritClass = function( x, y ){ MyClass.Call(this, x); this.实例属性2 = y; }</li>
+                <li><strong class="label label-info">继承实例方法</strong> InheritClass.prototype = new InheritClass(); </li>
+                <li><strong class="label label-info">指定构造函数</strong> InheritClass.prototype.constructor = InheritClass; </li>
+            </ul>
+        </li>
     </ul>
 </div>
+
+<p class="alert">
+    注：
+    <br />
+    1.以上技巧基于这样一个事实：通过<strong>new MyClass()</strong>创建的对象，继承<strong>MyClass.prototype</strong>的所有成员
+    <br />
+    2.关于模拟类和继承，请参考下面的<a href="#mock_demo">例子</a>
+</p>
+
+<a id="mock_demo" data-code-url="scripts/app/mock_demo.js">mock_demo.js 代码</a>
