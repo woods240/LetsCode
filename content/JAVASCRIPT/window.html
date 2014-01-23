@@ -1,0 +1,38 @@
+﻿<div class="blackBoard">
+    <h4>
+        window：当前窗口
+    </h4>
+    <ul>
+        <li>
+            属性
+            <ul>
+                <li><strong class="label label-info">window.name</strong> 窗口名称</li>
+                <li><strong class="label label-info">window.opener</strong> 打开当前窗口的窗口</li>
+                <li><strong class="label label-info">window.location</strong> 当前窗口的地址</li>
+                <li><strong class="label label-info">window.history</strong> 当前窗口的浏览历史</li>
+                <li><strong class="label label-info">window.screen</strong> 显示器的屏幕</li>
+                <li><strong class="label label-info">window.document</strong> 窗口加载的Html文档（DOM）</li>
+            </ul>
+        </li>
+        <li>                        
+            方法
+            <ul>
+                <li><strong class="label label-info">window.open(url,窗口名,'属性设置')</strong> 打开新窗口</li>
+                <li><strong class="label label-info">window.close()</strong> 关闭当前窗口</li>
+                <li><strong class="label label-info">window.focus()</strong> 当前窗口锁定键盘焦点</li>
+                <li><strong class="label label-info">window.moveTo() / window.moveBy()</strong> 移动当前窗口</li>
+                <li><strong class="label label-info">window.scrollTo() / window.scrollBy()</strong> 滚动当前窗口的位置</li>
+                <li><strong class="label label-info">window.resizeTo() / window.resizeBy()</strong> 调整当前窗口的尺寸</li>
+                <li><strong class="label label-info">window.addEventListener() / window.removeEventListener()</strong> 管理当前窗口的事件句柄集合</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.<strong>window</strong>上挂接的属性，可以直接引用（省略window.）
+    <br />
+    2.所有直接创建的变量，都默认被挂在<strong>window</strong>上
+</p>

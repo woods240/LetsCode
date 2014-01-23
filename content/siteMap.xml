@@ -46,8 +46,6 @@
             <item name="#mock" url="content/JAVASCRIPT/mock.html">模拟类</item>
             <item name="#nameSpace" url="content/JAVASCRIPT/nameSpace.html">模块和名字空间</item>
         </category>
-        <category text="客户端javascript">
-        </category>
         <category text="javascript内建对象">
             <item name="#array" url="content/JAVASCRIPT/array.html">Array</item>
             <item name="#string" url="content/JAVASCRIPT/string.html">String</item>
@@ -55,6 +53,17 @@
             <item name="#date" url="content/JAVASCRIPT/date.html">Date</item>
             <item name="#math" url="content/JAVASCRIPT/math.html">Math</item>
             <item name="#regExp" url="content/JAVASCRIPT/regExp.html">RegExp</item>
+        </category>
+        <category text="客户端javascript">
+            <item name="#client" url="content/JAVASCRIPT/client.html">概述</item>
+            <item name="#window" url="content/JAVASCRIPT/window.html">window</item>
+            <item name="#windowLocation" url="content/JAVASCRIPT/windowLocation.html">location</item>
+            <item name="#windowHistory" url="content/JAVASCRIPT/windowHistory.html">history</item>
+            <item name="#windowScreen" url="content/JAVASCRIPT/windowScreen.html">screen</item>
+            <item name="#document" url="content/JAVASCRIPT/windowDocument.html">document</item>
+            <item name="#timing" url="content/JAVASCRIPT/timing.html">计时器</item>
+            <item name="#event" url="content/JAVASCRIPT/event.html">事件处理</item>
+            <item name="#cookie" url="content/JAVASCRIPT/cookie.html">cookie持久化</item>
         </category>
         <category text="常用技巧">
         </category>

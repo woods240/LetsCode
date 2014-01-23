@@ -1,0 +1,35 @@
+﻿<div class="blackBoard">
+    <h4>
+        location：当前窗口的地址
+    </h4>
+    <ul>
+        <li>
+            属性
+            <ul>
+                <li><strong class="label label-info">location.href</strong> 完整的url地址：<br /> "http://www.oreilly.com:123/catalog/search.html?m=10#demo" </li>
+                <li><strong class="label label-info">location.protocal</strong> url的协议部分："http:"</li>
+                <li><strong class="label label-info">location.host</strong> url的主机名和端口："www.oreilly.com:123"</li>
+                <li><strong class="label label-info">location.hostname</strong> url的主机名部分："www.oreilly.com"</li>
+                <li><strong class="label label-info">location.port</strong> url的端口部分："123"</li>
+                <li><strong class="label label-info">location.pathname</strong> url的路径部分："/catalog/search.html"</li>
+                <li><strong class="label label-info">location.search</strong> url的查询部分："?m=10"</li>
+                <li><strong class="label label-info">location.hash</strong> url的锚部分："#demo"</li>
+            </ul>
+        </li>
+        <li>
+            方法
+            <ul>
+                <li><strong class="label label-info">location.reload(true/false)</strong> 重新装载当前文档(是/否强制刷新)</li>
+                <li><strong class="label label-info">location.replace(url)</strong> 装载新的地址(旧地址不记入history)</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.用于获取当前url的各个部分，和重新加载window
+    <br />
+    2.一旦location发生变化，window会自动加载相应的url
+</p>

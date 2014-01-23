@@ -1,0 +1,25 @@
+﻿<div class="blackBoard">
+    <h4>
+        事件驱动模型
+    </h4>
+    <ul>
+        <li>
+            传播过程
+            <ul>
+                <li><strong class="label label-info">捕捉阶段</strong> document对象 --&gt; 叶子祖先 --&gt; 目标节点</li>
+                <li><strong class="label label-info">找到目标</strong> 调用事件句柄 + 浏览器执行默认行为</li>
+                <li><strong class="label label-info">起泡阶段</strong> document对象 &lt;-- 叶子祖先 &lt;-- 目标节点</li>
+                <li><strong class="label label-info">阻止事件传播</strong> stopPropagation()</li>
+                <li><strong class="label label-info">取消浏览器默认行为</strong> preventDefault()</li>
+            </ul>
+        </li>
+        <li>
+            响应过程：事件句柄可挂接多个响应函数
+            <ul>
+                <li><strong class="label label-info">注册事件句柄</strong> 元素.addEventListener('eventType',响应函数,是否捕捉事件)</li>
+                <li><strong class="label label-info">触发事件</strong> 设备触发 || 过程触发 || 代码调用触发</li>
+                <li><strong class="label label-info">响应事件</strong> 调用响应函数，顺序不确定</li>
+            </ul>
+        </li>
+    </ul>
+</div>
