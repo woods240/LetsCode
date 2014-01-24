@@ -1,10 +1,59 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
+﻿<div class="blackBoard">
+    <h4>根据定位到的问题，对症下药</h4>
+    <ul>
+        <li><strong class="label label-info">客户端</strong> 降低页面加载时间
+            <ul>
+                <li>生成页面耗时长：分析服务端的程序 || 提高响应性（进度提示等）</li>
+                <li>包含太多不需要的内容：考虑精简或用其它方式存储</li>
+                <li>资源体积大：压缩（工具、IIS）</li>
+                <li>网络环境差：购买带宽 || 使用CDN</li>
+                <li>服务器响应慢：提升服务器配置</li>
+                <li>js效率低：调试js，修正算法</li>
+                <li>css效率低：分析css，进行优化</li>
+                <li><strong class="label label-primary">开启缓存（浏览器、代理服务器、IIS），可以有效减少请求次数</strong></li>
+            </ul>
+        </li>
+        <li><strong class="label label-info">服务器端</strong> 降低函数执行时间
+            <ul>
+                <li>第三方组件的使用方式不对：详细了解接口文档，改进调用方式</li>
+                <li>第三方组件有问题：更换组件</li>
+                <li>通信链路慢：更换通信硬件 || 尝试其它通信方式</li>
+                <li>通信的程序或服务响应慢：与服务提供方沟通 || 更换服务</li>
+                <li>算法速度慢：优化算法（可尝试缓存 || 并行计算）</li>
+                <li>硬件配置不够：购买硬件</li>
+                <li><strong class="label label-primary">“缓存”减少计算量，“并行计算”充分发挥计算能力，“异步通信”减少等待时间</strong></li>
+            </ul>
+        </li>
+        <li><strong class="label label-info">数据库</strong> 分析sql查询计划
+            <ul>
+                <li>单表数据量大：对表进行横向拆分</li>
+                <li>未建立合适的索引：根据查询特点，建立索引</li>
+                <li>关联逻辑效率低：调整表的关联次序，使用子查询</li>
+                <li>where逻辑效率低：改进过滤条件的sql表达</li>
+                <li>翻译成的sql效率低：直接写sql语句</li>
+                <li>索引太多：减少不重要的索引，平衡读写速度</li>
+                <li>表的字段太多：对表进行纵向拆分</li>
+                <li>包含触发器：减少触发器的工作量 || 用程序方式实现</li>
+                <li>批量写入方式效率低：使用SqlBulkCopy提升效率</li>
+                <li><strong class="label label-primary">“索引”提升查询效率，“高级冗余”减少表的关联</strong></li>
+            </ul>
+        </li>
+        <li><strong class="label label-info">更通用的性能优化思想</strong> 按需所取
+            <ul>
+                <li>预加载：多个资源，肯定会用到；合并到一起加载，减少通信次数</li>
+                <li>懒加载：一个资源，不一定用到；用时再加载，减少无谓的消耗</li>
+                <li>分页：数据量大；均匀切分，少量加载</li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
-</body>
-</html>
+<p class="alert">
+    注：
+    <br />
+    1.以上陈述基于这样一个假设：系统架构、程序设计没有重大问题；“对症下药”仅仅是小修小补。
+    <br />
+    2.性能问题的直接原因：我们不管三七二十一，先选择一种方式，把事情做了；事后发现方式不合理，然后调整
+    <br />
+    3.软件应该：“做对的事，用合理的方式”，性能问题仅仅是软件的缺陷在一个方面的体现
+</p>

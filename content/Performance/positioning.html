@@ -6,7 +6,7 @@
                 <li>加载Html耗时：生成页面耗时长 || 包含太多不需要的内容</li>
                 <li>加载外部资源耗时：资源体积大 || 网络环境差 || 服务器响应慢</li>
                 <li>渲染页面耗时：js效率低 || css效率低</li>
-                <li>工具：IE10，Chrome等浏览器自带的分析工具</li>
+                <li><strong class="label label-primary">工具：IE10，Chrome等浏览器自带的分析工具</strong></li>
             </ul>
         </li>
         <li><strong class="label label-info">服务器端</strong> 分析函数执行时间
@@ -14,16 +14,17 @@
                 <li>调用第三方组件的函数：使用方式不对 || 第三方组件有问题</li>
                 <li>与其它程序或服务通信的函数：通信链路慢 || 其它程序或服务响应慢</li>
                 <li>自实现的函数：算法速度慢 || 硬件配置不够</li>
-                <li>工具：VS2012自带的性能分析</li>
+                <li><strong class="label label-primary">工具：VS2012自带的性能分析</strong></li>
             </ul>
         </li>
         <li><strong class="label label-info">数据库</strong> 分析sql查询计划
             <ul>
                 <li>单表查询速度慢：数据量大 || 未建立合适的索引</li>
-                <li>多表查询速度慢：关联逻辑效率低 || where逻辑效率低</li>
+                <li>多表查询速度慢：关联逻辑效率低 || where逻辑效率低 || 翻译成的sql效率低</li>
+                <li>删除和修改速度慢：翻译成的sql效率低</li>
                 <li>写入单条数据速度慢：索引太多 || 表的字段太多 || 包含触发器</li>
-                <li>写入多条数据速度慢：写入方式太慢（使用SqlBulkCopy提升效率）</li>
-                <li>工具：Sql Profiler</li>
+                <li>写入多条数据速度慢：批量写入方式效率低</li>
+                <li><strong class="label label-primary">工具：Sql Profiler</strong></li>
             </ul>
         </li>
     </ul>
@@ -32,7 +33,7 @@
 <p class="alert">
     注：
     <br />
-    1.抛开工具，只有两种选择：跟踪代码，靠经验判断
+    1.抛开工具，只有两种选择：跟踪代码 || 靠经验判断
     <br />
     2.选择合适的工具可以减少程序员的工作量，并加快定位问题的时间
 </p>

@@ -99,14 +99,6 @@
         </category>
         <category text="高级语法">
         </category>
-        <category text="编程规范">
-            <item name="#cSharpGeneralStandard" url="content/CSharp/cSharpGeneralStandard.html">《通用编程规范》</item>
-            <item name="#cSharpDotNetStandard" url="content/CSharp/cSharpDotNetStandard.html">《.Net编程规范》</item>
-        </category>
-        <category text="拓展书目">
-            <item name="#cSharpEffectiveStandard" url="content/CSharp/cSharpEffectiveStandard.html">《Effective C#》</item>
-            <item name="#enterpriseArchitect" url="content/CSharp/enterpriseArchitect.html">《企业应用架构模式》</item>
-        </category>
     </nav>
     <nav text="工具集">
         <category text="软件授权协议">
@@ -124,13 +116,26 @@
     </nav>
     <nav text="性能优化">
         <category text="性能优化概述">
-            <item name="#prevention" url="content/Performance/prevention.html">预防</item>
-            <item name="#positioning" url="content/Performance/positioning.html">定位</item>
-            <item name="#solution" url="content/Performance/solution.html">解决</item>
+            <item name="#prevention" url="content/Performance/prevention.html">1.预防</item>
+            <item name="#positioning" url="content/Performance/positioning.html">2.定位</item>
+            <item name="#solution" url="content/Performance/solution.html">3.解决</item>
         </category>
         <category text="客户端性能优化">
         </category>
         <category text="服务端性能优化">
+        </category>
+    </nav>
+    <nav text="拓展书目">
+        <category text="语言层面">
+            <item name="#cSharpGeneralStandard" url="content/Expand/cSharpGeneralStandard.html">《通用编程规范》</item>
+            <item name="#cSharpDotNetStandard" url="content/Expand/cSharpDotNetStandard.html">《.Net编程规范》</item>
+            <item name="#cSharpEffectiveStandard" url="content/Expand/cSharpEffectiveStandard.html">《Effective C#》</item>
+        </category>
+        <category text="设计层面">
+            <item name="#enterpriseArchitect" url="content/Expand/enterpriseArchitect.html">《企业应用架构模式》</item>
+        </category>
+        <category text="管理层面">
+            <item name="#continuousIntegration" url="content/Expand/continuousIntegration.html">《持续集成》</item>
         </category>
     </nav>
 </location>
