@@ -123,6 +123,11 @@
         </category>
     </nav>
     <nav text="性能优化">
+        <category text="性能优化概述">
+            <item name="#prevention" url="content/Performance/prevention.html">预防</item>
+            <item name="#positioning" url="content/Performance/positioning.html">定位</item>
+            <item name="#solution" url="content/Performance/solution.html">解决</item>
+        </category>
         <category text="客户端性能优化">
         </category>
         <category text="服务端性能优化">
