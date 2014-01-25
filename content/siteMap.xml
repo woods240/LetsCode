@@ -76,6 +76,14 @@
     </nav>
     <nav text="JQUERY">
         <category text="选择器">
+            <item name="#basic" url="content/JQUERY/basic.html">基础</item>
+            <item name="#hierarchyFilter" url="content/JQUERY/hierarchyFilter.html">层级</item>
+            <item name="#positionFilter" url="content/JQUERY/positionFilter.html">位置筛选</item>
+            <item name="#attributeFilter" url="content/JQUERY/attributeFilter.html">属性筛选</item>
+            <item name="#childFilter" url="content/JQUERY/childFilter.html">子节点筛选</item>
+            <item name="#contentFilter" url="content/JQUERY/contentFilter.html">内容筛选</item>
+            <item name="#formFilter" url="content/JQUERY/formFilter.html">表单元素筛选</item>
+            <item name="#visibilityFilter" url="content/visibility/visibilityFilter.html">表单元素筛选</item>
         </category>
         <category text="操作类型">
         </category>
