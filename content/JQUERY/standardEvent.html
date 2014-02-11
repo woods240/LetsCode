@@ -1,0 +1,60 @@
+﻿<div class="blackBoard">
+    <h4>分类罗列了浏览器支持的事件类型</h4>
+    <ul>
+        <li>
+            鼠标触发
+            <ul>
+                <li><strong class="label label-info">click</strong> 单击</li>
+                <li><strong class="label label-info">dblclick</strong> 双击</li>
+                <li><strong class="label label-info">mousedown</strong> 鼠标任意键被按下</li>
+                <li><strong class="label label-info">mouseup</strong> 鼠标任意键被松开</li>
+                <li><strong class="label label-info">mouseenter</strong> 鼠标指针进入元素</li>
+                <li><strong class="label label-info">mouseleave</strong> 鼠标指针离开元素</li>
+                <li><strong class="label label-info">mousemove</strong> 鼠标指针在元素内移动</li>
+                <li><strong class="label label-primary">mouseenter + mouseleave</strong> 模拟hover效果</li>
+            </ul>
+        </li>
+        <li>
+            键盘触发
+            <ul>
+                <li><strong class="label label-info">keydown</strong> 按键被按下</li>
+                <li><strong class="label label-info">keyup</strong> 按键被松开</li>
+                <li><strong class="label label-info">keypress</strong> 通过按键输入字符</li>
+            </ul>
+        </li>
+        <li>
+            文档加载过程中触发
+            <ul>
+                <li><strong class="label label-info">$( handler )</strong> DOM加载完成后（不考虑资源是否加载完成）</li>
+            </ul>
+        </li>
+        <li>
+            浏览器窗口触发
+            <ul>
+                <li><strong class="label label-info">window.onload</strong> 全部加载完成</li>
+                <li><strong class="label label-info">window.onbeforeunload = function () { return '提示内容'; }</strong> 离开页面之前（可以取消）</li>
+                <li><strong class="label label-info">window.onunload</strong> 离开页面（不能取消），卸载文档之前</li>
+                <li><strong class="label label-info">window.onresize</strong> 缩放浏览器窗口</li>
+                <li><strong class="label label-info">window.onerror</strong> js执行出错</li>
+                <li><strong class="label label-info">scroll</strong> 拖动滚动条（任何包含滚动条的容器都可触发）</li>
+            </ul>
+        </li>
+        <li>
+            表单元素相关
+            <ul>
+                <li><strong class="label label-info">change</strong> value值发生了改变</li>
+                <li><strong class="label label-info">focus</strong> 获得焦点</li>
+                <li><strong class="label label-info">blur</strong> 失去焦点</li>
+                <li><strong class="label label-info">focusin</strong> 获得焦点（支持事件冒泡）</li>
+                <li><strong class="label label-info">focusout</strong> 失去焦点（支持事件冒泡）</li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.除了<strong>window.事件句柄</strong>，所有的事件类型都在<strong>.on()</strong>和<strong>.trigger()</strong>中使用
+</p>

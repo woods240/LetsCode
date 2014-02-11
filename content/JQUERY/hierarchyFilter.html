@@ -1,0 +1,17 @@
+﻿<div class="blackBoard">
+    <h4>根据相对层级关系来筛选</h4>
+    <ul>
+        <li><strong class="label label-info">祖先 子孙</strong> 在‘祖先’的<strong>后辈</strong>节点中，‘子孙’匹配的节点</li>
+        <li><strong class="label label-info">父亲 > 孩子</strong> 在‘父亲’的<strong>子</strong>节点中，‘孩子’匹配的节点</li>
+        <li><strong class="label label-info">兄长 ~ 兄弟</strong> 在‘哥哥’的<strong>兄弟</strong>节点中，‘兄弟’匹配的节点</li>
+        <li><strong class="label label-info">哥哥 + 相邻的弟弟</strong> ‘哥哥’<strong>相邻的弟弟</strong>节点，并且‘相邻的弟弟’能够匹配</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.前一个选择器<strong>确定范围</strong>，后一个选择器<strong>精确查找</strong>
+    <br />
+    2.四种层级选择器仅仅是<strong>确定范围的规则</strong>不同
+</p>

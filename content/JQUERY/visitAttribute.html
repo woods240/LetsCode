@@ -1,0 +1,49 @@
+﻿<div class="blackBoard">
+    <h4>读取和修改html元素的属性</h4>
+    <ul>
+        <li>
+            html: html文本
+            <ul>
+                <li><strong class="label label-info">.html()</strong> 找到集合中的第一个元素，返回它的innerHtml（不包含本身）</li>
+                <li><strong class="label label-info">.html('html文本')</strong> 遍历集合中的所有元素，用新的html文本替换innerHtml</li>
+            </ul>
+        </li>
+        <li>
+            attribute: html文本作为普通标签，所包含的无意义的文本键值对
+            <ul>
+                <li><strong class="label label-info">.attr('键')</strong> 找到集合中的第一个元素，返回'键'对应的'值'</li>
+                <li><strong class="label label-info">.attr('键', '值')</strong> 遍历集合中的所有元素，设定'键值对'</li>
+                <li><strong class="label label-info">.removeAttr('键')</strong> 遍历集合中的所有元素，移除'键值对'</li>
+            </ul>
+        </li>
+        <li>
+            property: html文本作为DOM元素，所包含的有意义的属性
+            <ul>
+                <li><strong class="label label-info">.prop('属性名')</strong> 找到集合中的第一个元素，返回对应'属性的值'</li>
+                <li><strong class="label label-info">.prop('属性名', '值')</strong> 遍历集合中的所有元素，设定'属性的值'</li>
+            </ul>
+        </li>
+        <li>
+            value: 表单元素的值
+            <ul>
+                <li><strong class="label label-info">.val()</strong> 找到集合中的第一个元素，返回它的value</li>
+                <li><strong class="label label-info">.val('值')</strong> 遍历集合中的所有元素，设定它的value</li>
+            </ul>
+        </li>
+        <!--<li>
+            value: 表单元素的值
+            <ul>
+                <li><strong class="label label-info">.val()</strong> 找到集合中的第一个元素，返回它的value</li>
+                <li><strong class="label label-info">.val('值')</strong> 遍历集合中的所有元素，设定它的value</li>
+            </ul>
+        </li>-->
+        
+    </ul>
+
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.围绕html元素，分别将它作为'文本，标签，DOM元素，表单元素'，访问其属性
+</p>

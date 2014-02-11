@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
-    <nav text="自我介绍">
-        <category text="展示的内容">
+    <nav text="写代码吧">
+        <category text="核心内容">
             <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
             <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
         </category>
-        <category text="内部结构">
+        <category text="通过它们来实现">
             <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
             <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
             <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
@@ -17,7 +17,7 @@
     </nav>
     <nav text="Web原理">
     </nav>
-    <nav text="HTML">
+    <nav text="HTML 5">
         <category text="标签语义">
         </category>
         <category text="DOM">
@@ -25,7 +25,7 @@
         <category text="设计原则">
         </category>
     </nav>
-    <nav text="CSS">
+    <nav text="CSS 3">
         <category text="CSS选择器">
         </category>
         <category text="CSS样式">
@@ -57,13 +57,13 @@
         <category text="客户端javascript">
             <item name="#client" url="content/JAVASCRIPT/client.html">概述</item>
             <item name="#window" url="content/JAVASCRIPT/window.html">window</item>
-            <item name="#windowLocation" url="content/JAVASCRIPT/windowLocation.html">location</item>
-            <item name="#windowHistory" url="content/JAVASCRIPT/windowHistory.html">history</item>
-            <item name="#windowScreen" url="content/JAVASCRIPT/windowScreen.html">screen</item>
-            <item name="#document" url="content/JAVASCRIPT/windowDocument.html">document</item>
-            <item name="#timing" url="content/JAVASCRIPT/timing.html">计时器</item>
+            <item name="#windowLocation" url="content/JAVASCRIPT/windowLocation.html">window.location</item>
+            <item name="#windowHistory" url="content/JAVASCRIPT/windowHistory.html">window.history</item>
+            <item name="#windowScreen" url="content/JAVASCRIPT/windowScreen.html">window.screen</item>
+            <item name="#document" url="content/JAVASCRIPT/windowDocument.html">window.document</item>
+            <item name="#cookie" url="content/JAVASCRIPT/cookie.html">document.cookie</item>
             <item name="#event" url="content/JAVASCRIPT/event.html">事件处理</item>
-            <item name="#cookie" url="content/JAVASCRIPT/cookie.html">cookie持久化</item>
+            <item name="#timing" url="content/JAVASCRIPT/timing.html">计时器</item>
         </category>
         <category text="常用技巧">
         </category>
@@ -75,19 +75,31 @@
         </category>
     </nav>
     <nav text="JQUERY">
-        <category text="选择器">
-            <item name="#basic" url="content/JQUERY/basic.html">基础</item>
-            <item name="#hierarchyFilter" url="content/JQUERY/hierarchyFilter.html">层级</item>
-            <item name="#positionFilter" url="content/JQUERY/positionFilter.html">位置筛选</item>
-            <item name="#attributeFilter" url="content/JQUERY/attributeFilter.html">属性筛选</item>
-            <item name="#childFilter" url="content/JQUERY/childFilter.html">子节点筛选</item>
-            <item name="#contentFilter" url="content/JQUERY/contentFilter.html">内容筛选</item>
-            <item name="#formFilter" url="content/JQUERY/formFilter.html">表单元素筛选</item>
-            <item name="#visibilityFilter" url="content/visibility/visibilityFilter.html">表单元素筛选</item>
+        <category text="选择元素">
+            <item name="#basic" url="content/JQUERY/basicFilter.html">基本特征</item>
+            <item name="#attributeFilter" url="content/JQUERY/attributeFilter.html">属性特征</item>
+            <item name="#formFilter" url="content/JQUERY/formFilter.html">表单元素特征</item>
+            <item name="#contentFilter" url="content/JQUERY/contentFilter.html">内容特征</item>
+            <item name="#visibilityFilter" url="content/JQUERY/visibilityFilter.html">可见性特征</item>
+            <item name="#hierarchyFilter" url="content/JQUERY/hierarchyFilter.html">层级关系</item>
+            <item name="#childFilter" url="content/JQUERY/childFilter.html">同辈关系</item>
+            <item name="#positionFilter" url="content/JQUERY/positionFilter.html">二次筛选</item>
         </category>
-        <category text="操作类型">
+        <category text="操作元素">
+            <item name="#visitAttribute" url="content/JQUERY/visitAttribute.html">set/get属性值</item>
+            <item name="#visitSkin" url="content/JQUERY/visitSkin.html">set/get元素皮肤</item>
+            <item name="#ajustStructure" url="content/JQUERY/ajustStructure.html">调整html结构</item>
+            <item name="#animation" url="content/JQUERY/animation.html">添加动画效果</item>
+        </category>
+        <category text="事件处理">
+            <item name="#attachEvent" url="content/JQUERY/attachEvent.html">监听事件</item>
+            <item name="#removeEvent" url="content/JQUERY/removeEvent.html">取消监听</item>
+            <item name="#eventObject" url="content/JQUERY/eventObject.html">事件对象</item>
+            <item name="#triggerEvent" url="content/JQUERY/triggerEvent.html">代码触发事件</item>
+            <item name="#standardEvent" url="content/JQUERY/standardEvent.html">标准事件列表</item>
         </category>
         <category text="工具方法">
+            
         </category>
         <category text="Ajax">
             <item name="#globalEventHandler" url="content/JQUERY/globalEventHandler.html">Ajax全局事件</item>
@@ -108,20 +120,6 @@
         <category text="高级语法">
         </category>
     </nav>
-    <nav text="工具集">
-        <category text="软件授权协议">
-        </category>
-        <category text="加速开发的工具">
-            <item name="#gitHub" url="content/Tools/gitHub.html">GitHub</item>
-            <item url="">AppHarbor</item>
-            <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
-            <item name="#baidu" url="content/Tools/baidu.html">百度工具</item>
-            <item name="#w3cplus" url="content/Tools/w3cplus.html">CSS设计参考</item>
-            <item name="#cssSprites" url="content/Tools/cssSprites.html">图片合并</item>
-            <item name="#icoPng" url="content/Tools/icoPng.html">.ico &lt;—&gt; .png</item>
-            <item url="">百度地图</item>
-        </category>
-    </nav>
     <nav text="性能优化">
         <category text="性能优化概述">
             <item name="#prevention" url="content/Performance/prevention.html">1.预防</item>
@@ -133,7 +131,7 @@
         <category text="服务端性能优化">
         </category>
     </nav>
-    <nav text="拓展书目">
+    <nav text="《拓展书目》">
         <category text="语言层面">
             <item name="#cSharpGeneralStandard" url="content/Expand/cSharpGeneralStandard.html">《通用编程规范》</item>
             <item name="#cSharpDotNetStandard" url="content/Expand/cSharpDotNetStandard.html">《.Net编程规范》</item>
@@ -144,6 +142,18 @@
         </category>
         <category text="管理层面">
             <item name="#continuousIntegration" url="content/Expand/continuousIntegration.html">《持续集成》</item>
+        </category>
+    </nav>
+    <nav text="工具集">
+        <category text="软件授权协议">
+        </category>
+        <category text="过程管理工具">
+            <item name="#gitHub" url="content/Tools/gitHub.html">GitHub</item>
+            <item url="">AppHarbor</item>
+        </category>
+        <category text="技术实现的工具">
+            <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
+            <item name="#reference" url="content/Tools/reference.html">提供工具参考的网站</item>
         </category>
     </nav>
 </location>

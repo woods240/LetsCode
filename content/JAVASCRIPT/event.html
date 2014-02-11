@@ -14,11 +14,11 @@
             </ul>
         </li>
         <li>
-            响应过程：事件句柄可挂接多个响应函数
+            响应过程：元素订阅事件，当事件在传播过程中经过它时，用指定的函数来响应（可订阅多次）
             <ul>
                 <li><strong class="label label-info">注册事件句柄</strong> 元素.addEventListener('eventType',响应函数,是否捕捉事件)</li>
-                <li><strong class="label label-info">触发事件</strong> 设备触发 || 过程触发 || 代码调用触发</li>
-                <li><strong class="label label-info">响应事件</strong> 调用响应函数，顺序不确定</li>
+                <li><strong class="label label-info">触发方式</strong> 设备触发 || 过程触发 || 代码调用触发</li>
+                <li><strong class="label label-info">响应方式</strong> 随即调用响应函数，但顺序不确定</li>
             </ul>
         </li>
     </ul>

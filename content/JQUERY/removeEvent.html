@@ -1,0 +1,17 @@
+﻿<div class="blackBoard">
+    <h4>从不同的粒度：html元素，事件类型，处理函数 移除对事件的监听</h4>
+    <ul>
+        <li><strong class="label label-info">$( 'html元素' ).off()</strong> 取消对html元素上所有事件的监听</li>
+        <li><strong class="label label-info">$( 'html元素' ).off('.namespace')</strong> 取消对html元素上namespace下所有事件的监听</li>
+        <li><strong class="label label-info">$( 'html元素' ).off('事件类型.namespace')</strong> 取消对html元素上指定事件的监听</li>
+        <li><strong class="label label-info">$( 'html元素' ).off('events','selector',handler)</strong> 先前怎么监听的，现在怎么取消</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.程序模块化，使程序员不知道一个元素上到底绑定了哪些事件，为了方便移除自己监听的事件，最好通过namespace给它们添加标记，然后用namespace来精确的移除，达到不干扰其它模块的目的
+    <br />
+    2.上面的排列：粒度从大到小
+</p>

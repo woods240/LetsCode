@@ -1,0 +1,51 @@
+﻿<div class="blackBoard">
+    <h4>根据表单元素的特征进行筛选</h4>
+    <ul>
+        <li>
+            输入
+            <ul>
+                <li><strong class="label label-info">[type="text"]</strong> 文本框</li>
+                <li><strong class="label label-info">[type="password"]</strong> 密码框</li>
+                <li><strong class="label label-info">[type="file"]</strong> 上传框</li>
+                <li><strong class="label label-info">[type="image"]</strong> 图像类型的输入</li>
+            </ul>
+        </li>
+        <li>
+            选择
+            <ul>
+                <li><strong class="label label-info">[type="radio"]</strong> 单选框</li>
+                <li><strong class="label label-info">[type="checkbox"]</strong> 复选框</li>
+                <li><strong class="label label-info">select</strong> 下拉列表</li>
+                <li><strong class="label label-info">input:checked</strong> 单选框 || 复选框 中被选中的项目</li>
+                <li><strong class="label label-info">.filter(":selected")</strong> 下拉列表中被选中的项目</li>
+            </ul>
+        </li>
+        <li>
+            触发操作
+            <ul>
+                <li><strong class="label label-info">.filter(":button")</strong> 所有按钮</li>
+                <li><strong class="label label-info">[type="reset"]</strong> 重置按钮</li>
+                <li><strong class="label label-info">[type="submit"]</strong> 提交按钮</li>
+            </ul>
+        </li>
+        <li>
+            状态
+            <ul>
+                <li><strong class="label label-info">:enabled</strong> 状态为启用的元素</li>
+                <li><strong class="label label-info">:disabled</strong> 状态为禁用的元素</li>
+                <li><strong class="label label-info">document.activeElement</strong> 焦点所在的元素</li>
+            </ul>
+        </li>
+        <li><strong class="label label-info">.filter(":input")</strong> 所有表单控件</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.出于性能考虑，jQuery官网对某些伪类提供了替代方案
+    <br />
+    2.出于方便，以上仅列举了性能上最优的选择器
+    <br />
+    3.<strong>.filter()</strong>的含义：先粗选，再过滤
+</p>

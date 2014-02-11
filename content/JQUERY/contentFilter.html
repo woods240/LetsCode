@@ -1,0 +1,17 @@
+﻿<div class="blackBoard">
+    <h4>根据html元素包含的内容来筛选</h4>
+    <ul>
+        <li><strong class="label label-info">:contains("text")</strong> 内容包含text</li>
+        <li><strong class="label label-info">:has("selector")</strong> 子元素能够匹配"selector"</li>
+        <li><strong class="label label-info">:empty</strong> 不包含子元素和任何文本</li>
+        <li><strong class="label label-info">:parent</strong> 与:empty相反</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.“内容”指的是所有子元素的文本，连接在一起的结果
+    <br />
+    2.子元素之间的“空格”和“换行(\n)”，也会被连接到“内容”中
+</p>

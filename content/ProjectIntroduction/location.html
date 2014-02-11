@@ -1,10 +1,9 @@
 ﻿<div class="blackBoard">
-    <h4>
-        导航定位组件由3部分组成</h4>
+    <h4>知道现在在哪，并可以到站内的任何地方</h4>
     <ul>
-        <li><strong class="label label-info">siteMap.xml</strong> 提供站点地图数据</li>
-        <li><strong class="label label-info">DOM选择器</strong> 在页面中定位导航区域</li>
-        <li><strong class="label label-info">location.js</strong> 用站点地图数据构造导航区域，实时刷新内容区域</li>
+        <li><strong class="label label-info">siteMap.xml</strong> 描述站点地图</li>
+        <li><strong class="label label-info">DOM选择器</strong> 定位导航区域</li>
+        <li><strong class="label label-info">location.js</strong> 用站点地图描绘导航区域，用链接文件填充内容区域</li>
     </ul>
 </div>
 
@@ -14,6 +13,8 @@
     1.location.js的引用顺序要放到最后
     <br />
     2.可以注册onContentLoad事件，在内容区域加载完成后触发
+    <br />
+    3.在站点地图中导航定位：&lt;a data-target="location" href="页面name"&gt;跳转到...&lt;/a&gt;
 </p>
 
 <a data-code-url="scripts/location.js">location.js 代码</a> 

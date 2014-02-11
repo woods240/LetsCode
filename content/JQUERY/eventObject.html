@@ -1,0 +1,35 @@
+﻿<div class="blackBoard">
+    <h4>封装了与事件相关的信息</h4>
+    <ul>
+        <li>
+            属性
+            <ul>
+                <li><strong class="label label-info">event.target</strong> (dom)事件传播过程中找到的目标html元素</li>
+                <li><strong class="label label-info">event.currentTarget</strong> (dom)触发事件的html元素</li>
+                <li><strong class="label label-info">event.delegateTarget</strong> (dom)监听事件的html元素</li>
+                <li><strong class="label label-info">event.type</strong> (string)事件类型</li>
+                <li><strong class="label label-info">event.namespace</strong> (string)事件的命名空间</li>
+                <li><strong class="label label-info">event.data</strong> (object)监听事件时，传过来的数据</li>
+                <li><strong class="label label-info">event.metaKey</strong> (boolean)是否在事件发生时按下了<strong>Ctrl键</strong></li>
+                <li><strong class="label label-info">event.which</strong> (number)当前按下的鼠标或键盘上按键的编号</li>
+                <li><strong class="label label-info">event.pageX, event.pageY</strong> (number)相对于document左上角的坐标值</li>
+                <li><strong class="label label-info">event.result</strong> (object)上一个handler的返回值</li>
+            </ul>
+        </li>
+        <li>
+            方法
+            <ul>
+                <li><strong class="label label-info">event.preventDefault()</strong> 取消浏览器默认行为</li>
+                <li><strong class="label label-info">event.stopPropagation()</strong> 阻止事件继续冒泡</li>
+                <li><strong class="label label-info">event.isDefaultPrevented()</strong> (boolean)是否已经取消浏览器默认行为</li>
+                <li><strong class="label label-info">event.isPropagationStopped()</strong> (boolean)是否已经阻止事件继续冒泡</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.在事件触发的过程中，<strong>event对象</strong>作为参数被传递到handler中
+</p>

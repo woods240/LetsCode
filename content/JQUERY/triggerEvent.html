@@ -1,0 +1,24 @@
+﻿<div class="blackBoard">
+    <h4>拓展了事件的触发方式，并使自定义事件成为可能</h4>
+    <ul>
+        <li>
+            模拟用户操作浏览器的行为: .trigger( eventType [,extraParameters] )
+            <ul>
+                <li><strong class="label label-info">eventType</strong> (string)事件类型.namespace</li>
+                <li><strong class="label label-info">extraParameters</strong> (Array)触发事件时，传递给handler的数据</li>
+                <li><strong class="label label-primary">javascript对象的方法，可以被当成事件触发</strong></li>
+            </ul>
+        </li>
+        <li>
+            仅调用事件相关的handler: .triggerHandler( eventType [,extraParameters] )
+        </li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.两者的区别：前者激发事件，保留了事件传播过程和浏览器默认行为；后者仅仅调用事件处理函数（并且限于第一个匹配的元素）；
+    <br />
+    2.增加了传递数据的灵活性：<strong>extraParameters</strong>在触发时传递数据，<strong>event.data</strong>在监听时传递数据
+</p>

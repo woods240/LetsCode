@@ -158,15 +158,13 @@
 
 
       , createLinkHtml: function ( anchor, text ) {
-          return '<li><a href="' + ( anchor || '#' ) + '">' + text + '</a></li>';
+          return '<li><a data-target="location" href="' + ( anchor || '#' ) + '">' + text + '</a></li>';
       }
 
       , createLink: function ( anchor, text ) {
           var that = this;
 
-          return $( this.createLinkHtml( anchor, text ) ).on( 'click', function ( event ) {
-              that.loadPage( anchor );
-          } );
+          return $( this.createLinkHtml( anchor, text ) );
       }
 
       , createNavLink: function ( $Nav ) {
@@ -213,8 +211,17 @@
 
             if ( !data ) $this.data( 'location', data = new Location( options ) );
 
+            // 响应地址栏
             var anchor = window.location.hash || options.defaultAnchor;
             data.loadPage( anchor );
+
+            // 响应页面链接
+            $( document ).on( 'click', 'a[data-target=location][href^=#]', function () {
+                var $this = $( this )
+                  , href = $this.attr( 'href' );
+
+                data.loadPage( href );
+            } );
         } );
     };
 
@@ -224,7 +231,7 @@
         breadcrumbId: 'breadcrumb',
         contentId: 'content',
         siteMapPath: 'content/siteMap.xml',
-        defaultAnchor: '#GitHub',
+        defaultAnchor: '#gitHub',
         onContentLoading: function () { },
         onContentLoad: function () { },
         onContentUpdate: function () { }

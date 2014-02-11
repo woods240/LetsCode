@@ -3,7 +3,8 @@
 <head>
     <!-- seo -->
     <title>写代码吧</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;" />
     <meta name="keywords" content="写代码吧,分享编程知识" />
     <meta name="description" content="通过分享编程知识，梳理自己的知识体系结构，同时帮助新手少走弯路!" />
     <meta name="author" content="woods" />
@@ -17,16 +18,17 @@
     <div class="navbar navbar-static-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand" href="#">写代码吧</a>
+                <a class="brand" data-target="location" href="#">logo</a>
                 <ul id="mainMenu" class="nav">
                     <!--主导航-->
                 </ul>
             </div>
         </div>
     </div>
-
-    <p id="notice"></p>
-
+    
+    <p id="notice">    
+    </p>
+    
     <div class="container">
         <div class="row">
             <div class="span3">
@@ -67,9 +69,10 @@
     <!--<script src="scripts/debug/debug_ajax.js"></script>-->
 
     <script type="text/javascript">
-
+        
+        //window.onresize = function () { alert('hi') }
         $( function () {
-
+            
             enableThemeSwitch();
             enableScrollUp();
 

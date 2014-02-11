@@ -1,0 +1,20 @@
+﻿<div class="blackBoard">
+    <h4>根据html元素的属性来筛选</h4>
+    <ul>
+        <li><strong class="label label-info">[attribute]</strong> 包含attribute</li>
+        <li><strong class="label label-info">[attribute="value"]</strong> 包含attribute && 值为"value"</li>
+        <li><strong class="label label-info">[attribute!="value"]</strong> 不包含attribute || 值不为"value"</li>
+        <li><strong class="label label-info">[attribute^="value"]</strong> 包含attribute && 值的前缀为"value"</li>
+        <li><strong class="label label-info">[attribute$="value"]</strong> 包含attribute && 值的后缀为"value"</li>
+        <li><strong class="label label-info">[attribute*="value"]</strong> 包含attribute && 值包含"value"</li>
+        <li><strong class="label label-info">[attribute~="value"]</strong> 包含attribute && 值包含用空格分隔的"value"</li>
+        <li><strong class="label label-info">[attribute|="value"]</strong> 包含attribute && 值的前缀为"value-"或"value"</li>
+        <li><strong class="label label-info">[selector1][selector2][selectorN]</strong> 多个匹配结果的交集</li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.先找到节点的属性，然后<strong>根据属性值进行匹配</strong>
+</p>

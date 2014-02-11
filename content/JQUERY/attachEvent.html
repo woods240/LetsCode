@@ -1,0 +1,43 @@
+﻿<div class="blackBoard">
+    <h4>.on( events [,selector] [,data], handler(eventObject) )</h4>
+    <ul>
+        <li>
+            <strong class="label label-info">events</strong> (string)以空格分隔的事件类型
+            <ul>
+                <li>事件类型可以是浏览器定义好的，也可以是自定义的</li>
+                <li>推荐用namespace给事件类型分类，方便分类管理（注册/取消）</li>
+                <li>浏览器触发标准事件 || <strong>.trigger()</strong>触发自定义事件和标准事件</li>
+            </ul>
+        </li>
+        <li>
+            <strong class="label label-info">selector</strong> (string)匹配后辈元素的选择器
+            <ul>
+                <li>在匹配的元素（可以是动态附加的）上触发事件</li>
+                <li>出于性能考虑：选用的元素与后辈尽量离得近一些</li>
+            </ul>
+        </li>
+        <li>
+            <strong class="label label-info">data</strong> (object)传递给handler的数据
+            <ul>
+                <li>在handler中，通过event.data来引用</li>
+            </ul>
+        </li>
+        <li>
+            <strong class="label label-info">handler(eventObject)</strong> 事件处理函数
+            <ul>
+                <li>事件发生时，event对象会传递到事件处理函数中</li>
+                <li>可以阻止事件继续冒泡：<strong>event.stopPropagation()</strong></li>
+                <li>可以取消浏览器的默认行为：<strong>event.preventDefault()</strong></li>
+                <li>阻止事件继续冒泡 && 取消浏览器的默认行为：<strong>return false</strong></li>
+                <li>指代触发事件的html元素：<strong>this</strong></li>
+            </ul>
+        </li>
+        <li><strong class="label label-primary">为保证监听成功：在html文档加载完之后，再注册监听</strong></li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.这是对<a data-target="location" href="#event">javascript事件处理</a>的简化
+</p>
