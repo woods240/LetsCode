@@ -1,0 +1,78 @@
+﻿<div class="blackBoard">
+    <h4>读取和修改html元素的皮肤</h4>
+    <ul>
+        <li>
+            class: 样式类
+            <ul>
+                <li><strong class="label label-info">.addClass('样式类')</strong> 遍历集合中的所有元素，增加'样式类'</li>
+                <li><strong class="label label-info">.removeClass('样式类')</strong> 遍历集合中的所有元素，移除'样式类'</li>
+                <li><strong class="label label-info">.toggleClass('样式类')</strong> 遍历集合中的所有元素，反转'样式类'</li>
+                <li><strong class="label label-info">.hasClass('样式类')</strong> 遍历集合中的所有元素，是否至少存在一个'样式类'</li>
+            </ul>
+        </li>
+        <li>
+            css: 内联样式
+            <ul>
+                <li><strong class="label label-info">.css('样式属性')</strong> 找到集合中的第一个元素，返回它的'样式属性的值'</li>
+                <li><strong class="label label-info">.css('样式属性', '值')</strong> 遍历集合中的所有元素，设定'样式属性的值'</li>
+            </ul>
+        </li>
+        <li>
+            offset：相对于document左上角的位置，由坐标对象“{ top:_, left:_ }”表示
+            <ul>
+                <li><strong class="label label-info">.offset()</strong> 找到集合中的第一个元素，返回它的'坐标'</li>
+                <li><strong class="label label-info">.offset(坐标)</strong> 遍历集合中的所有元素，设定'坐标'</li>
+            </ul>
+        </li>
+        <li>
+            position：相对于父元素左上角的位置，由坐标对象“{ top:_, left:_ }”表示
+            <ul>
+                <li><strong class="label label-info">.position()</strong> 找到集合中的第一个元素，返回它的'坐标'</li>
+            </ul>
+        </li>
+        <li>
+            滚动位置：由于拖动滚动条，被隐藏区域的长度
+            <ul>
+                <li><strong class="label label-info">.scrollLeft()</strong> 找到集合中的第一个元素，返回'水平方向，左侧隐藏的长度'</li>
+                <li><strong class="label label-info">.scrollLeft(长度)</strong> 遍历集合中的所有元素，设定'水平方向，左侧隐藏的长度'</li>
+                <li><strong class="label label-info">.scrollTop()</strong> 找到集合中的第一个元素，返回'垂直方向，上侧隐藏的长度'</li>
+                <li><strong class="label label-info">.scrollTop(长度)</strong> 遍历集合中的所有元素，设定'垂直方向，上侧隐藏的长度'</li>
+            </ul>
+        </li>
+        <li>
+            '内容'的尺寸
+            <ul>
+                <li><strong class="label label-info">.width()</strong> 找到集合中的第一个元素，返回'内容的宽度'</li>
+                <li><strong class="label label-info">.width(宽度)</strong> 遍历集合中的所有元素，设定'内容的宽度'</li>
+                <li><strong class="label label-info">.height()</strong> 找到集合中的第一个元素，返回'内容的高度'</li>
+                <li><strong class="label label-info">.height(高度)</strong> 遍历集合中的所有元素，设定'内容的高度'</li>
+            </ul>
+        </li>
+        <li>
+            '内容+padding'的尺寸
+            <ul>
+                <li><strong class="label label-info">.innerWidth()</strong> 找到集合中的第一个元素，返回'包含padding的宽度'</li>
+                <li><strong class="label label-info">.innerHeight()</strong> 找到集合中的第一个元素，返回'包含padding的高度'</li>
+                <li><strong class="label label-primary">不要在 window 和 document 上使用</strong></li>
+            </ul>
+        </li>
+        <li>
+            '内容+padding+border+(?margin)'的尺寸：参数为true时，包含margin
+            <ul>
+                <li><strong class="label label-info">.outerWidth()</strong> 找到集合中的第一个元素，返回'包含border的宽度'</li>
+                <li><strong class="label label-info">.outerWidth(宽度)</strong> 遍历集合中的所有元素，设定'包含border的宽度'</li>
+                <li><strong class="label label-info">.outerHeight()</strong> 找到集合中的第一个元素，返回'包含border的高度'</li>
+                <li><strong class="label label-info">.outerHeight(高度)</strong> 遍历集合中的所有元素，设定'包含border的高度'</li>
+                <li><strong class="label label-primary">不要在 window 和 document 上使用</strong></li>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.<strong>反转</strong>的意思是：有就移除，没有就添加
+</p>

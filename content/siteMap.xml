@@ -33,7 +33,7 @@
         <category text="设计原则">
         </category>
         <category text="常用技巧">
-            <item name="#shape" url="content/CSS/shape.html">特殊形状</item>
+            <!--<item name="#shape" url="content/CSS/shape.html">特殊形状</item>-->
         </category>
     </nav>
     <nav text="JAVASCRIPT">
@@ -65,8 +65,8 @@
             <item name="#event" url="content/JAVASCRIPT/event.html">事件处理</item>
             <item name="#timing" url="content/JAVASCRIPT/timing.html">计时器</item>
         </category>
-        <category text="常用技巧">
-        </category>
+        <!--<category text="常用技巧">
+        </category>-->
     </nav>
     <nav text="XML">
         <category text="基本语法">
