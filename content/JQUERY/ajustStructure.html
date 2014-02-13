@@ -1,0 +1,58 @@
+﻿<div class="blackBoard">
+    <h4>在现有的DOM结构上，增加/移除DOM元素</h4>
+    <ul>
+        <li>
+            对DOM元素做包裹
+            <ul>
+                <li><strong class="label label-info">.wrap(content)</strong> 遍历集合中的所有元素，在外层包裹content</li>
+                <li><strong class="label label-info">.unwrap()</strong> 遍历集合中的所有元素，移除父元素</li>
+                <li><strong class="label label-info">.wrapInner(content)</strong> 遍历集合中的所有元素，在内层包裹content</li>
+            </ul>
+        </li>
+        <li>
+            在DOM元素内部做插入
+            <ul>
+                <li><strong class="label label-info">.append(content)</strong> 遍历集合中的所有元素，在内部后侧插入content</li>
+                <li><strong class="label label-info">.prepend(content)</strong> 遍历集合中的所有元素，在内部前侧插入content</li>
+                <li><strong class="label label-info">.appendTo()</strong> 与append相似，只是把主宾调换</li>
+                <li><strong class="label label-info">.prependTo()</strong> 与prepend相似，只是把主宾调换</li>
+            </ul>
+        </li>
+        <li>
+            在DOM元素外部做插入
+            <ul>
+                <li><strong class="label label-info">.after(content)</strong> 遍历集合中的所有元素，在外部后侧插入content</li>
+                <li><strong class="label label-info">.before(content)</strong> 遍历集合中的所有元素，在外部前侧插入content</li>
+                <li><strong class="label label-info">.insertAfter()</strong> 与after相似，只是把主宾调换</li>
+                <li><strong class="label label-info">.insertBefore()</strong> 与before相似，只是把主宾调换</li>
+            </ul>
+        </li>
+        <li>
+            替换DOM元素
+            <ul>
+                <li><strong class="label label-info">.replaceWith(content)</strong> 遍历集合中的所有元素，用content替换</li>
+                <li><strong class="label label-info">.replaceAll()</strong> 与replaceWith相似，只是把主宾调换</li>
+            </ul>
+        </li>
+        <li>
+            移除DOM元素
+            <ul>
+                <li><strong class="label label-info">.remove()</strong> 遍历集合中的所有元素，从DOM中移除</li>
+                <li><strong class="label label-info">.detach()</strong> 遍历集合中的所有元素，从DOM中移除（保留event等，还会重新插入）</li>
+                <li><strong class="label label-info">.empty()</strong> 遍历集合中的所有元素，将子元素从DOM中移除（保留自己）</li>
+            </ul>
+        </li>
+        <li>
+            复制DOM元素
+            <ul>
+                <li><strong class="label label-info">.clone(是否复制event)</strong> 遍历集合中的所有元素，做深度复制</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<p class="alert">
+    注：
+    <br />
+    1.<strong>content</strong>：html字符串，jQuery对象，DOM对象
+</p>
