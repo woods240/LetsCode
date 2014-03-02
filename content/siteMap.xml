@@ -99,7 +99,10 @@
             <item name="#standardEvent" url="content/JQUERY/standardEvent.html">标准事件列表</item>
         </category>
         <category text="工具方法">
-            <item name="#utilities" url="content/JQUERY/utilities.html">监听事件</item>
+            <item name="#testElement" url="content/JQUERY/testElement.html">判断目标特征</item>
+            <item name="#processCollection" url="content/JQUERY/processCollection.html">处理集合元素</item>
+            <item name="#" url="content/JQUERY/.html"></item>
+            <item name="#" url="content/JQUERY/.html"></item>
         </category>
         <category text="Ajax">
             <item name="#globalEventHandler" url="content/JQUERY/globalEventHandler.html">Ajax全局事件</item>
