@@ -99,7 +99,7 @@
             <item name="#standardEvent" url="content/JQUERY/standardEvent.html">标准事件列表</item>
         </category>
         <category text="工具方法">
-            
+            <item name="#utilities" url="content/JQUERY/utilities.html">监听事件</item>
         </category>
         <category text="Ajax">
             <item name="#globalEventHandler" url="content/JQUERY/globalEventHandler.html">Ajax全局事件</item>

@@ -231,7 +231,7 @@
         breadcrumbId: 'breadcrumb',
         contentId: 'content',
         siteMapPath: 'content/siteMap.xml',
-        defaultAnchor: '#gitHub',
+        defaultAnchor: '#about',
         onContentLoading: function () { },
         onContentLoad: function () { },
         onContentUpdate: function () { }
