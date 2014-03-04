@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
-    <nav text="写代码吧">
+    <nav text="简介">
         <category text="核心内容">
             <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
             <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
@@ -75,6 +75,9 @@
         </category>
     </nav>
     <nav text="JQUERY">
+        <category text="核心">
+            <item name="#core" url="content/JQUERY/core.html">创建jQuery对象</item>
+        </category>
         <category text="选择元素">
             <item name="#basic" url="content/JQUERY/basicFilter.html">基本特征</item>
             <item name="#attributeFilter" url="content/JQUERY/attributeFilter.html">属性特征</item>
@@ -99,10 +102,11 @@
             <item name="#standardEvent" url="content/JQUERY/standardEvent.html">标准事件列表</item>
         </category>
         <category text="工具方法">
+            <item name="#data" url="content/JQUERY/data.html">存取数据</item>
             <item name="#testElement" url="content/JQUERY/testElement.html">判断目标特征</item>
             <item name="#processCollection" url="content/JQUERY/processCollection.html">处理集合元素</item>
-            <item name="#" url="content/JQUERY/.html"></item>
-            <item name="#" url="content/JQUERY/.html"></item>
+            <item name="#parse" url="content/JQUERY/parse.html">解析文本</item>
+            <item name="#other" url="content/JQUERY/other.html">其它</item>
         </category>
         <category text="Ajax">
             <item name="#globalEventHandler" url="content/JQUERY/globalEventHandler.html">Ajax全局事件</item>

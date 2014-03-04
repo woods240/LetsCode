@@ -1,12 +1,16 @@
 ﻿<div class="blackBoard">
-    <h4></h4>
+    <h4>对集合元素进行操作的API</h4>
     <ul>
-        <li><strong class="label label-info"></strong></li>
+        <li><strong class="label label-info">$.each(集合, function(key, value) { ... })</strong> 遍历集合，自定义对元素的操作</li>
+        <li><strong class="label label-info">$.grep(数组, function(元素, index){ ... })</strong> 自定义布尔规则，从数组中筛选元素</li>
+        <li><strong class="label label-info">$.inArray(元素, 数组)</strong> 返回元素在数组中的位置</li>
+        <li><strong class="label label-info">$.map(数组, function(元素, index){ ... })</strong> 自定义转换规则，映射出一个新数组</li>
     </ul>
+
 </div>
 
 <p class="alert">
     注：
     <br />
-    1.
+    1.<strong>集合</strong> 指数组或对象，<strong>数组</strong> 就只能是Array
 </p>
