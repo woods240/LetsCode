@@ -3,7 +3,8 @@
         分布式版本控制：当前流行的开源版本控制工具
     </h4>
     <ul>
-        <li>本地操作
+        <li>
+            本地操作
             <ul>
                 <li><strong class="label label-info">git clone &lt;项目地址&gt;</strong> 克隆GitHub上的项目</li>
                 <li><strong class="label label-info">git add &lt;文件路径&gt;</strong> 内容“复制”到暂存区</li>
@@ -14,7 +15,8 @@
                 <li><strong class="label label-info">git status</strong> 检查文件状态（在哪个区域）</li>
                 <li><strong class="label label-info">git commit --amend</strong> 修改上次的提交（信息/内容）</li>
                 <li><strong class="label label-info">git rm --cached &lt;文件路径&gt;</strong> 内容“离开”了GitHub</li>
-                <li>.gitignore（用正则表达式忽略匹配的 文件[夹]）
+                <li>
+                    .gitignore（用正则表达式忽略匹配的 文件[夹]）
                     <ul>
                         <li><strong class="label label-info">*</strong> 匹配任意多个字符</li>
                         <li><strong class="label label-info">[]</strong> 匹配[]中枚举的字符</li>
@@ -25,7 +27,8 @@
                 </li>
             </ul>
         </li>
-        <li>分支
+        <li>
+            分支
             <ul>
                 <li>HEAD 是当前分支的别名</li>
                 <li><strong class="label label-info">git branch [branch-name]</strong> 创建分支</li>
@@ -33,7 +36,8 @@
                 <li><strong class="label label-info">git merge [branch-name]</strong> 合并分支内容到HEAD(有时要手动解决冲突)</li>
                 <li><strong class="label label-info">git branch --merged</strong> 列出已合并的分支(可以删了)</li>
                 <li><strong class="label label-info">git branch -d [branch-name]</strong> 删除分支</li>
-                <li>分支工作流程
+                <li>
+                    分支工作流程
                     <ol>
                         <li>创建项目，在默认的master分支上工作</li>
                         <li>遇到bug或新需求，创建并切换到新分支上工作</li>
@@ -43,7 +47,8 @@
                 </li>
             </ul>
         </li>
-        <li>管理远程仓库（协作）
+        <li>
+            管理远程仓库（协作）
             <ul>
                 <li><strong class="label label-info">git remote add [远程名] [url]</strong> 跟踪远程仓库并起名(自动跟踪master)</li>
                 <li><strong class="label label-info">git remote show [远程名]</strong> 查看指定仓库的信息</li>
@@ -63,7 +68,7 @@
     <br />
     1.GitHub使用3个区域：<strong>工作目录(编辑内容)、暂存区(打算提交)、本地仓库(已经提交)</strong>管理提交过程
     <br />
-    2.使用GitHub的过程，就是文件内容在3个区域的“行走”过程
+    2.使用GitHub的过程，就是文件内容在3个区域的“转移”过程
     <br />
     3.远程仓库是托管在网络上的项目仓库，需要先在本地<strong>跟踪远程仓库</strong>，然后与之交换数据
     <br />

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
-    <nav text="简介">
+    <nav text="LetsCode">
         <category text="核心内容">
             <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
             <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
         </category>
-        <category text="通过它们来实现">
+        <category text="身体结构">
             <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
             <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
             <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
@@ -160,7 +160,7 @@
         </category>
         <category text="技术实现的工具">
             <item name="#chart" url="content/Tools/chart.html">HTML5图表：chart.js</item>
-            <item name="#reference" url="content/Tools/reference.html">提供工具参考的网站</item>
+            <item name="#reference" url="content/Tools/reference.html">在线工具介绍</item>
         </category>
     </nav>
 </location>
