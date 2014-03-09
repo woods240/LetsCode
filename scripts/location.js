@@ -123,8 +123,7 @@
                   that.onContentLoad();
               },
               error: function ( XMLHttpRequest, textStatus, errorThrown ) {
-                  alert( errorThrown );
-                  that.$Content.html( '出错啦' );
+                  that.$Content.html( '服务器连接不上' );
               },
               cache: false,
               type: 'get',
@@ -154,6 +153,9 @@
           // 给 Nav 和 Item, 增加 "active" 样式
           this.activeLink( $NavLink );
           this.activeLink( $ItemLink );
+
+          // 设置SubMenu的高度
+          this.$SubMenu.css( 'overflow', 'auto' ).css( 'max-height', screen.height - 200 );
       }
 
 

@@ -10,7 +10,7 @@
         this.title = this.$element.text();
         this.visible = false;
 
-        this.$element.after( this.$codeContainer );
+        this.$element.after( $( '<div class="code"></div>' ).append( this.$codeContainer ) );
     };
 
     PrettyCode.prototype = {
@@ -35,17 +35,20 @@
                           window.prettyPrint && prettyPrint();
 
                           var title = $( '<h6 class="text-center">' + that.title + '<i class="icon-fullscreen scaleButton" title="缩放"></i></h6>' );
-                          that.$codeContainer.prepend( title );
+                          that.$codeContainer.before( title );
+                          var $code = that.$codeContainer.parent();
                           title.find( 'i.scaleButton' ).on( 'click', function () {
                               var scaleButton = $( this );
-                              var isFullScreen = that.$codeContainer.hasClass( 'modal' );
+                              var isFullScreen = $code.hasClass( 'modal' );
                               if ( isFullScreen ) {
-                                  that.$codeContainer.removeClass( 'modal' );
-                                  scaleButton.removeClass( " icon-resize-small" ).addClass( "icon-fullscreen" );
+                                  $code.removeClass( 'modal' );
+                                  scaleButton.removeClass( "icon-resize-small" ).addClass( "icon-fullscreen" );
+                                  that.$codeContainer.height( '100%' )
                               }
                               else {
-                                  that.$codeContainer.addClass( 'modal' );
-                                  scaleButton.removeClass( "icon-fullscreen" ).addClass( " icon-resize-small" );
+                                  $code.addClass( 'modal' );
+                                  scaleButton.removeClass( "icon-fullscreen" ).addClass( "icon-resize-small" );
+                                  that.$codeContainer.outerHeight( $( window ).height() - 40 );
                               }
                           } );
 
@@ -56,7 +59,7 @@
                       async: true
                   } );
               }
-              this.$codeContainer.show();
+              this.$codeContainer.parent().slideDown( 'slow' );
           }
 
           this.visible = true;
@@ -64,7 +67,7 @@
 
       , hide: function () {
           if ( this.visible ) {
-              this.$codeContainer.hide();
+              this.$codeContainer.parent().slideUp( 'slow' );
           }
 
           this.visible = false;
@@ -84,12 +87,7 @@
 
             if ( !data ) $this.data( 'prettyCode', data = new PrettyCode( this, codeUrl ) );
 
-            if ( !data.visible ) {
-                data.show();
-            }
-            else {
-                data.hide();
-            }
+            data.visible ? data.hide() : data.show();
         } );
     };
 
@@ -110,7 +108,7 @@
 
     $.initPrettyCodeSwitch = function () {
         var closeIcon = 'icon-hand-right'
-            , openIcon = 'icon-hand-down';
+          , openIcon = 'icon-hand-down';
 
         $( document ).find( '[data-code-url]' ).not( '.label' ).addClass( 'label label-important' ).prepend( '<i class="icon-white ' + closeIcon + '"></i> ' ).on( 'click', function () {
             var $icon = $( this ).find( 'i' )

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <location>
-    <nav text="LetsCode">
+    <nav text="Lets Code !">
         <category text="核心内容">
             <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
             <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
