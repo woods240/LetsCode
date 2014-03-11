@@ -54,7 +54,7 @@
 
                       },
                       error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
-                      cache: false,
+                      cache: true,
                       type: 'get',
                       async: true
                   } );

@@ -30,7 +30,7 @@
               error: function ( XMLHttpRequest, textStatus, errorThrown ) {
                   alert( errorThrown );
               },
-              cache: false,
+              cache: true,
               type: 'GET',
               async: false
           } );
@@ -125,7 +125,7 @@
               error: function ( XMLHttpRequest, textStatus, errorThrown ) {
                   that.$Content.html( '服务器连接不上' );
               },
-              cache: false,
+              cache: true,
               type: 'get',
               async: true
           } );
