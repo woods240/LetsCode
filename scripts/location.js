@@ -75,17 +75,18 @@
 
           that.$SubMenu.empty();
           this.get$Nav( navText ).find( 'category[text]' ).each( function () {
-              var $Category = $( this )
-                , $CategoryText = that.createCategoryText( $Category );
-
-              that.$SubMenu.append( $CategoryText );
+              var $Category = $(this)
+                , $CategoryLink = that.createCategoryLink($Category)
+                , $CategoryChild = $( '<ul class="nav"></ul>' );
 
               $Category.find( 'item[name]' ).each( function () {
                   var $Item = $( this )
                     , $ItemLink = that.createItemLink( $Item );
 
-                  that.$SubMenu.append( $ItemLink );
+                  $CategoryChild.append( $ItemLink );
               } );
+
+              that.$SubMenu.append( $CategoryLink.append( $CategoryChild ) );
           } );
       }
 
@@ -94,8 +95,8 @@
             , $Nav = $Category.parent().first();
 
           var $ItemText = $( '<li class="active">' + $Item.text() + '</li>' )
-            , $CategoryLink = this.createCategoryLink( $Category ).append( '<span class="divider">/</span>' )
-            , $NavLink = this.createNavLink( $Nav ).append( '<span class="divider">/</span>' );
+            , $CategoryLink = this.createCategoryLink( $Category )
+            , $NavLink = this.createNavLink( $Nav )
 
           this.$Breadcrumb.empty();
           this.$Breadcrumb.append( $NavLink ).append( $CategoryLink ).append( $ItemText );

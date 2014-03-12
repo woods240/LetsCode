@@ -14,34 +14,43 @@
     <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
     <link href="themes/css/justify.css" rel="stylesheet" />-->
 
-    <link id="Link1" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
-    <link id="Link2" href="//twitter.github.io/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+    <link id="bootstrap_cssRef" href="//libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet" />
+    <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
     <link href="themes/css/justify.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-static-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <ul id="mainMenu" class="nav">
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul id="mainMenu" class="nav navbar-nav">
                     <!--主导航-->
                 </ul>
-            </div>
+            </nav>
         </div>
-    </div>
+    </header>
 
     <p id="notice">
     </p>
 
-    <div class="container">
+    <div class="container bs-docs-container">
         <div class="row">
-            <div class="span3">
-                <div class="well well-small">
-                    <ul id="subMenu" class="nav nav-list">
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix" role="complementary">
+                    <ul id="subMenu" class="nav bs-sidenav">
                         <!--子菜单-->
                     </ul>
                 </div>
             </div>
-            <div class="span9">
+            <div class="col-md-9">
                 <ul id="breadcrumb" class="breadcrumb">
                     <!--面包屑-->
                 </ul>
@@ -64,10 +73,10 @@
     <script id="prettify_jsRef" src="scripts/prettify.js"></script>
     <script id="scrollUp_jsRef" src="scripts/jquery.scrollUp.min.js"></script>-->
 
-    <script id="Script1" src="//libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-    <script id="Script2" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script id="Script3" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-    <script id="Script4" src="//www.bootcss.com/assets/js/jquery.scrollUp.min.js"></script>
+    <script id="jqueryRef" src="//libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script id="bootstrap_jsRef" src="//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script id="prettify_jsRef" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    <script id="scrollUp_jsRef" src="//www.bootcss.com/assets/js/jquery.scrollUp.min.js"></script>
 
     <script src="scripts/waitingPrompt.js"></script>
     <script src="scripts/prettyCode.js"></script>
@@ -80,7 +89,7 @@
 
         $( function () {
 
-            enableThemeSwitch();
+            //enableThemeSwitch();
             enableScrollUp();
 
         } );
@@ -92,19 +101,19 @@
                 packageSelector: { 'bootstrap_cssRef': 'href' }
 
               , seriesCollection: [
-                    { seriesName: 'amelia', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/amelia/bootstrap.min.css' } }
-                  , { seriesName: 'cerulean', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css' } }
-                  , { seriesName: 'cosmo', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css' } }
-                  , { seriesName: 'cyborg', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/cyborg/bootstrap.min.css' } }
-                  , { seriesName: 'flatly', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css' } }
-                  , { seriesName: 'journal', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/journal/bootstrap.min.css' } }
-                  , { seriesName: 'readable', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/readable/bootstrap.min.css' } }
-                  , { seriesName: 'simplex', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/simplex/bootstrap.min.css' } }
-                  , { seriesName: 'slate', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/slate/bootstrap.min.css' } }
-                  , { seriesName: 'spacelab', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/spacelab/bootstrap.min.css' } }
-                  , { seriesName: 'spruce', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/spruce/bootstrap.min.css' } }
-                  , { seriesName: 'superhero', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/superhero/bootstrap.min.css' } }
-                  , { seriesName: 'united', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/2.3.2/united/bootstrap.min.css' } }
+                    { seriesName: 'amelia', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/amelia/bootstrap.min.css' } }
+                  , { seriesName: 'cerulean', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cerulean/bootstrap.min.css' } }
+                  , { seriesName: 'cosmo', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css' } }
+                  , { seriesName: 'cyborg', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cyborg/bootstrap.min.css' } }
+                  , { seriesName: 'flatly', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css' } }
+                  , { seriesName: 'journal', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/journal/bootstrap.min.css' } }
+                  , { seriesName: 'readable', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/readable/bootstrap.min.css' } }
+                  , { seriesName: 'simplex', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/simplex/bootstrap.min.css' } }
+                  , { seriesName: 'slate', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/slate/bootstrap.min.css' } }
+                  , { seriesName: 'spacelab', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/spacelab/bootstrap.min.css' } }
+                  , { seriesName: 'spruce', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/spruce/bootstrap.min.css' } }
+                  , { seriesName: 'superhero', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/superhero/bootstrap.min.css' } }
+                  , { seriesName: 'united', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css' } }
               ]
 
               , showSeriesList: function ( $element, seriesList, packageSwitch ) {

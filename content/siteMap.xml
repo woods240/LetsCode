@@ -5,7 +5,7 @@
             <item name="#about" url="content/ProjectIntroduction/about.html">"我" 是谁</item>
             <item name="#talk" url="content/ProjectIntroduction/talk.html">"我" 要表达什么</item>
         </category>
-        <category text="身体结构">
+        <category text="组织结构">
             <item name="#framework" url="content/ProjectIntroduction/framework.html">框架页</item>
             <item name="#location" url="content/ProjectIntroduction/location.html">导航定位组件</item>
             <item name="#siteMap" url="content/ProjectIntroduction/siteMap.html">站点地图</item>
