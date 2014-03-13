@@ -9,14 +9,17 @@
     <meta name="description" content="通过分享编程知识，梳理自己的知识体系结构，同时帮助新手少走弯路!" />
     <meta name="author" content="胡明明" />
 
-    <!-- css -->
-    <!--<link id="bootstrap_cssRef" href="themes/css/bootstrap.min.css" rel="stylesheet" />
-    <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
-    <link href="themes/css/justify.css" rel="stylesheet" />-->
+    <!-- local -->
+    <!--<link href="themes/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="themes/bootstrap/css/docs.css" rel="stylesheet" />-->
+    <!-- /.local -->
 
-    <link id="bootstrap_cssRef" href="//libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- cdn -->
+    <link href="//libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
     <link href="//v3.bootcss.com/docs-assets/css/docs.css" rel="stylesheet" />
-    <link id="prettify_cssRef" href="themes/css/prettify.css" rel="stylesheet" />
+    <!-- /.cdn -->
+
+    <link href="themes/css/prettify.css" rel="stylesheet" />
     <link href="themes/css/justify.css" rel="stylesheet" />
 </head>
 <body>
@@ -61,94 +64,44 @@
         </div>
     </div>
 
-    <div id="rapidPanel" class="label label-info">
+    <!--<div id="rapidPanel" class="label label-info">
         <select id="themeSwitch" style="width: auto;">
             <option disabled="disabled">风格切换</option>
         </select>
+    </div>-->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title text-center" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- js -->
-    <!--<script id="jqueryRef" src="scripts/jquery.min.js"></script>
-    <script id="bootstrap_jsRef" src="scripts/bootstrap.min.js"></script>
-    <script id="prettify_jsRef" src="scripts/prettify.js"></script>
-    <script id="scrollUp_jsRef" src="scripts/jquery.scrollUp.min.js"></script>-->
+    <!-- local -->
+    <!--<script src="scripts/jquery.min.js"></script>
+    <script src="themes/bootstrap/js/bootstrap.min.js"></script>
+    <script src="scripts/prettify.js"></script>
+    <script src="scripts/jquery.scrollUp.min.js"></script>-->
+    <!-- /.local -->
 
-    <script id="jqueryRef" src="//libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-    <script id="bootstrap_jsRef" src="//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script id="prettify_jsRef" src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
-    <script id="scrollUp_jsRef" src="//www.bootcss.com/assets/js/jquery.scrollUp.min.js"></script>
+    <!-- cdn -->
+    <script src="//libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    <script src="//www.bootcss.com/assets/js/jquery.scrollUp.min.js"></script>
+    <!-- /.cdn -->
 
-    <script src="scripts/waitingPrompt.js"></script>
-    <script src="scripts/prettyCode.js"></script>
-    <script src="scripts/packageSwitch.js"></script>
-    <script src="scripts/location.js"></script>
-
+    <script src="scripts/local/waitingPrompt.js"></script>
+    <script src="scripts/local/prettyCode.js"></script>
+    <script src="scripts/local/packageSwitch.js"></script>
+    <script src="scripts/local/location.js"></script>
+    <script src="scripts/local/index.js"></script>
     <!--<script src="scripts/debug/debug_ajax.js"></script>-->
-
-    <script type="text/javascript">
-
-        $( function () {
-
-            //enableThemeSwitch();
-            enableScrollUp();
-
-        } );
-
-        // 主题样式表切换 --> packageSwitch.js
-        function enableThemeSwitch() {
-            $( '#themeSwitch' ).packageSwitch( {
-
-                packageSelector: { 'bootstrap_cssRef': 'href' }
-
-              , seriesCollection: [
-                    { seriesName: 'amelia', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/amelia/bootstrap.min.css' } }
-                  , { seriesName: 'cerulean', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cerulean/bootstrap.min.css' } }
-                  , { seriesName: 'cosmo', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css' } }
-                  , { seriesName: 'cyborg', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/cyborg/bootstrap.min.css' } }
-                  , { seriesName: 'flatly', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/flatly/bootstrap.min.css' } }
-                  , { seriesName: 'journal', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/journal/bootstrap.min.css' } }
-                  , { seriesName: 'readable', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/readable/bootstrap.min.css' } }
-                  , { seriesName: 'simplex', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/simplex/bootstrap.min.css' } }
-                  , { seriesName: 'slate', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/slate/bootstrap.min.css' } }
-                  , { seriesName: 'spacelab', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/spacelab/bootstrap.min.css' } }
-                  , { seriesName: 'spruce', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/spruce/bootstrap.min.css' } }
-                  , { seriesName: 'superhero', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/superhero/bootstrap.min.css' } }
-                  , { seriesName: 'united', seriesValues: { 'bootstrap_cssRef': '//netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css' } }
-              ]
-
-              , showSeriesList: function ( $element, seriesList, packageSwitch ) {
-                  var options = '';
-                  $.each( seriesList, function ( index, name ) {
-                      options += '<option value="' + index + '">' + name + '</option>';
-                  } );
-
-                  $element.append( options ).on( 'change', function () {
-                      var seriesIndex = $( this ).val();
-                      packageSwitch.switchTo( seriesIndex );
-                  } );
-              }
-
-              , addDefault: true
-
-              , defaultSeriesName: 'default'
-            } );
-        }
-
-        // 启用回到顶端 --> jquery.scrollUp.min.js
-        function enableScrollUp() {
-            $.scrollUp( {
-                scrollName: 'scrollUp', // Element ID
-                topDistance: '300', // Distance from top before showing element (px)
-                topSpeed: 300, // Speed back to top (ms)
-                animation: 'fade', // Fade, slide, none
-                animationInSpeed: 200, // Animation in speed (ms)
-                animationOutSpeed: 200, // Animation out speed (ms)
-                scrollText: '回到顶端', // Text for element
-                activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-            } );
-        }
-
-    </script>
-
 </body>
 </html>

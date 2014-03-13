@@ -5,12 +5,16 @@
 
     var PrettyCode = function ( element, codeUrl ) {
         this.$element = $( element );
-        this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码加载中...</span></pre>' );
+        //this.$codeContainer = $( '<pre class="prettyprint linenums"><span class="loading">源代码加载中...</span></pre>' );
         this.codeUrl = codeUrl;
         this.title = this.$element.text();
         this.visible = false;
 
-        this.$element.after( $( '<div class="code"></div>' ).append( this.$codeContainer ) );
+        this.$codePanel = $( '<div class="panel panel-primary"><div class="panel-heading" data-toggle="code-modal" style="cursor:pointer"><h3 class="panel-title text-center">' + this.title +
+            '</h3></div><div class="panel-body"><pre class="prettyprint linenums"><span class="loading">源代码加载中...</span></pre></div></div>' );
+
+        this.$codeContainer = this.$codePanel.find( 'pre.prettyprint' );
+        this.$element.after( this.$codePanel );
     };
 
     PrettyCode.prototype = {
@@ -22,36 +26,20 @@
 
       , show: function () {
           if ( !this.visible ) {
-              var noContent = this.$codeContainer.children().hasClass( 'loading' );
+              var noContent = this.$codeContainer.children().hasClass( 'loading' ); 
               if ( noContent ) {
-                  var that = this;
+                  var that = this; 
                   $.ajax( {
                       url: this.codeUrl,
                       dataType: 'text',
                       success: function ( data ) {
                           var encodedData = that.htmlEncode( data );
-                          that.$codeContainer.html( encodedData );
 
+                          that.$codeContainer.html( encodedData );
                           window.prettyPrint && prettyPrint();
 
-                          var title = $( '<h6 class="text-center">' + that.title + '<i class="icon-fullscreen scaleButton" title="缩放"></i></h6>' );
-                          that.$codeContainer.before( title );
-                          var $code = that.$codeContainer.parent();
-                          title.find( 'i.scaleButton' ).on( 'click', function () {
-                              var scaleButton = $( this );
-                              var isFullScreen = $code.hasClass( 'modal' );
-                              if ( isFullScreen ) {
-                                  $code.removeClass( 'modal' );
-                                  scaleButton.removeClass( "icon-resize-small" ).addClass( "icon-fullscreen" );
-                                  that.$codeContainer.height( '100%' )
-                              }
-                              else {
-                                  $code.addClass( 'modal' );
-                                  scaleButton.removeClass( "icon-fullscreen" ).addClass( "icon-resize-small" );
-                                  that.$codeContainer.outerHeight( $( window ).height() - 40 );
-                              }
-                          } );
-
+                          //that.$modalDialog.find( '.modal-title' ).html( that.title );
+                          //that.$modalDialog.find( '.modal-body' ).html( that.$codeContainer.clone() );
                       },
                       error: function ( XMLHttpRequest, textStatus, errorThrown ) { alert( errorThrown ); },
                       cache: true,
@@ -59,7 +47,7 @@
                       async: true
                   } );
               }
-              this.$codeContainer.parent().slideDown( 'slow' );
+              this.$codePanel.slideDown( 'slow' );
           }
 
           this.visible = true;
@@ -67,7 +55,7 @@
 
       , hide: function () {
           if ( this.visible ) {
-              this.$codeContainer.parent().slideUp( 'slow' );
+              this.$codePanel.slideUp( 'slow' );
           }
 
           this.visible = false;
@@ -107,10 +95,10 @@
     * =================== */
 
     $.initPrettyCodeSwitch = function () {
-        var closeIcon = 'icon-hand-right'
-          , openIcon = 'icon-hand-down';
+        var closeIcon = 'glyphicon-hand-right'
+          , openIcon = 'glyphicon-hand-down';
 
-        $( document ).find( '[data-code-url]' ).not( '.label' ).addClass( 'label label-important' ).prepend( '<i class="icon-white ' + closeIcon + '"></i> ' ).on( 'click', function () {
+        $( document ).find( '[data-code-url]' ).not( '.btn' ).addClass( 'btn btn-danger' ).append( ' <i class="glyphicon ' + closeIcon + '"></i>' ).on( 'click', function () {
             var $icon = $( this ).find( 'i' )
               , close = $icon.hasClass( closeIcon );
 
